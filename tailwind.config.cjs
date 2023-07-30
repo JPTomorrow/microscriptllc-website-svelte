@@ -1,6 +1,8 @@
-/** @type {import('tailwindcss').Config} */
-export default {
-  	// 1. Apply the dark mode class setting:
+const { url } = require('inspector');
+
+/** @type {import('tailwindcss').Config}*/
+const config = {
+	// 1. Apply the dark mode class setting:
 	darkMode: 'class',
 	content: [
 		'./src/**/*.{html,js,svelte,ts}',
@@ -13,13 +15,15 @@ export default {
 	theme: {
 		extend: {
 			backgroundImage: {
-				'space-stars': "url('/images/space-stars.webp')",
+				'space-stars': "url('/images/space-stars.webp')"
 			}
-		},
+		}
 	},
+
 	plugins: [
 		// 3. Append the Skeleton plugin to the end of this list
 		...require('@skeletonlabs/skeleton/tailwind/skeleton.cjs')()
 	]
-}
+};
 
+module.exports = config;
