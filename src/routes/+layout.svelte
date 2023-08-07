@@ -9,6 +9,6 @@
 </script>
 
 <AppShell>
-	<!-- <svelte:fragment slot="header"><Header /></svelte:fragment> -->
+	<svelte:fragment slot="header"><Header /></svelte:fragment>
 	<slot />
 </AppShell>
