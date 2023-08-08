@@ -11,12 +11,17 @@
 </script>
 
 <div class="fixed hidden md:flex w-screen bg-transparent justify-between p-5">
-	<div class="flex items-center">
+	<div class="flex h-full items-center">
 		<ArrowUpBar class="align-middle mr-5" />
 		<a href="/"><strong class="text-3xl">{env.PUBLIC_BRAND_NAME}</strong></a>
 	</div>
-	<div class="flex items-center">
-		<LightSwitch />
+	<div class="flex h-full items-center justify-between gap-5">
+		<nav class="flex h-full gap-5 items-center">
+			<a class="h-full hover:underline underline-offset-1" href="/">Home</a>
+			<a class="h-full hover:underline underline-offset-1" href="/about">About</a>
+			<a class="h-full hover:underline underline-offset-1" href="/skills">Skills</a>
+		</nav>
+		<LightSwitch class="border-[1px] rounded" />
 	</div>
 </div>
 
