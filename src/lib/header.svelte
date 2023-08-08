@@ -1,12 +1,13 @@
 <script lang="ts">
 	import { Menu2 } from 'tabler-icons-svelte';
 	import { Drawer, LightSwitch } from '@skeletonlabs/skeleton';
-	import { env } from '$env/dynamic/public';
 	import { drawerStore } from '@skeletonlabs/skeleton';
 	import NavLinks from '$lib/navlinks.svelte';
 	import Github from '$lib/github.svelte';
+	import Logo from '$lib/logo.svelte';
 	import { slide } from 'svelte/transition';
 	import { onMount } from 'svelte';
+	import Navlinks from '$lib/navlinks.svelte';
 
 	let playAnim = false;
 
@@ -22,23 +23,17 @@
 
 <div class="fixed hidden md:flex w-screen bg-transparent justify-between p-5">
 	{#if playAnim}
-		<a href="/" class="flex h-full items-center transition-transform hover:scale-105">
-			<img
-				in:slide|global={{ delay: 0, axis: 'x', duration: 600 }}
-				alt="logo"
-				src="/images/logo.png"
-				class="w-[40px] align-middle mr-5"
-			/>
-			<p class="text-3xl font-thin">{env.PUBLIC_BRAND_NAME}</p>
-		</a>
+		<Logo />
 		<div class="flex h-full items-center justify-between gap-8">
 			<NavLinks />
 			<div
 				in:slide|global={{ delay: 0, axis: 'x', duration: 600 }}
-				class="flex gap-8 items-center justify-between"
+				class="flex gap-5 items-center justify-between"
 			>
 				<Github />
-				<LightSwitch class="border-[1px] rounded" />
+				<div class="border-[1px] border-primary-200 rounded-full p-[2px]">
+					<LightSwitch rounded="rounded-full" />
+				</div>
 			</div>
 		</div>
 	{/if}
@@ -55,5 +50,13 @@
 </div>
 
 <Drawer position="bottom">
-	<p>Hello Skeleton</p>
+	<div class="w-full flex flex-col items-center justify-center p-5 gap-5">
+		<div class="flex w-1/2 justify-between items-center gap-5">
+			<Logo />
+			<div class="h-fit border-[1px] border-primary-200 rounded-full p-[2px]">
+				<LightSwitch rounded="rounded-full" />
+			</div>
+		</div>
+		<Navlinks />
+	</div>
 </Drawer>

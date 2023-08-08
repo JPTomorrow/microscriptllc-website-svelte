@@ -11,7 +11,7 @@
 
 <div class="hover:scale-110 transition-transform duration-75">
 	<a href="/" class="[&>*]:pointer-events-none" use:popup={popupHover}>
-		<BrandGithub class="border-[2px] border-primary-200 rounded-full p-1" size="32" />
+		<BrandGithub class="border-[2px] border-primary-200 rounded-full p-1" size="28" />
 	</a>
 </div>
 

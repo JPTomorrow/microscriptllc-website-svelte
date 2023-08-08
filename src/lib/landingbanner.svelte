@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { Avatar } from '@skeletonlabs/skeleton';
 	import { onMount } from 'svelte';
-	import { blur } from 'svelte/transition';
+	import { blur, slide } from 'svelte/transition';
 	import { ArrowRightRhombus } from 'tabler-icons-svelte';
 
 	const justinName = [...'Justin Morrow'];
@@ -43,14 +43,16 @@
 <div class="w-fit text-center font-thin bg-transparent">
 	<div class="flex w-full font-light gap-10 justify-center items-center">
 		<div class="flex w-full flex-col justify-center items-center">
-			<Avatar
-				src="/images/profile.webp"
-				width="w-[150px]"
-				rounded="rounded-full"
-				class={`border-[3px] border-primary-200 shadow-md shadow-secondary-800 mb-3 transform transition-transform duration-300 ${
-					visible ? 'scale-100' : 'scale-0'
-				}`}
-			/>
+			<div in:blur|global={{ delay: 0, duration: 400 }}>
+				<Avatar
+					src="/images/profile.webp"
+					width="w-[150px]"
+					rounded="rounded-full"
+					class={`border-[3px] border-primary-200 shadow-md shadow-secondary-800 mb-3 transform transition-transform duration-150 ${
+						visible ? 'scale-100' : 'scale-0'
+					}`}
+				/>
+			</div>
 			{#if visible}
 				<div class="flex flex-col">
 					<div class="flex items-center justify-center">
@@ -83,14 +85,16 @@
 			{/if}
 		</div>
 		<div class="flex w-full flex-col justify-center items-center">
-			<Avatar
-				src="/images/profile.webp"
-				width="w-[150px]"
-				rounded="rounded-full"
-				class={`border-[3px] border-primary-200 shadow-md shadow-secondary-800 mb-3 transform transition-transform duration-300 ${
-					visible ? 'scale-100' : 'scale-0'
-				}`}
-			/>
+			<div in:blur|global={{ delay: 0, duration: 400 }}>
+				<Avatar
+					src="/images/profile.webp"
+					width="w-[150px]"
+					rounded="rounded-full"
+					class={`border-[3px] border-primary-200 shadow-md shadow-secondary-800 mb-3 transform transition-transform duration-300 ${
+						visible ? 'scale-100' : 'scale-0'
+					}`}
+				/>
+			</div>
 			{#if visible}
 				<div class="flex flex-col">
 					<div class="flex items-center justify-center">
@@ -131,7 +135,7 @@
 		>
 			<h1 class="text-2xl">We design and implement feature rich</h1>
 			<h1 class="text-4xl text-secondary-400">
-				<div class="transition-all duration-75 hover:text-secondary-100 hover:scale-110">
+				<div class="transition-all duration-150 hover:text-secondary-100 hover:scale-110">
 					<a href="/">
 						<strong class="hover:underline">Websites</strong>
 						and
@@ -166,10 +170,10 @@
 			class="flex items-center justify-center mt-5"
 		>
 			<a
-				class="flex w-fit items-center justify-center border-[1px] border-primary-50 rounded-full px-5 py-2 hover:bg-primary-200 hover:bg-opacity-30 transition-all duration-75 hover:scale-105"
+				class="flex w-fit items-center justify-center border-[1px] border-primary-50 rounded-full px-5 py-2 hover:bg-primary-200 hover:bg-opacity-30 transition-all duration-75 hover:scale-105 dark:text-primary-50 dark:hover:text-white"
 				href="/projects"
 			>
-				<p class="text-sm uppercase mr-2">See our work</p>
+				<p class="text-sm uppercase mr-3">See our work</p>
 				<ArrowRightRhombus />
 			</a>
 		</div>
