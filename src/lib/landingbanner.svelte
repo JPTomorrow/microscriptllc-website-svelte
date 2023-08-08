@@ -41,7 +41,7 @@
 </script>
 
 <div class="w-fit text-center font-thin bg-transparent">
-	<div class="flex w-full font-light gap-10">
+	<div class="flex w-full font-light gap-10 justify-center items-center">
 		<div class="flex w-full flex-col justify-center items-center">
 			<Avatar
 				src="/images/profile.webp"
@@ -82,7 +82,7 @@
 				</div>
 			{/if}
 		</div>
-		<div class="flex flex-col justify-center items-center">
+		<div class="flex w-full flex-col justify-center items-center">
 			<Avatar
 				src="/images/profile.webp"
 				width="w-[150px]"
@@ -123,14 +123,30 @@
 			{/if}
 		</div>
 	</div>
+
 	{#if visible}
-		<div class="flex flex-col items-center mt-5">
+		<div
+			in:blur|global={{ delay: 1000, duration: 800 }}
+			class="flex-col my-5 justify-center items-center"
+		>
+			<h1 class="text-2xl">We design and implement feature rich</h1>
+			<h1 class="text-4xl text-secondary-400">
+				<div class="transition-all duration-75 hover:text-secondary-100 hover:scale-110">
+					<a href="/">
+						<strong class="hover:underline">Websites</strong>
+						and
+						<strong class="hover:underline">Web Apps</strong>
+					</a>
+				</div>
+			</h1>
+		</div>
+		<div class="flex flex-col items-center">
 			{#each quote_lines as quote, timing_idx}
 				<div class="flex">
 					{#each quote as char, i (i)}
 						<p
 							in:blur|global={{
-								delay: 1000 * (timing_idx + 1) + quoteTimings[timing_idx][i],
+								delay: 500 * (timing_idx + 1) + quoteTimings[timing_idx][i],
 								duration: 800
 							}}
 							class="text-xl"
@@ -146,7 +162,7 @@
 		</div>
 
 		<div
-			in:blur|global={{ delay: 5000, duration: 400 }}
+			in:blur|global={{ delay: 3000, duration: 400 }}
 			class="flex items-center justify-center mt-5"
 		>
 			<a

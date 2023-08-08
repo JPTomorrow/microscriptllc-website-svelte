@@ -2,6 +2,7 @@
 	import { onMount } from 'svelte';
 	import { sineInOut } from 'svelte/easing';
 	import { blur } from 'svelte/transition';
+	import { page } from '$app/stores';
 
 	let animationStart = false;
 
@@ -19,13 +20,25 @@
 </script>
 
 {#if animationStart}
-	<nav class="flex h-full gap-4 items-center mr-5">
+	<nav class="flex h-full gap-4 items-center">
 		{#each navLinks as l, i (i)}
 			<a
-				in:blur|global={{ delay: i * 100, duration: 800, easing: sineInOut }}
+				in:blur|global={{
+					delay: (navLinks.length - i) * 100,
+					duration: 800,
+					easing: sineInOut
+				}}
 				class="nav-link"
-				href={l.path}>{l.name}</a
-			>
+				class:active={$page.url.pathname === l.path}
+				href={l.path}
+				>{l.name}
+			</a>
 		{/each}
 	</nav>
 {/if}
+
+<style>
+	.active {
+		text-decoration: underline;
+	}
+</style>
