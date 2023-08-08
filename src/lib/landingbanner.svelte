@@ -2,6 +2,8 @@
 	import { Avatar } from '@skeletonlabs/skeleton';
 	import { onMount } from 'svelte';
 	import { blur } from 'svelte/transition';
+	import { ArrowRightRhombus } from 'tabler-icons-svelte';
+
 	const justinName = [...'Justin Morrow'];
 	const justinTitle = [...'Co-Founder / CTO'];
 	const thomasName = [...'Thomas Bender'];
@@ -40,12 +42,12 @@
 
 <div class="w-fit text-center font-thin bg-transparent">
 	<div class="flex w-full font-light gap-10">
-		<div class="flex flex-col justify-center items-center">
+		<div class="flex w-full flex-col justify-center items-center">
 			<Avatar
 				src="/images/profile.webp"
 				width="w-[150px]"
 				rounded="rounded-full"
-				class={`border-[3px] mb-3 transform transition-transform duration-300 ${
+				class={`border-[3px] border-primary-200 shadow-md shadow-secondary-800 mb-3 transform transition-transform duration-300 ${
 					visible ? 'scale-100' : 'scale-0'
 				}`}
 			/>
@@ -85,7 +87,7 @@
 				src="/images/profile.webp"
 				width="w-[150px]"
 				rounded="rounded-full"
-				class={`border-[3px] mb-3 transform transition-transform duration-300 ${
+				class={`border-[3px] border-primary-200 shadow-md shadow-secondary-800 mb-3 transform transition-transform duration-300 ${
 					visible ? 'scale-100' : 'scale-0'
 				}`}
 			/>
@@ -141,6 +143,19 @@
 					{/each}
 				</div>
 			{/each}
+		</div>
+
+		<div
+			in:blur|global={{ delay: 5000, duration: 400 }}
+			class="flex items-center justify-center mt-5"
+		>
+			<a
+				class="flex w-fit items-center justify-center border-[1px] border-primary-50 rounded-full px-5 py-2 hover:bg-primary-200 hover:bg-opacity-30 transition-all duration-75 hover:scale-105"
+				href="/projects"
+			>
+				<p class="text-sm uppercase mr-2">See our work</p>
+				<ArrowRightRhombus />
+			</a>
 		</div>
 	{/if}
 </div>

@@ -3,6 +3,7 @@
 	import { Drawer, LightSwitch } from '@skeletonlabs/skeleton';
 	import { env } from '$env/dynamic/public';
 	import { drawerStore } from '@skeletonlabs/skeleton';
+	import NavLinks from '$lib/navlinks.svelte';
 
 	// Open the drawer:
 	function drawerOpen(): void {
@@ -16,11 +17,7 @@
 		<a href="/"><strong class="text-3xl">{env.PUBLIC_BRAND_NAME}</strong></a>
 	</div>
 	<div class="flex h-full items-center justify-between gap-5">
-		<nav class="flex h-full gap-5 items-center">
-			<a class="h-full hover:underline underline-offset-1" href="/">Home</a>
-			<a class="h-full hover:underline underline-offset-1" href="/about">About</a>
-			<a class="h-full hover:underline underline-offset-1" href="/skills">Skills</a>
-		</nav>
+		<NavLinks />
 		<LightSwitch class="border-[1px] rounded" />
 	</div>
 </div>
