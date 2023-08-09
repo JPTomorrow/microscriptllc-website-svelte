@@ -5,3 +5,18 @@ html, body {
 .nav-link {
     @apply h-full hover:underline underline-offset-4 transition-all duration-75 hover:scale-110 hover:text-secondary-300;
 }
+
+@keyframes animatedBackground {
+    from {
+        background-position: -100px -100px;
+    }
+    to {
+        background-position: -25px 0;
+    }
+}
+.animate-bg {
+    width: 110%;
+    background-position: 0px 0px;
+    background-repeat: ;
+    animation: animatedBackground 10s ease-in-out infinite alternate;
+}

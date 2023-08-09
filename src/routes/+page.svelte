@@ -3,7 +3,7 @@
 	import { fade } from 'svelte/transition';
 </script>
 
-<div in:fade|global out:fade|global class="bg-space-stars bg-cover h-screen">
+<div in:fade|global out:fade|global class="animate-bg bg-space-stars bg-cover">
 	<div class="flex h-screen justify-center items-center">
 		<LandingBanner />
 	</div>
