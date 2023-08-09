@@ -1,8 +1,8 @@
 <script lang="ts">
 	import { Avatar } from '@skeletonlabs/skeleton';
 	import { onMount } from 'svelte';
-	import { blur, slide } from 'svelte/transition';
-	import { ArrowRightRhombus } from 'tabler-icons-svelte';
+	import { blur, fly, scale, slide } from 'svelte/transition';
+	import { ArrowRightRhombus, Axe } from 'tabler-icons-svelte';
 
 	const justinName = [...'Justin Morrow'];
 	const justinTitle = [...'Co-Founder / CTO'];
@@ -43,17 +43,15 @@
 <div class="w-fit text-center font-thin bg-transparent">
 	<div class="flex w-full font-light gap-10 justify-center items-center">
 		<div class="flex w-full flex-col justify-center items-center">
-			<div in:blur|global={{ delay: 0, duration: 400 }}>
-				<Avatar
-					src="/images/profile.webp"
-					width="w-[150px]"
-					rounded="rounded-full"
-					class={`border-[2px] border-primary-200 shadow-md shadow-secondary-800 mb-3 transform transition-transform duration-150 ${
-						visible ? 'scale-100' : 'scale-0'
-					}`}
-				/>
-			</div>
 			{#if visible}
+				<div in:scale|global={{ delay: 50, duration: 600 }}>
+					<Avatar
+						src="/images/profile.webp"
+						width="w-[150px]"
+						rounded="rounded-full"
+						class="border-[2px] border-primary-200 shadow-md shadow-secondary-800 mb-3 transform transition-transform duration-150"
+					/>
+				</div>
 				<div class="flex flex-col">
 					<div class="flex items-center justify-center">
 						{#each justinName as char, i (i)}
@@ -85,17 +83,15 @@
 			{/if}
 		</div>
 		<div class="flex w-full flex-col justify-center items-center">
-			<div in:blur|global={{ delay: 0, duration: 400 }}>
-				<Avatar
-					src="/images/profile.webp"
-					width="w-[150px]"
-					rounded="rounded-full"
-					class={`border-[2px] border-primary-200 shadow-md shadow-secondary-800 mb-3 transform transition-transform duration-300 ${
-						visible ? 'scale-100' : 'scale-0'
-					}`}
-				/>
-			</div>
 			{#if visible}
+				<div in:scale|global={{ delay: 50, duration: 600 }}>
+					<Avatar
+						src="/images/profile.webp"
+						width="w-[150px]"
+						rounded="rounded-full"
+						class="border-[2px] border-primary-200 shadow-md shadow-secondary-800 mb-3 transform transition-transform duration-300"
+					/>
+				</div>
 				<div class="flex flex-col">
 					<div class="flex items-center justify-center">
 						{#each thomasName as char, i (i)}
