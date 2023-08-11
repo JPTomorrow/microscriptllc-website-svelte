@@ -6,8 +6,7 @@
 </script>
 
 <div
-	in:fade|global
-	out:fade|global
+	in:fade|global={{ duration: 200 }}
 	class="animate-bg bg-space-stars bg-cover w-screen h-screen bg-no-repeat"
 >
 	<div class="flex w-full h-screen justify-center items-center">

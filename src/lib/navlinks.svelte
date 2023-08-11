@@ -13,9 +13,9 @@
 	const navLinks: NavLink[] = [
 		{ name: 'Home', path: '/' },
 		// { name: 'Blog', path: '/blog' },
-		{ name: 'Skills', path: '/skills' },
-		{ name: 'Projects', path: '/projects' },
-		{ name: 'Contact Us', path: '/contact' }
+		// { name: 'Skills', path: '/skills' },
+		{ name: 'Works', path: '/projects' },
+		{ name: 'Contact', path: '/contact' }
 	];
 </script>
 

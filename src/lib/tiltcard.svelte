@@ -1,10 +1,11 @@
 <script lang="ts">
+	import { CarCrane } from 'tabler-icons-svelte';
 	import tilt from './tilt.js';
-
+	export let size: string;
 	let reverse = true;
 </script>
 
-<div use:tilt={{ scale: 1.005, max: 2, reverse }}>
+<div class={size} use:tilt={{ scale: 1.005, max: 2, reverse }}>
 	<slot />
 </div>
 
@@ -22,10 +23,6 @@
 		margin: 0;
 	}
 	div {
-		height: 200px;
-		width: 200px;
-
-		display: grid;
 		justify-content: center;
 		align-content: center;
 		text-align: center;
