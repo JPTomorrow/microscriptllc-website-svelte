@@ -12,6 +12,14 @@ declare global {
 		name: string,
 		path: string
 	}
+
+	interface WorkProject {
+		name: string,
+		img: string;
+		description: string;
+		description2?: string;
+		bullet_points: string[];
+	}
 }
 
 export {};
