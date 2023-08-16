@@ -16,9 +16,10 @@ declare global {
 	interface WorkProject {
 		name: string,
 		img: string;
+		skills: string[];
 		description: string;
-		description2?: string;
-		bullet_points: string[];
+		github?: string;
+		site?: string;
 	}
 }
 

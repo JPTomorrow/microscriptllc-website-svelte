@@ -10,7 +10,7 @@
 	class="animate-bg bg-space-stars bg-cover w-screen h-screen bg-no-repeat"
 >
 	<div class="flex w-full h-screen justify-center items-center">
-		<Tiltcard>
+		<Tiltcard size="">
 			<LandingBanner />
 		</Tiltcard>
 		<Particles />

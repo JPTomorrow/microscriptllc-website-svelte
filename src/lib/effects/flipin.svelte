@@ -1,17 +1,21 @@
-<div class="flip-in-diag-1-tr">
+<script lang="ts">
+	export let delay: number = 0;
+</script>
+
+<div class="flip-in-diag-1-bl w-full h-full" style={`animation-delay: ${delay}s`}>
 	<slot />
 </div>
 
 <style>
-	.flip-in-diag-1-tr {
-		-webkit-animation: flip-in-diag-1-tr 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
-		animation: flip-in-diag-1-tr 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+	.flip-in-diag-1-bl {
+		-webkit-animation: flip-in-diag-1-bl 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+		animation: flip-in-diag-1-bl 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 	}
 
-	@-webkit-keyframes flip-in-diag-1-tr {
+	@-webkit-keyframes flip-in-diag-1-bl {
 		0% {
-			-webkit-transform: rotate3d(1, 1, 0, -80deg);
-			transform: rotate3d(1, 1, 0, -80deg);
+			-webkit-transform: rotate3d(1, 1, 0, 80deg);
+			transform: rotate3d(1, 1, 0, 80deg);
 			opacity: 0;
 		}
 		100% {
@@ -20,10 +24,10 @@
 			opacity: 1;
 		}
 	}
-	@keyframes flip-in-diag-1-tr {
+	@keyframes flip-in-diag-1-bl {
 		0% {
-			-webkit-transform: rotate3d(1, 1, 0, -80deg);
-			transform: rotate3d(1, 1, 0, -80deg);
+			-webkit-transform: rotate3d(1, 1, 0, 80deg);
+			transform: rotate3d(1, 1, 0, 80deg);
 			opacity: 0;
 		}
 		100% {

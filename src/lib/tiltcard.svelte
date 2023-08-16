@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { CarCrane } from 'tabler-icons-svelte';
 	import tilt from './tilt.js';
 	export let size: string;
 	let reverse = true;
@@ -17,7 +16,6 @@
 	:global(body) {
 		justify-content: center;
 		align-content: center;
-		grid-gap: 20px;
 	}
 	* {
 		margin: 0;
