@@ -9,8 +9,8 @@
 	in:fade|global={{ duration: 200 }}
 	class="animate-bg bg-space-stars bg-cover w-screen h-screen bg-no-repeat"
 >
-	<div class="flex w-full h-screen justify-center items-center">
-		<Tiltcard size="">
+	<div class="flex w-screen h-screen justify-center items-center">
+		<Tiltcard size="w-[500px] h-[500px] items-center justify-center">
 			<LandingBanner />
 		</Tiltcard>
 		<Particles />
