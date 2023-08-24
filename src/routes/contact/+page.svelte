@@ -2,6 +2,7 @@
 	import { enhance } from '$app/forms';
 	import Rollintext from '$lib/effects/rollintext.svelte';
 	import { draw, fade } from 'svelte/transition';
+	import { popup, type PopupSettings } from '@skeletonlabs/skeleton';
 
 	function valEmail(e: string) {
 		var emailRegEx =
@@ -28,6 +29,18 @@
 			isSending = false;
 		}, 2000);
 	}
+
+	const popupHover: PopupSettings = {
+		event: 'hover',
+		target: 'contactAddInfo',
+		placement: 'right'
+	};
+
+	const emailHover: PopupSettings = {
+		event: 'hover',
+		target: 'emailInfo',
+		placement: 'right'
+	};
 </script>
 
 <div
@@ -100,25 +113,54 @@
 		>
 			<!-- <Rollintext text="Contact Us" /> -->
 			<h1 class="text-2xl">Contact Us</h1>
-			<input class="input custom-input" type="text" placeholder="Name" name="name" />
-			{#if !isValid}
-				<h1 class="text-error-500">* Not a valid email</h1>
-			{/if}
+			<input class="input custom-input custom-focus" type="text" placeholder="Name" name="name" />
 			<input
 				bind:value={email}
-				class="input custom-input"
+				class="input custom-input custom-focus"
 				type="text"
 				placeholder="Email"
 				name="email"
+				use:popup={emailHover}
 			/>
-			<textarea class="textarea p-4 rounded-lg" rows="4" placeholder="Message" name="msg" />
-			<button class="btn variant-outline-secondary rounded-full" type="submit">Submit</button>
+			<textarea
+				class="textarea p-4 rounded-lg custom-focus"
+				rows="4"
+				placeholder="Message"
+				name="msg"
+				use:popup={popupHover}
+			/>
+			<div class="flex items-center gap-3">
+				<button class="btn variant-outline-secondary rounded-full" type="submit">Submit</button>
+				{#if !isValid}
+					<h1 class="text-error-500">*not a valid email</h1>
+				{/if}
+			</div>
 		</form>
 	{/if}
 </div>
 
+<div class="card mt-3 p-4 variant-outline-secondary" data-popup="contactAddInfo">
+	<p class="text-md"><strong>Helpful Info:</strong></p>
+	<ul class="text-sm">
+		<li>You Phone #</li>
+		<li>Your business name if applicable</li>
+		<li>A rough description of what you are looking to have designed</li>
+	</ul>
+	<div class="arrow variant-filled-secondary" />
+</div>
+
+<div class="card mt-3 p-4 variant-outline-secondary" data-popup="emailInfo">
+	<p class="text-md"><strong>Email Format:</strong></p>
+	<p class="text-sm">email@domain.com</p>
+	<div class="arrow variant-filled-secondary" />
+</div>
+
 <style lang="postcss">
+	.custom-focus {
+		@apply outline-none;
+	}
+
 	.custom-input {
-		@apply rounded-full p-2 px-4;
+		@apply rounded-full p-2 px-4 border-[1px];
 	}
 </style>
