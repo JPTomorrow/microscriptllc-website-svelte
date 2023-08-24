@@ -10,10 +10,13 @@
 		return emailRegEx.test(String(e).toLowerCase());
 	}
 	let email: string = '';
-	$: isValid = valEmail(email);
+	let showEmailError = false;
 
 	function sub() {
+		const isValid = valEmail(email);
 		if (!isValid) {
+			showEmailError = email !== '';
+
 			return;
 		}
 		animateSend();
@@ -129,11 +132,11 @@
 				name="msg"
 				use:popup={popupHover}
 			/>
+			{#if showEmailError}
+				<h1 class="text-error-500">*not a valid email</h1>
+			{/if}
 			<div class="flex items-center gap-3">
 				<button class="btn variant-outline-secondary rounded-full" type="submit">Submit</button>
-				{#if !isValid}
-					<h1 class="text-error-500">*not a valid email</h1>
-				{/if}
 			</div>
 		</form>
 	{/if}
