@@ -1,8 +1,9 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
 	import Rollintext from '$lib/effects/rollintext.svelte';
-	import { draw, fade } from 'svelte/transition';
+	import { draw, fade, fly, slide } from 'svelte/transition';
 	import { popup, type PopupSettings } from '@skeletonlabs/skeleton';
+	import Trackintext from '$lib/effects/trackintext.svelte';
 
 	function valEmail(e: string) {
 		var emailRegEx =
@@ -16,7 +17,6 @@
 		const isValid = valEmail(email);
 		if (!isValid) {
 			showEmailError = email !== '';
-
 			return;
 		}
 		animateSend();
@@ -115,7 +115,9 @@
 			in:fade={{ duration: 800 }}
 		>
 			<!-- <Rollintext text="Contact Us" /> -->
-			<h1 class="text-2xl">Contact Us</h1>
+			<Trackintext>
+				<h1 class="text-2xl">Contact Us</h1>
+			</Trackintext>
 			<input class="input custom-input custom-focus" type="text" placeholder="Name" name="name" />
 			<input
 				bind:value={email}

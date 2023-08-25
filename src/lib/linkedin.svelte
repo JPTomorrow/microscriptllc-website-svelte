@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { popup, type PopupSettings } from '@skeletonlabs/skeleton';
-	import { BrandGithub } from 'tabler-icons-svelte';
+	import { BrandLinkedin } from 'tabler-icons-svelte';
 
 	const popupHover: PopupSettings = {
 		event: 'hover',
@@ -16,12 +16,12 @@
 		class="[&>*]:pointer-events-none"
 		use:popup={popupHover}
 	>
-		<BrandGithub class="border-[2px] border-primary-200 rounded-full p-1" size="28" />
+		<BrandLinkedin class="rounded-full" size="34" strokeWidth="1.2" />
 	</a>
 </div>
 
 <div class="card mt-3 p-4 variant-outline-secondary" data-popup="popupHover">
-	<p class="text-md"><strong>Justin's Github</strong></p>
-	<p>Proof of programming skills</p>
+	<p class="text-md"><strong>Our LinkedIn</strong></p>
+	<p>Connect with our business on LinkedIn</p>
 	<div class="arrow variant-filled-secondary" />
 </div>

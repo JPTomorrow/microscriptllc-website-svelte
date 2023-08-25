@@ -40,5 +40,6 @@
 <style>
 	.active {
 		text-decoration: underline;
+		font-weight: bold;
 	}
 </style>

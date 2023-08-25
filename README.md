@@ -11,9 +11,4 @@ npm i
 npm run dev
 ```
 
-## Deploy to Railway
-```
-railway login
-railway link
-railway up
-```
+## Deploy to Vercel

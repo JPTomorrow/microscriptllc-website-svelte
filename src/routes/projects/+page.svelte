@@ -6,8 +6,8 @@
 	import { onMount } from 'svelte';
 	import Tiltcard from '$lib/tiltcard.svelte';
 	import Flipin from '$lib/effects/flipin.svelte';
-	import Github from '$lib/github.svelte';
 	import { RadioGroup, RadioItem } from '@skeletonlabs/skeleton';
+	import Particles from '$lib/particles.svelte';
 
 	const projects: WorkProject[] = [
 		{
@@ -70,13 +70,16 @@
 	let selectedGroup = 0;
 </script>
 
-<div bind:this={outer} class="flex flex-col w-screen h-screen items-center overflow-y-scroll">
+<div
+	bind:this={outer}
+	in:fade|global={{ duration: 200 }}
+	class="flex flex-col w-screen h-screen items-center overflow-y-scroll"
+>
 	<RadioGroup class="mt-[100px] mb-[5%]">
-		<RadioItem bind:group={selectedGroup} name="justify" value={0}>Personal</RadioItem>
 		<RadioItem bind:group={selectedGroup} name="justify" value={1}>Proffesional</RadioItem>
+		<RadioItem bind:group={selectedGroup} name="justify" value={0}>Personal</RadioItem>
 	</RadioGroup>
 	<div
-		in:fade|global={{ duration: 200 }}
 		class="grid grid-cols-2 md:grid-cols-3 gap-10 h-full w-full px-[30px] md:px-[80px] mb-[150px]"
 	>
 		{#if selectedGroup == 0}
@@ -102,4 +105,5 @@
 			{/each}
 		{/if}
 	</div>
+	<!-- <Particles /> -->
 </div>

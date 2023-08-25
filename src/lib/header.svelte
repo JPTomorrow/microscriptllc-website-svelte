@@ -9,6 +9,7 @@
 	import { onMount } from 'svelte';
 	import Navlinks from '$lib/navlinks.svelte';
 	import { scrollYStore } from '$lib/scrollstore';
+	import Linkedin from './linkedin.svelte';
 
 	let playAnim = false;
 
@@ -30,12 +31,13 @@
 	>
 		{#if playAnim}
 			<Logo />
-			<div class="flex h-full items-center justify-between gap-8">
+			<div class="flex h-full items-center justify-between gap-7">
 				<NavLinks />
 				<div
 					in:slide|global={{ delay: 0, axis: 'x', duration: 600 }}
-					class="flex gap-5 items-center justify-between"
+					class="flex gap-3 items-center justify-between"
 				>
+					<Linkedin />
 					<Github />
 					<div class="border-[1px] border-primary-200 rounded-full p-[2px]">
 						<LightSwitch rounded="rounded-full" />
