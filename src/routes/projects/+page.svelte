@@ -76,7 +76,7 @@
 	class="flex flex-col w-screen h-screen items-center overflow-y-scroll"
 >
 	<RadioGroup class="mt-[100px] mb-[5%]">
-		<RadioItem bind:group={selectedGroup} name="justify" value={1}>Proffesional</RadioItem>
+		<RadioItem bind:group={selectedGroup} name="justify" value={1}>Professional</RadioItem>
 		<RadioItem bind:group={selectedGroup} name="justify" value={0}>Personal</RadioItem>
 	</RadioGroup>
 	<div

@@ -1,13 +1,7 @@
 <script lang="ts">
-	import { Avatar } from '@skeletonlabs/skeleton';
 	import { onMount } from 'svelte';
-	import { blur, fly, scale, slide } from 'svelte/transition';
-	import { ArrowRightRhombus, Axe } from 'tabler-icons-svelte';
-
-	const justinName = [...'Justin Morrow'];
-	const justinTitle = [...'Co-Founder / CTO'];
-	const thomasName = [...'Thomas Bender'];
-	const thomasTitle = [...'Co-Founder / PRO'];
+	import { blur } from 'svelte/transition';
+	import { ArrowRightRhombus } from 'tabler-icons-svelte';
 
 	const quote_lines = [
 		[...'Knowledge must continually be renewed...'],
@@ -24,10 +18,6 @@
 		);
 	}
 
-	const justinNameTimings = getFadeTimings(justinName, 500);
-	const justinTitleTimings = getFadeTimings(justinTitle, 500);
-	const thomasNameTimings = getFadeTimings(thomasName, 500);
-	const thomasTitleTimings = getFadeTimings(thomasTitle, 500);
 	const quoteTimings = [
 		getFadeTimings(quote_lines[0], 500),
 		getFadeTimings(quote_lines[1], 500),
@@ -41,89 +31,6 @@
 </script>
 
 <div class="w-fit text-center font-thin bg-transparent">
-	<div class="flex w-full font-light gap-10 justify-center items-center">
-		<div class="flex w-full flex-col justify-center items-center">
-			{#if visible}
-				<div in:scale|global={{ delay: 50, duration: 600 }}>
-					<Avatar
-						src="/images/profile.webp"
-						width="w-[150px]"
-						rounded="rounded-full"
-						class="border-[2px] border-primary-200 shadow-md shadow-secondary-800 mb-3 transform transition-transform duration-150"
-					/>
-				</div>
-				<div class="flex flex-col">
-					<div class="flex items-center justify-center">
-						{#each justinName as char, i (i)}
-							<p
-								in:blur|global={{ delay: 0 + justinNameTimings[i], duration: 800 }}
-								class="text-3xl"
-							>
-								{char}
-								{#if char == ' '}
-									&nbsp;
-								{/if}
-							</p>
-						{/each}
-					</div>
-					<div class="flex items-center justify-center">
-						{#each justinTitle as char, i (i)}
-							<p
-								in:blur|global={{ delay: 0 + justinTitleTimings[i], duration: 800 }}
-								class="text-xl"
-							>
-								{char}
-								{#if char == ' '}
-									&nbsp;
-								{/if}
-							</p>
-						{/each}
-					</div>
-				</div>
-			{/if}
-		</div>
-		<div class="flex w-full flex-col justify-center items-center">
-			{#if visible}
-				<div in:scale|global={{ delay: 50, duration: 600 }}>
-					<Avatar
-						src="/images/profile.webp"
-						width="w-[150px]"
-						rounded="rounded-full"
-						class="border-[2px] border-primary-200 shadow-md shadow-secondary-800 mb-3 transform transition-transform duration-300"
-					/>
-				</div>
-				<div class="flex flex-col">
-					<div class="flex items-center justify-center">
-						{#each thomasName as char, i (i)}
-							<p
-								in:blur|global={{ delay: 0 + thomasNameTimings[i], duration: 800 }}
-								class="text-3xl"
-							>
-								{char}
-								{#if char == ' '}
-									&nbsp;
-								{/if}
-							</p>
-						{/each}
-					</div>
-					<div class="flex items-center justify-center">
-						{#each thomasTitle as char, i (i)}
-							<p
-								in:blur|global={{ delay: 0 + thomasTitleTimings[i], duration: 800 }}
-								class="text-xl"
-							>
-								{char}
-								{#if char == ' '}
-									&nbsp;
-								{/if}
-							</p>
-						{/each}
-					</div>
-				</div>
-			{/if}
-		</div>
-	</div>
-
 	{#if visible}
 		<div
 			in:blur|global={{ delay: 1000, duration: 800 }}
