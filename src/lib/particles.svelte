@@ -84,22 +84,9 @@
 <svelte:component
 	this={ParticlesComponent}
 	id="tsparticles"
-	class="foo bar"
+	class="fixed z-10"
 	style=""
 	options={particlesConfig}
 	on:particlesLoaded={onParticlesLoaded}
 	{particlesInit}
 />
-<!-- <slot name="contents" /> -->
-
-<!-- or -->
-
-<!-- <svelte:component
-	this={ParticlesComponent}
-	id="tsparticles"
-	class="foo bar"
-	style=""
-	url={particlesUrl}
-	on:particlesLoaded={onParticlesLoaded}
-	{particlesInit}
-/> -->
