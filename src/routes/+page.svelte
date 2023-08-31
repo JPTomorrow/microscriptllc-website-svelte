@@ -1,13 +1,13 @@
 <script lang="ts">
-	import LandingBanner from '$lib/landingbanner.svelte';
 	import Particles from '$lib/particles.svelte';
-	import Tiltcard from '$lib/tiltcard.svelte';
 	import { onMount } from 'svelte';
 	import { setScrollY } from '$lib/scrollstore';
 	import { fade } from 'svelte/transition';
 	import Inneraccentborder from '$lib/inneraccentborder.svelte';
 	import Projectscrollcontainer from '$lib/projectscrollcontainer.svelte';
 	import Contactuscard from '$lib/contactuscard.svelte';
+	import Footer from '$lib/footer.svelte';
+	import Projectmodal from '$lib/projectmodal.svelte';
 
 	// capture scroll to hide header
 	let outer: HTMLDivElement;
@@ -41,7 +41,7 @@
 		</div>
 
 		<!-- Work -->
-		<div class="custom-card flex justify-center">
+		<div class="custom-card flex flex-col justify-center">
 			<Projectscrollcontainer />
 		</div>
 
@@ -49,12 +49,14 @@
 		<div class="backdrop-blur-sm custom-card py-32">
 			<Contactuscard />
 		</div>
+		<Footer />
 		<Particles />
+		<Projectmodal />
 	</div>
 </div>
 
 <style lang="postcss">
 	.custom-card {
-		@apply relative z-20 px-10 w-full h-fit bg-black bg-opacity-5;
+		@apply relative z-[2] px-10 w-full h-fit bg-black bg-opacity-5;
 	}
 </style>

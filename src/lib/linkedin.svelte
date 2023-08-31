@@ -4,7 +4,7 @@
 
 	const popupHover: PopupSettings = {
 		event: 'hover',
-		target: 'popupHover',
+		target: 'linkedinpopup',
 		placement: 'top'
 	};
 </script>
@@ -20,7 +20,7 @@
 	</a>
 </div>
 
-<div class="card mt-3 p-4 variant-outline-secondary" data-popup="popupHover">
+<div class="card mt-3 p-4 variant-outline-secondary" data-popup="linkedinpopup">
 	<p class="text-md"><strong>Our LinkedIn</strong></p>
 	<p>Connect with our business on LinkedIn</p>
 	<div class="arrow variant-filled-secondary" />

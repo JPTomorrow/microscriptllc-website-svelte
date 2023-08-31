@@ -84,7 +84,7 @@
 <svelte:component
 	this={ParticlesComponent}
 	id="tsparticles"
-	class="fixed z-10"
+	class="fixed z-[1]"
 	style=""
 	options={particlesConfig}
 	on:particlesLoaded={onParticlesLoaded}
