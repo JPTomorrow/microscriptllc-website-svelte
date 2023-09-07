@@ -48,7 +48,7 @@
 					</a>
 				</div>
 			</div>
-			<img src="/images/about-pic.webp" width="41.6667%" class="aspect-auto" alt="Utah" />
+			<img src="/images/about-pic.webp" width="41.6667%" class="aspect-[1.49]" alt="Utah" />
 		</div>
 
 		<!-- Work -->
