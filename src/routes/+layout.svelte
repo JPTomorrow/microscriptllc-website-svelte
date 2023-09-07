@@ -13,6 +13,14 @@
 	import Header from '$lib/header.svelte';
 </script>
 
+<svelte:head>
+	<title>MicroScript</title>
+	<meta
+		name="description"
+		content="Unlock your business potential with MicroScript LLC's top-notch web design services. Transform your online presence today. Learn more now!"
+	/>
+</svelte:head>
+
 <AppShell>
 	<svelte:fragment slot="header"><Header /></svelte:fragment>
 	<slot />

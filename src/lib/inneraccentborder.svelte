@@ -1,8 +1,9 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import { blur } from 'svelte/transition';
-	let clazz: string;
+	let clazz: string = '';
 	export { clazz as class };
+	export let header: string = '';
 
 	let animate = false;
 
@@ -11,10 +12,14 @@
 	});
 </script>
 
-<div class={`flex flex-col gap-5 ${clazz}`}>
-	<div class="divider" />
+<div class={`flex flex-col ${clazz}`}>
+	{#if header != '' && animate}
+		<h1 in:blur|global class="text-5xl font-thin mb-5">{header}</h1>
+	{/if}
+	<div class="divider w-full" />
+	<div class="divider w-[98%] mt-1" />
 	{#if animate}
-		<div in:blur|global>
+		<div class="pl-2 pr-10 my-4" in:blur|global>
 			<slot />
 		</div>
 	{:else}
@@ -25,11 +30,11 @@
 			<div class="placeholder" />
 		</div>
 	{/if}
-	<div class="divider" />
+	<div class="divider w-3/4" />
 </div>
 
 <style lang="postcss">
 	.divider {
-		@apply w-full h-[1px] bg-secondary-500;
+		@apply h-[1px] bg-secondary-500;
 	}
 </style>

@@ -8,11 +8,12 @@
 	import Contactuscard from '$lib/contactuscard.svelte';
 	import Footer from '$lib/footer.svelte';
 	import Projectmodal from '$lib/projectmodal.svelte';
+	import { ArrowRightRhombus } from 'tabler-icons-svelte';
 
 	// capture scroll to hide header
 	let outer: HTMLDivElement;
 	onMount(() => {
-		outer.addEventListener('scroll', (e) => {
+		outer.addEventListener('scroll', (_) => {
 			setScrollY(outer.scrollTop);
 		});
 	});
@@ -24,20 +25,33 @@
 >
 	<div
 		bind:this={outer}
-		class="flex flex-col w-screen h-screen justify-start items-center overflow-y-scroll"
+		class="flex flex-col w-screen h-screen justify-start items-center overflow-y-scroll scroll-smooth"
 	>
-		<!-- <Tiltcard size="flex w-[500px] h-[500px] items-center justify-center">
-			<LandingBanner />
-		</Tiltcard> -->
-
 		<!-- Landing Banner -->
-		<div class="mt-[110px] py-20 backdrop-blur-sm custom-card">
-			<Inneraccentborder class="w-1/2">
-				<h1 class="text-4xl font-medium">
-					A boutique creative agency that understands the digital world is continually evolving and
-					your brand cannot become idle.
-				</h1>
-			</Inneraccentborder>
+		<div class="flex gap-5 mt-[110px] py-20 backdrop-blur-sm custom-card">
+			<div class="w-7/12">
+				<Inneraccentborder header="Today's Vision, Tomorrow's Web">
+					<h1 class="text-3xl font-thin leading-snug">
+						As you set sail on your online voyage, consider us your steadfast co-pilots. At
+						MicroScript, we offer more than just web development; we provide a full spectrum of
+						digital services and advanced features.
+					</h1>
+				</Inneraccentborder>
+				<div class="w-3/4 flex justify-start gap-5 mt-7">
+					<a class="btn1" href="/projects">
+						<p class="text-sm uppercase mr-3">Our Process</p>
+						<ArrowRightRhombus />
+					</a>
+					<a class="btn1" href="/projects">
+						<p class="text-sm uppercase mr-3">Get in Touch with us</p>
+						<ArrowRightRhombus />
+					</a>
+				</div>
+			</div>
+			<div class="relative w-5/12 m-10">
+				<img src="/images/about-pic.webp" alt="Utah" />
+				<div class="-z-10 absolute top-0 left-0 bg-red-300 w-full h-full" />
+			</div>
 		</div>
 
 		<!-- Work -->
