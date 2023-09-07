@@ -6,6 +6,8 @@
 	<img
 		alt="projectimg"
 		{src}
-		class="animate-img object-cover w-[100%] h-[100%] shadow-xl rounded-xl"
+		width="100%"
+		height="100%"
+		class="animate-img object-cover shadow-xl rounded-xl"
 	/>
 </div>

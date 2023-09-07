@@ -48,10 +48,7 @@
 					</a>
 				</div>
 			</div>
-			<div class="relative w-5/12 m-10">
-				<img src="/images/about-pic.webp" alt="Utah" />
-				<div class="-z-10 absolute top-0 left-0 bg-red-300 w-full h-full" />
-			</div>
+			<img src="/images/about-pic.webp" width="41.6667%" class="aspect-[4/3]" alt="Utah" />
 		</div>
 
 		<!-- Work -->
@@ -64,7 +61,7 @@
 			<Contactuscard />
 		</div>
 		<Footer />
-		<Particles />
+		<!-- <Particles /> -->
 		<Projectmodal />
 	</div>
 </div>

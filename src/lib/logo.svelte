@@ -11,6 +11,8 @@
 		in:slide|global={{ delay: 200, axis: 'x', duration: 600 }}
 		alt="logo"
 		src="/images/logo.png"
-		class="hidden sm:block w-[40px] align-middle ml-1"
+		width="40px"
+		height="40px"
+		class="hidden sm:block align-middle ml-1"
 	/>
 </a>
