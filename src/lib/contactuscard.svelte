@@ -150,7 +150,7 @@
 	<Employeebadge
 		employeeName="Thomas Bender"
 		employeeTitle="Co-Founder / PRO"
-		employeeImage="/images/thomas.png"
+		employeeImage="/images/thomas.webp"
 	/>
 </div>
 
