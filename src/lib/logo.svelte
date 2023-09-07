@@ -10,7 +10,7 @@
 	<img
 		in:slide|global={{ delay: 200, axis: 'x', duration: 600 }}
 		alt="logo"
-		src="/images/logo.png"
+		src="/images/logo.webp"
 		width="40px"
 		height="40px"
 		class="hidden sm:block align-middle ml-1"

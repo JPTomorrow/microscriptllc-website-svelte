@@ -208,7 +208,7 @@
 		{#if visible}
 			<div in:scale|global={{ delay: 50, duration: 600 }}>
 				<Avatar
-					src="/images/thomas.png"
+					src="/images/thomas.webp"
 					width="w-[150px]"
 					rounded="rounded-full"
 					class="border-[2px] border-primary-200 shadow-md shadow-secondary-800 mb-3 transform transition-transform duration-300"
