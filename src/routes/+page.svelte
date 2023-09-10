@@ -8,6 +8,7 @@
 	import Footer from '$lib/footer.svelte';
 	import Projectmodal from '$lib/projectmodal.svelte';
 	import { ArrowRightRhombus } from 'tabler-icons-svelte';
+	import BannerImage from '$lib/banner-image.svelte';
 
 	// capture scroll to hide header
 	let outer: HTMLDivElement;
@@ -47,10 +48,7 @@
 					</a>
 				</div>
 			</div>
-			<div class="relative aspect-[1.49]">
-				<img src="/images/about-pic.webp" width="100%" alt="Utah" />
-				<div class="absolute top-0 left-0 bg-red-300 w-1/3 h-full transform rotate-45" />
-			</div>
+			<BannerImage />
 		</div>
 
 		<!-- Work -->
