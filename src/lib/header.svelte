@@ -2,7 +2,6 @@
 	import { Menu2 } from 'tabler-icons-svelte';
 	import { Drawer, LightSwitch } from '@skeletonlabs/skeleton';
 	import { drawerStore } from '@skeletonlabs/skeleton';
-	import NavLinks from '$lib/navlinks.svelte';
 	import Github from '$lib/github.svelte';
 	import Logo from '$lib/logo.svelte';
 	import { slide } from 'svelte/transition';

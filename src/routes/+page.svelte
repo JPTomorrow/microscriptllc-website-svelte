@@ -1,5 +1,4 @@
 <script lang="ts">
-	import Particles from '$lib/particles.svelte';
 	import { onMount } from 'svelte';
 	import { setScrollY } from '$lib/scrollstore';
 	import { fade } from 'svelte/transition';
@@ -28,8 +27,8 @@
 		class="flex flex-col w-screen h-screen justify-start items-center overflow-y-scroll scroll-smooth"
 	>
 		<!-- Landing Banner -->
-		<div class="flex gap-5 mt-[110px] py-20 backdrop-blur-sm custom-card">
-			<div class="w-7/12">
+		<div class="flex gap-5 mt-[85px] backdrop-blur-sm custom-card items-center">
+			<div class="w-full">
 				<Inneraccentborder header="Today's Vision, Tomorrow's Web">
 					<h1 class="text-3xl font-thin leading-snug">
 						As you set sail on your online voyage, consider us your steadfast co-pilots. At
@@ -48,7 +47,10 @@
 					</a>
 				</div>
 			</div>
-			<img src="/images/about-pic.webp" width="41.6667%" class="aspect-[1.49]" alt="Utah" />
+			<div class="relative aspect-[1.49]">
+				<img src="/images/about-pic.webp" width="100%" alt="Utah" />
+				<div class="absolute top-0 left-0 bg-red-300 w-1/3 h-full transform rotate-45" />
+			</div>
 		</div>
 
 		<!-- Work -->
@@ -61,7 +63,6 @@
 			<Contactuscard />
 		</div>
 		<Footer />
-		<!-- <Particles /> -->
 		<Projectmodal />
 	</div>
 </div>
