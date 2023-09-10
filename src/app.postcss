@@ -25,10 +25,20 @@ html, body {
 /* component specific */
 
 .btn1 {
-    @apply flex w-fit items-center justify-center border-[1px] border-t-[3px] hover:border-t-[1px] 
-    border-primary-50 rounded-full px-5 py-2 hover:bg-primary-200 
-    hover:bg-opacity-30 transition-all duration-150 dark:text-primary-50 dark:hover:text-white;
+    @apply flex w-fit items-center justify-center 
+    border-[1px] border-primary-50 
+    rounded-full px-5 py-2 hover:bg-primary-200 
+    hover:bg-opacity-30 transition-all duration-150 
+    dark:text-primary-50 dark:hover:text-white;
+
+    box-shadow: 0 -2px 0 0 rgb(var(--color-primary-50));
 }
+
+.btn1:hover {
+    box-shadow: none;
+    @apply translate-y-[-3px] transition-transform duration-150;
+}
+
 .nav-link {
     @apply h-full hover:underline underline-offset-4 transition-all duration-75 hover:scale-110 hover:text-secondary-300;
 }
