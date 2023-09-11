@@ -8,14 +8,14 @@
 	const work = [...'WORK'];
 </script>
 
-<div class="flex w-7/8 justify-between border-y-[1px] border-secondary-500 px-80 py-3 mt-5">
+<div class="flex w-full justify-between border-y-[1px] border-secondary-500 px-80 py-3 mt-5">
 	{#each work as c, i (i)}
 		<p class="text-7xl font-thin">{c}</p>
 	{/each}
 </div>
 
 <div
-	class="transparent-gradient-fade w-7/8 snap-x scroll-px-5 snap-mandatory scroll-smooth flex gap-8 overflow-x-auto px-10 py-10"
+	class="transparent-gradient-fade w-full snap-x scroll-px-5 snap-mandatory scroll-smooth flex gap-8 overflow-x-auto py-10"
 >
 	{#each projects as currentProject, i (i)}
 		<Tiltcard size="snap-center shrink-0 h-80 aspect-video">

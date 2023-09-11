@@ -12,7 +12,7 @@
 					<a href="/" class="nav-link"> Home </a>
 				</li>
 				<li>
-					<a href="/" class="nav-link"> Blog </a>
+					<a href="/blog" class="nav-link"> Blog </a>
 				</li>
 			</ul>
 		</div>
@@ -48,7 +48,7 @@
 			<div class="divider" />
 		</div>
 		<div class="flex flex-col items-center">
-			<h1 class="mt-4">© 2023 MicroScript LLC. All Rights Reserved</h1>
+			<h1 class="mt-4">© 2023 MicroScript LLC. | All Rights Reserved</h1>
 			<a href="/" class="mt-5 text-sm nav-link">Privacy Policy</a>
 		</div>
 	</div>

@@ -142,14 +142,14 @@
 					<h1 class="text-error-500">*not a valid email</h1>
 				{/if}
 				<div class="flex items-center gap-3">
-					<button class="btn variant-outline-secondary rounded-full" type="submit">Submit</button>
+					<button class="btn1" type="submit">Submit</button>
 				</div>
 			</form>
 		{/if}
 	</div>
 	<Employeebadge
 		employeeName="Thomas Bender"
-		employeeTitle="Co-Founder / PRO"
+		employeeTitle="Co-Founder / COO"
 		employeeImage="/images/thomas.webp"
 	/>
 </div>
