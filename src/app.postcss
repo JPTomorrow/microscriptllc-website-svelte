@@ -68,6 +68,7 @@ html, body {
         right:  -25px;
     }
 }
+
 .animate-img {
     /* background-size: 110% 110%; */
     /* aspect-ratio: 1 / 1; */
@@ -75,3 +76,10 @@ html, body {
     animation: animatedImage 8s ease-in-out infinite alternate;
 }
 
+.animated-space-bg {
+    @apply animate-bg bg-space-stars bg-cover w-screen h-screen bg-no-repeat;
+}
+
+.page-inner-scroll-container {
+    @apply flex flex-col w-screen h-screen justify-start items-center overflow-y-scroll scroll-smooth;
+}

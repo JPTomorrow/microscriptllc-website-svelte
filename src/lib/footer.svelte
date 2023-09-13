@@ -1,6 +1,6 @@
 <script lang="ts">
-	import Github from './github.svelte';
-	import Linkedin from './linkedin.svelte';
+	import Github from '$lib/github.svelte';
+	import Linkedin from '$lib/linkedin.svelte';
 </script>
 
 <div class="z-20 flex flex-col w-full bg-secondary-900 p-16 items-center justify-between">
@@ -12,29 +12,32 @@
 					<a href="/" class="nav-link"> Home </a>
 				</li>
 				<li>
-					<a href="/blog" class="nav-link"> Blog </a>
+					<a href="/coming-soon" class="nav-link"> Blog </a>
 				</li>
 			</ul>
 		</div>
 		<div>
 			<h1 class="footer-header">Our Process</h1>
 			<ul>
-				<li><a href="/" class="nav-link">Branding</a></li>
-				<li><a href="/" class="nav-link">SEO</a></li>
+				<li><a href="/coming-soon" class="nav-link">Branding</a></li>
+				<li><a href="/coming-soon" class="nav-link">SEO</a></li>
 			</ul>
 		</div>
 		<div>
 			<h1 class="footer-header">Resources</h1>
 			<ul>
-				<li><a href="/" class="nav-link">Client Portal</a></li>
-				<li><a href="/" class="nav-link">Email Newsletter</a></li>
+				<li><a href="/coming-soon" class="nav-link">Client Portal</a></li>
+				<li><a href="/coming-soon" class="nav-link">Email Newsletter</a></li>
 			</ul>
 		</div>
 		<div>
 			<h1 class="footer-header">Contact</h1>
 			<ul>
-				<li><a href="/" class="nav-link">connect@microscriptllc.com</a></li>
-				<li><a href="/" class="nav-link">(385) 420-0435</a></li>
+				<li>
+					<a href="mailto:connect@microscriptllc.com" class="nav-link">connect@microscriptllc.com</a
+					>
+				</li>
+				<li><a href="tel:3854200435" class="nav-link">(385) 420-0435</a></li>
 			</ul>
 		</div>
 	</div>
@@ -49,7 +52,7 @@
 		</div>
 		<div class="flex flex-col items-center">
 			<h1 class="mt-4">© 2023 MicroScript LLC. | All Rights Reserved</h1>
-			<a href="/" class="mt-5 text-sm nav-link">Privacy Policy</a>
+			<a href="/privacy-policy" class="mt-5 text-sm nav-link">Privacy Policy</a>
 		</div>
 	</div>
 </div>

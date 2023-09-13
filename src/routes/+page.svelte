@@ -7,7 +7,7 @@
 	import Contactuscard from '$lib/contactuscard.svelte';
 	import Footer from '$lib/footer.svelte';
 	import Projectmodal from '$lib/projectmodal.svelte';
-	import { ArrowRightRhombus, Devices, Phone } from 'tabler-icons-svelte';
+	import { ArrowRightRhombus, BrandZoom, Phone, Users } from 'tabler-icons-svelte';
 	import BannerImage from '$lib/banner-image.svelte';
 	import ServiceCard from '$lib/service-card.svelte';
 
@@ -21,16 +21,10 @@
 	});
 </script>
 
-<div
-	in:fade|global={{ duration: 200 }}
-	class="animate-bg bg-space-stars bg-cover w-screen h-screen bg-no-repeat"
->
-	<div
-		bind:this={outer}
-		class="flex flex-col w-screen h-screen justify-start items-center overflow-y-scroll scroll-smooth"
-	>
+<div in:fade|global={{ duration: 200 }} class="animated-space-bg">
+	<div bind:this={outer} class="page-inner-scroll-container pt-[85px]">
 		<!-- Landing Banner -->
-		<div class="flex gap-5 mt-[85px] backdrop-blur-sm custom-card items-center px-10">
+		<div class="flex gap-5 backdrop-blur-sm custom-card items-center px-10">
 			<div class="w-full">
 				<Inneraccentborder header="Today's Vision, Tomorrow's Web">
 					<h1 class="text-3xl font-thin leading-snug">
@@ -128,13 +122,13 @@
 			</div>
 			<div class="grid grid-cols-3 grid-rows-2 gap-0 w-fit min-w-fit max-h-[400px]">
 				<div class="meetings-icon col-start-2 row-start-1 translate-y-5">
-					<Phone class="-rotate-45" strokeWidth="0.5" size="100" />
+					<Phone class="-rotate-45" strokeWidth="1" size="90" />
 				</div>
 				<div class="meetings-icon row-start-2 col-start-1 translate-x-5">
-					<Devices class="-rotate-45" strokeWidth="0.5" size="100" />
+					<BrandZoom class="-rotate-45" strokeWidth="1" size="90" />
 				</div>
 				<div class="meetings-icon row-start-2 col-start-3 -translate-x-5">
-					<Phone class="-rotate-45" strokeWidth="0.5" size="100" />
+					<Users class="-rotate-45" strokeWidth="1" size="90" />
 				</div>
 			</div>
 			<div
