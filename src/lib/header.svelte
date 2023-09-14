@@ -48,7 +48,7 @@
 	</div>
 {/if}
 <div class="fixed lg:hidden flex w-full justify-between items-center p-5 bg-transparent">
-	<button name="hamburger" class="flex items-center" on:click={drawerOpen}>
+	<button aria-label="hamburger" class="flex items-center" on:click={drawerOpen}>
 		<Menu2
 			class="rounded-md p-1 border-[1px] bg-secondary-500 bg-opacity-60 hover:bg-primary-300 hover:bg-opacity-60"
 			size="32"
