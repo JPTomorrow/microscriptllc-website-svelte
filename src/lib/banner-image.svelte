@@ -1,13 +1,3 @@
-<script lang="ts">
-	import { onMount } from 'svelte';
-	import { slide } from 'svelte/transition';
-
-	// let animate = false;
-	// onMount(() => {
-	// 	animate = true;
-	// });
-</script>
-
 <div class="relative w-full min-h-full aspect-[1.49]">
 	<img src="/images/about-pic.webp" width="100%" class="utah-img-clip" alt="Utah" />
 </div>

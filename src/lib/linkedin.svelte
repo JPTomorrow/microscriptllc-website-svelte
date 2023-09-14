@@ -16,7 +16,7 @@
 		class="[&>*]:pointer-events-none"
 		use:popup={popupHover}
 	>
-		<BrandLinkedin class="rounded-full" size="34" strokeWidth="1.2" />
+		<BrandLinkedin class="rounded-full" size="40" strokeWidth="1.2" />
 	</a>
 </div>
 
