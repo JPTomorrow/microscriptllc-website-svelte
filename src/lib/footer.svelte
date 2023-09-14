@@ -1,9 +1,12 @@
 <script lang="ts">
 	import Github from '$lib/github.svelte';
 	import Linkedin from '$lib/linkedin.svelte';
+
+	let clazz: string = '';
+	export { clazz as class };
 </script>
 
-<div class="z-20 flex flex-col w-full bg-secondary-900 p-16 items-center justify-between">
+<div class="z-20 flex flex-col w-full bg-secondary-900 p-16 items-center justify-between {clazz}">
 	<div class="w-full flex justify-between">
 		<div>
 			<h1 class="footer-header">Links</h1>

@@ -38,9 +38,10 @@
 				>
 					<Linkedin />
 					<Github />
-					<div class="border-[1px] border-primary-200 rounded-full p-[2px]">
+					<!-- REMOVING LIGHT SWITCH UNTIL LIGHT THEME IS IMPLEMENTED -->
+					<!-- <div class="border-[1px] border-primary-200 rounded-full p-[2px]">
 						<LightSwitch rounded="rounded-full" />
-					</div>
+					</div> -->
 				</div>
 			</div>
 		{/if}
@@ -61,9 +62,10 @@
 	<div class="w-full flex flex-col items-center justify-center p-5 gap-5">
 		<div class="flex w-1/2 justify-between items-center gap-5">
 			<Logo />
-			<div class="h-fit border-[1px] border-primary-200 rounded-full p-[2px]">
+			<!-- REMOVING LIGHT SWITCH UNTIL LIGHT THEME IS IMPLEMENTED -->
+			<!-- <div class="h-fit border-[1px] border-primary-200 rounded-full p-[2px]">
 				<LightSwitch rounded="rounded-full" />
-			</div>
+			</div> -->
 		</div>
 		<!-- <Navlinks /> -->
 	</div>
