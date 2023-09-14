@@ -16,8 +16,8 @@
 
 <div in:fade|global={{ duration: 200 }} class="animated-space-bg">
 	<div bind:this={outer} class="page-inner-scroll-container pt-[85px]">
-		<div class="w-3/4 px-10 py-5 backdrop-blur-sm rounded-md border-l-[1px] border-secondary-300">
-			<h1 class="uppercase mb-2 !text-6xl font-light underline">Privacy Policy</h1>
+		<div class="content-container">
+			<h1 class="uppercase mb-2 !text-3xl lg:!text-6xl font-light underline">Privacy Policy</h1>
 			<p class="mb-5 !text-sm">Last updated: 9/13/2023</p>
 
 			<h2>Introduction</h2>
@@ -117,24 +117,32 @@
 			<p>Thank you for choosing Microscript LLC!</p>
 			<a href="/" class="btn1 mt-5">Go Back</a>
 		</div>
-		<Footer class="mt-5" />
+		<Footer class="mt-5 hidden lg:flex" />
 	</div>
 </div>
 
 <style lang="postcss">
+	.content-container {
+		@apply w-full lg:w-3/4 
+		px-5 lg:px-10 py-5 
+		backdrop-blur-sm 
+		lg:rounded-md 
+		lg:border-l-[1px] lg:border-secondary-300;
+	}
+
 	p {
-		@apply text-lg ml-3 mt-5;
+		@apply text-sm lg:text-lg lg:ml-3 mt-5;
 	}
 
 	ul {
-		@apply ml-7 mt-5 list-disc;
+		@apply text-sm lg:text-lg ml-4 lg:ml-7 mt-5 list-disc;
 	}
 
 	h2 {
-		@apply text-5xl font-light mt-10 border-b-[1px] w-fit;
+		@apply text-2xl lg:text-5xl font-light mt-10 border-b-[1px] w-fit;
 	}
 
 	h3 {
-		@apply ml-3 mt-5 text-2xl border-b-[1px] w-fit;
+		@apply text-lg lg:text-2xl lg:ml-3 mt-5 border-b-[1px] w-fit;
 	}
 </style>

@@ -45,17 +45,17 @@ html, body {
 
 @keyframes animatedBackground {
     from {
-        background-position: -50px -25px;
+        background-position: 0% 0%;
     }
     to {
-        background-position: 0px 0px;
+        background-position: 15% 15%;
     }
 }
 .animate-bg {
-    background-size: 110% 110%;
+    background-size: 115% 115%;
     aspect-ratio: 1 / 1;
     /* background-position: 0px 0px; */
-    animation: animatedBackground 8s ease-in-out infinite alternate;
+    animation: animatedBackground 6s ease-in-out infinite alternate;
 }
 
 @keyframes animatedImage {
@@ -77,9 +77,10 @@ html, body {
 }
 
 .animated-space-bg {
-    @apply animate-bg bg-space-stars bg-cover w-screen h-screen bg-no-repeat;
+    @apply animate-bg bg-space-stars bg-cover w-screen h-screen bg-repeat;
 }
 
 .page-inner-scroll-container {
-    @apply flex flex-col w-screen h-screen justify-start items-center overflow-y-scroll scroll-smooth;
+    @apply flex flex-col w-screen h-screen justify-start items-center 
+    overflow-y-scroll scroll-smooth;
 }

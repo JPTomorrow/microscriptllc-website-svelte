@@ -26,7 +26,7 @@
 {#if $scrollYStore <= 0}
 	<div
 		out:slide={{ axis: 'y', duration: 200 }}
-		class="fixed hidden md:flex w-screen bg-transparent justify-between p-5"
+		class="fixed hidden lg:flex w-screen bg-transparent justify-between p-5"
 	>
 		{#if playAnim}
 			<Logo />
@@ -46,17 +46,16 @@
 			</div>
 		{/if}
 	</div>
-
-	<div class="fixed md:hidden flex w-full justify-between items-center p-5 bg-transparent">
-		<button class="flex items-center" on:click={drawerOpen}>
-			<Menu2
-				class="rounded-md p-1 border-[1px] hover:bg-primary-300 hover:bg-opacity-60"
-				size="32"
-				strokeWidth="2"
-			/>
-		</button>
-	</div>
 {/if}
+<div class="fixed lg:hidden flex w-full justify-between items-center p-5 bg-transparent">
+	<button class="flex items-center" on:click={drawerOpen}>
+		<Menu2
+			class="rounded-md p-1 border-[1px] bg-secondary-500 bg-opacity-60 hover:bg-primary-300 hover:bg-opacity-60"
+			size="32"
+			strokeWidth="2"
+		/>
+	</button>
+</div>
 
 <Drawer position="bottom">
 	<div class="w-full flex flex-col items-center justify-center p-5 gap-5">

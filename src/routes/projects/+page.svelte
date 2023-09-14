@@ -31,7 +31,7 @@
 		<RadioItem bind:group={selectedGroup} name="justify" value={0}>Personal</RadioItem>
 	</RadioGroup>
 	<div
-		class="grid grid-cols-2 md:grid-cols-3 gap-10 h-full w-full px-[30px] md:px-[80px] mb-[150px]"
+		class="grid grid-cols-2 lg:grid-cols-3 gap-10 h-full w-full px-[30px] lg:px-[80px] mb-[150px]"
 	>
 		{#if selectedGroup == 0}
 			{#each projects as currentProject, i (i)}
