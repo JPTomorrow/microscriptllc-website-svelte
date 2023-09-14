@@ -11,6 +11,7 @@
 
 <div class="hover:scale-110 transition-transform duration-75">
 	<a
+		aria-label="LinkedIn"
 		href="https://www.linkedin.com/company/microscript-llc"
 		target="_blank"
 		class="[&>*]:pointer-events-none"

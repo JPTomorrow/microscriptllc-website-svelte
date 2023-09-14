@@ -11,6 +11,7 @@
 
 <div class="hover:scale-110 transition-transform duration-75">
 	<a
+		aria-label="Github"
 		href="https://github.com/JPTomorrow"
 		target="_blank"
 		class="[&>*]:pointer-events-none"
