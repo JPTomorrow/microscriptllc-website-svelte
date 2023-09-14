@@ -1,8 +1,20 @@
 <script lang="ts">
 	// vercel analytics
-	import { dev } from '$app/environment';
-	import { inject } from '@vercel/analytics';
-	inject({ mode: dev ? 'development' : 'production' });
+	// import { dev } from '$app/environment';
+	// import { inject } from '@vercel/analytics';
+	// inject({ mode: dev ? 'development' : 'production' });
+	import { webVitals } from '$lib/vitals.js';
+	import { page } from '$app/stores';
+	import { browser } from '$app/environment';
+	let analyticsId = import.meta.env.VERCEL_ANALYTICS_ID;
+
+	$: if (browser && analyticsId) {
+		webVitals({
+			path: $page.url.pathname,
+			params: $page.params,
+			analyticsId
+		});
+	}
 
 	// Your selected Skeleton theme:
 	import '@skeletonlabs/skeleton/themes/theme-vintage.css';
