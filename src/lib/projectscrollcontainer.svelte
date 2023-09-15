@@ -8,7 +8,7 @@
 	const work = [...'WORK'];
 </script>
 
-<div class="flex w-full justify-between border-y-[1px] border-secondary-500 px-80 py-3 mt-5">
+<div class="flex w-full justify-between border-y-[1px] border-secondary-500 md:px-80 py-3 mt-5">
 	{#each work as c, i (i)}
 		<p class="text-7xl font-thin">{c}</p>
 	{/each}
@@ -18,7 +18,7 @@
 	class="transparent-gradient-fade w-full snap-x scroll-px-5 snap-mandatory scroll-smooth flex gap-8 overflow-x-auto py-10"
 >
 	{#each projects as currentProject, i (i)}
-		<Tiltcard size="snap-center shrink-0 h-80 aspect-video">
+		<div class="snap-center shrink-0 h-40 md:h-60 lg:h-80 aspect-video">
 			<Flipin delay={i * 0.1}>
 				<button
 					class="flex w-full h-full flex-col border-y-[3px] border-secondary-500 border-double rounded-xl transition-transform hover:scale-105 duration-75 shadow-xl"
@@ -34,7 +34,7 @@
 					</div>
 				</button>
 			</Flipin>
-		</Tiltcard>
+		</div>
 	{/each}
 </div>
 

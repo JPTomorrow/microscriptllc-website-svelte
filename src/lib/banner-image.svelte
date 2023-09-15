@@ -11,6 +11,6 @@
 		height: auto;
 		background-size: cover;
 		aspect-ratio: 1440/960;
-		@apply h-full border-[1px] border-r-[10px] border-secondary-600 rounded-t-md rounded-b-md;
+		@apply hidden lg:inline-block h-full border-[1px] border-r-[10px] border-secondary-600 rounded-t-md rounded-b-md;
 	}
 </style>

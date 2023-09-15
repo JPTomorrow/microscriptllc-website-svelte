@@ -4,9 +4,9 @@
 			"name": "LLAMA CHAT",
 			"img": "/images/llamachat.webp",
 			"skills": ["NextJS", "Websockets", "tailwindCSS", "Typescript"],
-			"description": "A chat app built on top of websocket technology",
+			"description": "A chat app built on top of websocket technology. It mimics a Discord style chat room.",
 			"github": "https://github.com/JPTomorrow/nextjs-pusher-railway-chat-app",
-			"site": "https://justins-chat-app.up.railway.app/"
+			"site": ""
 		},
 		{
 			"name": "BOM Generator",

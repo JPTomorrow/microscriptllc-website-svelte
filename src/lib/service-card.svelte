@@ -18,7 +18,7 @@
 	}
 
 	div :global(h1) {
-		@apply text-2xl font-semibold mb-3 uppercase;
+		@apply text-xl lg:text-2xl font-normal lg:font-semibold mb-3 uppercase;
 	}
 
 	.transparent-gradient-fade {

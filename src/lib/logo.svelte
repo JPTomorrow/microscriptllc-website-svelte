@@ -4,7 +4,10 @@
 </script>
 
 <a href="/" class="flex h-full items-start transition-transform hover:scale-105">
-	<p in:slide|global={{ delay: 0, axis: 'x', duration: 300 }} class="text-3xl font-thin">
+	<p
+		in:slide|global={{ delay: 0, axis: 'x', duration: 300 }}
+		class="text-2xl md:text-3xl font-thin"
+	>
 		{env.PUBLIC_BRAND_NAME}
 	</p>
 	<img
@@ -13,6 +16,6 @@
 		src="/images/logo.webp"
 		width="40px"
 		height="40px"
-		class="hidden sm:block align-middle ml-1"
+		class="w-[25px] h-[25px] md:w-[40px] md:h-[40px] self-center ml-2"
 	/>
 </a>

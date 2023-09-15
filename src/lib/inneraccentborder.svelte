@@ -3,7 +3,6 @@
 	import { blur } from 'svelte/transition';
 	let clazz: string = '';
 	export { clazz as class };
-	export let header: string = '';
 
 	let animate = false;
 
@@ -12,15 +11,19 @@
 	});
 </script>
 
-<div class={`flex flex-col ${clazz}`}>
-	{#if header != '' && animate}
-		<h1 in:blur|global class="text-5xl font-thin mb-5">{header}</h1>
+<div class="flex flex-col items-center lg:items-start {clazz}">
+	{#if animate}
+		<div in:blur|global class="header">
+			<slot name="header" />
+		</div>
+	{:else}
+		<div class="placeholder mb-5" />
 	{/if}
 	<div class="divider w-full" />
 	<div class="divider w-[98%] mt-1" />
 	{#if animate}
-		<div class="pl-2 pr-10 my-4" in:blur|global>
-			<slot />
+		<div class="lg:pl-2 lg:pr-10 my-4" in:blur|global>
+			<slot name="content" />
 		</div>
 	{:else}
 		<div class="p-4 space-y-4">
@@ -36,5 +39,9 @@
 <style lang="postcss">
 	.divider {
 		@apply h-[1px] bg-secondary-500;
+	}
+
+	.header {
+		@apply text-3xl text-center lg:text-left font-normal lg:text-5xl lg:font-thin mb-5;
 	}
 </style>

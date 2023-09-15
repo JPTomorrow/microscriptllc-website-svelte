@@ -28,7 +28,7 @@
 	});
 </script>
 
-<div class="flex w-full flex-col justify-center items-center">
+<div class="hidden md:flex w-full flex-col justify-center items-center">
 	{#if visible}
 		<div in:scale|global={{ delay: 50, duration: 600 }}>
 			<Avatar
