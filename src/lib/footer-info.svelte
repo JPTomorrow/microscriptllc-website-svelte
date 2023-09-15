@@ -4,7 +4,7 @@
 </script>
 
 <div
-	class="w-full flex flex-col lg:flex-row justify-center lg:justify-between items-center text-center lg:items-start lg:text-left lg:gap-0 gap-5"
+	class="w-full flex flex-col md:flex-row justify-center md:justify-between items-center text-center md:items-start md:text-left md:gap-0 gap-5"
 >
 	<div>
 		<h1 class="footer-header">Links</h1>
@@ -42,7 +42,7 @@
 	</div>
 </div>
 <div class="flex flex-col w-full items-center">
-	<div class="flex w-full items-center mt-5 lg:mt-32">
+	<div class="flex w-full items-center mt-5 md:mt-32">
 		<div class="divider" />
 		<div class="flex px-5 gap-5 items-center">
 			<Linkedin />

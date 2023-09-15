@@ -5,6 +5,7 @@ import { env } from "$env/dynamic/private";
 
 export async function POST({ request }) {
 
+  console.log("sending email");
   const data = await request.formData()
   const name = data.get('name') as string;
   const email = data.get('email') as string;
@@ -19,8 +20,8 @@ export async function POST({ request }) {
   });
 
   const options = {
-    From: 'jmorrow@microscriptllc.com', // email,
-    To: 'jmorrow@microscriptllc.com',
+    From: email,
+    To: 'connect@microscriptllc.com',
     Subject: 'email test',
     HtmlBody: emailHtml,
   };
