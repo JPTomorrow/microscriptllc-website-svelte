@@ -25,7 +25,7 @@
 	<div bind:this={outer} class="page-inner-scroll-container pt-[85px]">
 		<!-- Landing Banner -->
 		<div class="flex gap-5 backdrop-blur-sm custom-card items-center px-5 lg:px-10 py-5">
-			<div class="flex flex-col items-center lg:block lg:items-start w-full lg:min-w-[750px]">
+			<div class="flex flex-col items-center lg:block lg:items-start w-full lg:min-w-[700px]">
 				<Inneraccentborder>
 					<h1 slot="header">Today's Vision, Tomorrow's Web</h1>
 					<h1
