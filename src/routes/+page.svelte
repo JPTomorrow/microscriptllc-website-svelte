@@ -36,18 +36,18 @@
 						MicroScript, we offer more than just web development; we provide a full spectrum of
 						digital services and advanced features.
 					</h1>
+					<div slot="buttons">
+						<!-- Disabled till I can make the processes section -->
+						<!-- <a class="btn1" href="/projects">
+							<p class="text-sm uppercase mr-3">Our Process</p>
+							<ArrowRightRhombus />
+						</a> -->
+						<a class="btn1" href="#contact">
+							<p class="text-sm uppercase mr-3">Get in Touch</p>
+							<ArrowRightRhombus />
+						</a>
+					</div>
 				</Inneraccentborder>
-				<div class="w-3/4 flex justify-center lg:justify-start gap-5 mt-7">
-					<!-- Disabled till I can make the processes section -->
-					<!-- <a class="btn1" href="/projects">
-						<p class="text-sm uppercase mr-3">Our Process</p>
-						<ArrowRightRhombus />
-					</a> -->
-					<a class="btn1" href="#contact">
-						<p class="text-sm uppercase mr-3">Get in Touch</p>
-						<ArrowRightRhombus />
-					</a>
-				</div>
 			</div>
 			<BannerImage />
 		</div>

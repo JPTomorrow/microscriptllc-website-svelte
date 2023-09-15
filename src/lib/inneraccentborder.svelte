@@ -1,39 +1,21 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-	import { blur } from 'svelte/transition';
 	let clazz: string = '';
 	export { clazz as class };
-
-	let animate = false;
-
-	onMount(() => {
-		animate = true;
-	});
 </script>
 
-<div class="flex flex-col items-center lg:items-start {clazz}">
-	{#if animate}
-		<div in:blur|global class="header">
-			<slot name="header" />
-		</div>
-	{:else}
-		<div class="placeholder mb-5" />
-	{/if}
+<div class="min-h-full flex flex-col items-center lg:items-start {clazz}">
+	<div class="header">
+		<slot name="header" />
+	</div>
 	<div class="divider w-full" />
 	<div class="divider w-[98%] mt-1" />
-	{#if animate}
-		<div class="lg:pl-2 lg:pr-10 my-4" in:blur|global>
-			<slot name="content" />
-		</div>
-	{:else}
-		<div class="p-4 space-y-4">
-			<div class="placeholder" />
-			<div class="placeholder" />
-			<div class="placeholder" />
-			<div class="placeholder" />
-		</div>
-	{/if}
+	<div class="lg:pl-2 lg:pr-10 my-4">
+		<slot name="content" />
+	</div>
 	<div class="divider w-3/4" />
+	<div class="w-3/4 flex justify-center lg:justify-start gap-5 mt-7">
+		<slot name="buttons" />
+	</div>
 </div>
 
 <style lang="postcss">
