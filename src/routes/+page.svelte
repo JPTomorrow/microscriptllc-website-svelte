@@ -27,7 +27,6 @@
 		<div class="flex gap-5 backdrop-blur-sm custom-card items-center px-5 lg:px-10 py-5">
 			<div class="flex flex-col items-center lg:block lg:items-start w-full lg:min-w-[700px]">
 				<Inneraccentborder>
-					<h1 slot="header">Today's Vision, Tomorrow's Web</h1>
 					<h1
 						slot="content"
 						class="text-xl lg:text-2xl text-center lg:text-left font-thin leading-snug"
