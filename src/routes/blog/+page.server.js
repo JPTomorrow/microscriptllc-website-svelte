@@ -13,15 +13,7 @@ export const load = async () => {
 //       }
 //     }
 //   });
-  const blogPosts = await db.query.blogPosts.findMany({
-    with: {
-      choices: {
-        with: {
-          votes: true
-        }
-      }
-    }
-  });
+  const blogPosts = await db.query.blogPosts.findMany();
 
   if (blogPosts !== undefined) {
     return { blogPosts };
