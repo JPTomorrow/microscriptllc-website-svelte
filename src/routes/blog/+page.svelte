@@ -8,6 +8,7 @@
 		name: string;
 		headline: string;
 		body: string;
+		createdAt: number;
 	}
 
 	const blogposts = [];
