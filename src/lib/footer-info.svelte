@@ -13,7 +13,7 @@
 				<a href="/" class="nav-link"> Home </a>
 			</li>
 			<li>
-				<a href="/coming-soon" class="nav-link"> Blog </a>
+				<a href="/blog" class="nav-link"> Blog </a>
 			</li>
 		</ul>
 	</div>
