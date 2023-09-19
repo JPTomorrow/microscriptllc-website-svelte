@@ -4,6 +4,7 @@ import { tursoClient } from '$lib/server/turso';
 export const load = async () => {
   const db = tursoClient();
 
+//   EXAMPLE QUERY 
 //   const questions = await db.query.blogPosts.findMany({
 //     with: {
 //       choices: {
@@ -13,6 +14,7 @@ export const load = async () => {
 //       }
 //     }
 //   });
+
   const blogPosts = await db.query.blogPosts.findMany();
 
   if (blogPosts !== undefined) {

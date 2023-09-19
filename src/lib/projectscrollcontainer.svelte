@@ -1,18 +1,13 @@
 <script lang="ts">
-	import Tiltcard from '$lib/tiltcard.svelte';
 	import Flipin from '$lib/effects/flipin.svelte';
 	import { setShowModal } from '$lib/modalStore';
 	import json from '$lib/work-projects.json';
+	import TitleSpaced from '$lib/title-spaced.svelte';
 
 	const projects: WorkProject[] = json.projects;
-	const work = [...'WORK'];
 </script>
 
-<div class="flex w-full justify-between border-y-[1px] border-secondary-500 md:px-80 py-3 mt-5">
-	{#each work as c, i (i)}
-		<p class="text-7xl font-thin">{c}</p>
-	{/each}
-</div>
+<TitleSpaced headerText="Work" />
 
 <div
 	class="transparent-gradient-fade w-full snap-x scroll-px-5 snap-mandatory scroll-smooth flex gap-8 overflow-x-auto py-10"
