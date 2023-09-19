@@ -14,8 +14,8 @@
 		{ name: 'Home', path: '/' },
 		// { name: 'Blog', path: '/blog' },
 		// { name: 'Skills', path: '/skills' },
-		{ name: 'Works', path: '/projects' },
-		{ name: 'Contact', path: '/contact' }
+		{ name: 'Blog', path: '/blog' }
+		// { name: 'Contact', path: '/contact' }
 	];
 </script>
 

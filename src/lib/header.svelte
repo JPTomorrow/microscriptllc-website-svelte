@@ -37,7 +37,7 @@
 		{#if playAnim}
 			<Logo />
 			<div class="flex h-full items-center justify-between gap-7">
-				<!-- <NavLinks /> -->
+				<Navlinks />
 				<div
 					in:slide|global={{ delay: 0, axis: 'x', duration: 600 }}
 					class="flex gap-3 items-center justify-between"
