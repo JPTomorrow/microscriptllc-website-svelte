@@ -17,6 +17,6 @@
 	{/each}
 </div>
 
-<h1 class=" lg:hidden uppercase font-thin text-4xl w-full text-center">
+<h1 class=" lg:hidden uppercase font-thin text-4xl w-full text-center my-5">
 	{headerText}
 </h1>

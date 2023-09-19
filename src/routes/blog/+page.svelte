@@ -29,9 +29,11 @@
 		<TitleSpaced headerText="Justin talks about tech" />
 		{#each posts as post, i (i)}
 			<div class="post-{(i % 2) + 1}">
-				<h2 class="text-5xl mb-2 font-thin w-11/12">{post.headline}</h2>
-				<p class="text-xl ml-5 mb-5 font-thin">Posted On: {cvtTimestamp(post.createdAt)}</p>
-				<p class="text-xl mb-2 font-thin text-primary-50">{post.body}</p>
+				<h2 class="text-xl lg:text-5xl mb-2 font-normal lg:font-thin w-11/12">{post.headline}</h2>
+				<p class="text-sm lg:text-xl ml-5 mb-5 font-thin">
+					Posted On: {cvtTimestamp(post.createdAt)}
+				</p>
+				<p class="text-lg lg:text-xl mb-2 font-thin text-primary-50">{post.body}</p>
 			</div>
 		{/each}
 		<!-- <a href="/" class="btn1">Go Back</a> -->
@@ -44,9 +46,11 @@
 		@apply flex flex-col items-start text-left 
 		w-full h-fit 
 		bg-black backdrop-blur-sm bg-opacity-25
-		px-64 py-5;
+		px-5 lg:px-64 py-5;
 	}
 	.post-2 {
-		@apply w-full h-fit  bg-transparent;
+		@apply flex flex-col items-start text-left 
+		w-full h-fit bg-transparent
+		px-5 lg:px-64 py-5;
 	}
 </style>
