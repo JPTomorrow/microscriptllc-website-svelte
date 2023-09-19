@@ -16,6 +16,12 @@
 			setScrollY(outer.scrollTop);
 		});
 	});
+
+	function cvtTimestamp(createdAt: number) {
+		const date = new Date(0);
+		date.setUTCSeconds(createdAt);
+		return date.toLocaleDateString();
+	}
 </script>
 
 <div in:fade|global={{ duration: 200 }} class="animated-space-bg">
@@ -23,12 +29,12 @@
 		<TitleSpaced headerText="Justin talks about tech" />
 		{#each posts as post, i (i)}
 			<div class="post-{(i % 2) + 1}">
-				<h2 class="text-2xl mb-2">{post.headline}</h2>
-				<p class="text-sm text-gray-500">{post.createdAt}</p>
-				<p class="mb-2">{post.body}</p>
+				<h2 class="text-5xl mb-2 font-thin w-11/12">{post.headline}</h2>
+				<p class="text-xl ml-5 mb-5 font-thin">Posted On: {cvtTimestamp(post.createdAt)}</p>
+				<p class="text-xl mb-2 font-thin text-primary-50">{post.body}</p>
 			</div>
 		{/each}
-		<a href="/" class="btn1">Go Back</a>
+		<!-- <a href="/" class="btn1">Go Back</a> -->
 		<Footer class="hidden lg:flex" />
 	</div>
 </div>
@@ -37,7 +43,8 @@
 	.post-1 {
 		@apply flex flex-col items-start text-left 
 		w-full h-fit 
-		bg-black backdrop-blur-sm bg-opacity-25;
+		bg-black backdrop-blur-sm bg-opacity-25
+		px-64 py-5;
 	}
 	.post-2 {
 		@apply w-full h-fit  bg-transparent;
