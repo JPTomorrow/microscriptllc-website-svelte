@@ -4,6 +4,7 @@
 	import TitleSpaced from '$lib/title-spaced.svelte';
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
+	import { ScriptPlus } from 'tabler-icons-svelte';
 
 	export let data;
 	const posts = data.blogPosts;
@@ -22,6 +23,8 @@
 		date.setUTCSeconds(createdAt);
 		return date.toLocaleDateString();
 	}
+
+	let collapsed = true;
 </script>
 
 <div in:fade|global={{ duration: 200 }} class="animated-space-bg">
@@ -29,14 +32,31 @@
 		<TitleSpaced headerText="Justin talks about tech" />
 		{#each posts as post, i (i)}
 			<div class="post-{(i % 2) + 1}">
-				<h2 class="text-xl lg:text-5xl mb-2 font-normal lg:font-thin w-11/12">{post.headline}</h2>
+				<h2 class="text-xl lg:text-5xl mb-2 font-normal lg:font-thin w-11/12">
+					{post.headline}
+				</h2>
 				<p class="text-sm lg:text-xl ml-5 mb-5 font-thin">
 					Posted On: {cvtTimestamp(post.createdAt)}
 				</p>
-				<p class="text-lg lg:text-xl mb-2 font-thin text-primary-50">{post.body}</p>
+
+				<p
+					class="text-lg lg:text-xl mb-2 font-thin text-primary-50 {collapsed
+						? 'line-clamp-3 lg:line-clamp-4'
+						: ''}"
+				>
+					{#each post.body.replaceAll('\\n', 'AF12PVr5').split('AF12PVr5') as paragraph}
+						{paragraph}
+						<br />
+					{/each}
+				</p>
+				<button
+					on:click={() => {
+						collapsed = !collapsed;
+					}}
+					class="btn1 mt-5">{collapsed ? 'Read More' : '^'}</button
+				>
 			</div>
 		{/each}
-		<!-- <a href="/" class="btn1">Go Back</a> -->
 		<Footer class="hidden lg:flex" />
 	</div>
 </div>
