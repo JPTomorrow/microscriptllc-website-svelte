@@ -2,8 +2,9 @@
 	import Employeebadge from '$lib/employeebadge.svelte';
 	import { enhance } from '$app/forms';
 	import { draw, fade } from 'svelte/transition';
-	import { popup, type PopupSettings } from '@skeletonlabs/skeleton';
+	import { popup, type PopupSettings, type ToastSettings } from '@skeletonlabs/skeleton';
 	import Trackintext from '$lib/effects/trackintext.svelte';
+	import { toastStore } from '@skeletonlabs/skeleton';
 
 	function valEmail(e: string) {
 		var emailRegEx =
@@ -14,16 +15,46 @@
 		}
 		return passed;
 	}
+
+	let name: string = '';
 	let email: string = '';
-	let showEmailError = false;
+	let message: string = '';
+
+	const t: ToastSettings = {
+		message: 'Email Sent Successfully!'
+	};
+
+	const t2: ToastSettings = {
+		message: 'Missing Name',
+		background: 'variant-filled-error'
+	};
+
+	const t3: ToastSettings = {
+		message: 'Missing or Not Valid Email',
+		background: 'variant-filled-error'
+	};
+
+	const t4: ToastSettings = {
+		message: 'Missing Message',
+		background: 'variant-filled-error'
+	};
 
 	function sub() {
 		const isValid = valEmail(email);
 		if (!isValid) {
-			showEmailError = email !== '';
+			toastStore.trigger(t3);
+			return;
+		}
+		if (name === '') {
+			toastStore.trigger(t2);
+			return;
+		}
+		if (message === '') {
+			toastStore.trigger(t4);
 			return;
 		}
 		animateSend();
+		toastStore.trigger(t);
 	}
 
 	let isSending = false;
@@ -126,7 +157,13 @@
 				<Trackintext>
 					<h1 class="text-2xl">Contact Us</h1>
 				</Trackintext>
-				<input class="input custom-input custom-focus" type="text" placeholder="Name" name="name" />
+				<input
+					bind:value={name}
+					class="input custom-input custom-focus"
+					type="text"
+					placeholder="Name"
+					name="name"
+				/>
 				<input
 					bind:value={email}
 					class="input custom-input custom-focus"
@@ -136,15 +173,13 @@
 					use:popup={emailHover}
 				/>
 				<textarea
+					bind:value={message}
 					class="textarea p-4 rounded-lg custom-focus"
 					rows="4"
 					placeholder="Message"
 					name="msg"
 					use:popup={popupHover}
 				/>
-				{#if showEmailError}
-					<h1 class="text-error-500">*not a valid email</h1>
-				{/if}
 				<div class="flex items-center gap-3">
 					<button class="btn1" type="submit">Submit</button>
 				</div>
