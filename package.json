@@ -45,6 +45,7 @@
 		"@vercel/analytics": "^1.0.2",
 		"@vercel/node": "^2.15.10",
 		"drizzle-orm": "^0.28.6",
+		"openai": "^4.8.0",
 		"postmark": "^3.0.19",
 		"svelte-email": "^0.0.4",
 		"svelte-particles": "^2.12.0",
