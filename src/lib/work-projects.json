@@ -4,7 +4,7 @@
 			"name": "Stoner's Hearth",
 			"img": "/images/stonershearth.webp",
 			"skills": ["SvelteKit", "Turso", "tailwindCSS", "Drizzle ORM", "OpenAI API"],
-			"description": "We strive to create a great experience around your website. This website services a cannabis dispensary and has interesting ecommerce features that are integrated directely into an AI budtender system meant to help the user in choosing the correct strains to purchase.",
+			"description": "This website services a cannabis dispensary and has interesting ecommerce features that are integrated directely into an AI budtender system meant to help the user in choosing the correct strains to purchase.",
 			"site": "https://www.stonershearth.com"
 		},
 		{
