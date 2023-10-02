@@ -1,4 +1,4 @@
-const pages: string[] = ['about', 'shop', 'consulting']; //list of pages as a string ex. ["about", "blog", "contact"]
+const pages: string[] = ['blog']; //list of pages as a string ex. ["about", "blog", "contact"]
 
 const site = 'https://www.microscriptllc.com';
 
