@@ -2,6 +2,7 @@ import { render } from 'svelte-email';
 import Hello from '$lib/email.svelte';
 import postmark from 'postmark';
 import { env } from '$env/dynamic/private';
+import { PUBLIC_BRAND_NAME } from '$env/static/public';
 
 export async function POST({ request }) {
 	const data = await request.formData();
@@ -22,7 +23,7 @@ export async function POST({ request }) {
 	const options = {
 		From: 'connect@microscriptllc.com',
 		To: 'connect@microscriptllc.com',
-		Subject: `microscriptllc.com contact form - ${name}`,
+		Subject: `${PUBLIC_BRAND_NAME} contact form - ${name}`,
 		HtmlBody: emailHtml
 	};
 
