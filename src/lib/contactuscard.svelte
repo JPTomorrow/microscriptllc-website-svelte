@@ -146,12 +146,12 @@
 			</svg>
 		{:else}
 			<form
+				in:fade={{ duration: 800 }}
 				class="flex flex-col gap-5 items-start w-full"
 				method="POST"
-				on:submit|preventDefault={sub}
 				use:enhance
-				action="/contact/email"
-				in:fade={{ duration: 800 }}
+				action="/api/contact/email"
+				on:submit|preventDefault={() => sub()}
 			>
 				<!-- <Rollintext text="Contact Us" /> -->
 				<Trackintext>

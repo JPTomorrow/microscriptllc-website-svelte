@@ -1,15 +1,21 @@
 <script>
 	import { Body, Button, Hr, Html, Text } from 'svelte-email';
 
-	export let name = 'World';
+	export let name = 'N/A';
+	export let email = 'connect@microscriptllc.com';
+	export let msg = 'message was not filled out...';
 </script>
 
 <Html lang="en">
 	<Body>
 		<Text>
-			Hello, {name}!
+			NAME: {name},
 		</Text>
-		<Hr />
-		<Button href="https://svelte.dev">Visit Svelte</Button>
+		<Text>
+			EMAIL: {email},
+		</Text>
+		<Text>
+			MESSAGE: {msg}
+		</Text>
 	</Body>
 </Html>

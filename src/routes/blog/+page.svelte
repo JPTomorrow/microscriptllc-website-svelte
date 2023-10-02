@@ -4,7 +4,6 @@
 	import TitleSpaced from '$lib/title-spaced.svelte';
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
-	import { ScriptPlus } from 'tabler-icons-svelte';
 
 	export let data;
 	const posts = data.blogPosts;
