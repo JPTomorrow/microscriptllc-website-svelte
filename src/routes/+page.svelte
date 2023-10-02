@@ -10,6 +10,8 @@
 	import { ArrowRightRhombus, BrandZoom, Phone, Users } from 'tabler-icons-svelte';
 	import BannerImage from '$lib/banner-image.svelte';
 	import ServiceCard from '$lib/service-card.svelte';
+	import Seo from '$lib/seo.svelte';
+	import { PUBLIC_BRAND_NAME } from '$env/static/public';
 
 	// capture scroll to hide header
 	let outer: HTMLDivElement;
@@ -20,6 +22,8 @@
 		});
 	});
 </script>
+
+<Seo title="Home" description="The homepage of {PUBLIC_BRAND_NAME}" type="WebSite" />
 
 <div in:fade|global={{ duration: 200 }} class="animated-space-bg">
 	<div bind:this={outer} class="page-inner-scroll-container pt-[85px]">

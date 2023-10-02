@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Footer from '$lib/footer.svelte';
 	import { setScrollY } from '$lib/scrollstore';
+	import Seo from '$lib/seo.svelte';
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
 
@@ -13,6 +14,8 @@
 		});
 	});
 </script>
+
+<Seo title="Privacy Policy" description="The privacy policy page." type="WebPage" />
 
 <div in:fade|global={{ duration: 200 }} class="animated-space-bg">
 	<div bind:this={outer} class="page-inner-scroll-container pt-[85px]">

@@ -1,6 +1,9 @@
 <script lang="ts">
+	import Seo from '$lib/seo.svelte';
 	import { fade } from 'svelte/transition';
 </script>
+
+<Seo title="Coming Soon" description="A coming soon page." type="WebPage" />
 
 <div
 	in:fade|global={{ duration: 200 }}

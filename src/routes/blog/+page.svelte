@@ -1,6 +1,8 @@
 <script lang="ts">
+	import { PUBLIC_BRAND_NAME } from '$env/static/public';
 	import Footer from '$lib/footer.svelte';
 	import { setScrollY } from '$lib/scrollstore';
+	import Seo from '$lib/seo.svelte';
 	import TitleSpaced from '$lib/title-spaced.svelte';
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
@@ -25,6 +27,12 @@
 
 	let collapsed = true;
 </script>
+
+<Seo
+	title="Blog"
+	description="The blog page. Random thoughts by Justin Morrow, the co-founder of {PUBLIC_BRAND_NAME}."
+	type="WebPage"
+/>
 
 <div in:fade|global={{ duration: 200 }} class="animated-space-bg">
 	<div bind:this={outer} class="page-inner-scroll-container pt-[85px]">
