@@ -1,15 +1,15 @@
-const pages: string[] = ['blog']; //list of pages as a string ex. ["about", "blog", "contact"]
+import type { RequestHandler } from '@sveltejs/kit';
 
+const pages: string[] = ['blog']; //list of pages as a string ex. ["about", "blog", "contact"]
 const site = 'https://www.microscriptllc.com';
 
-/** @type {import('./$types').RequestHandler} */
-export async function GET({ url }) {
+export const GET: RequestHandler = async ({ url }) => {
 	const body = sitemap(pages);
 	const response = new Response(body);
 	response.headers.set('Cache-Control', 'max-age=0, s-maxage=3600');
 	response.headers.set('Content-Type', 'application/xml');
 	return response;
-}
+};
 
 const sitemap = (pages: string[]) => `<?xml version="1.0" encoding="UTF-8" ?>
 <urlset
