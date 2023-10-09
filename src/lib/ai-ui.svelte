@@ -90,7 +90,11 @@
 				{#if loading}
 					<div in:blur|global={{ delay: 400 }} class="feed-msg whitespace-pre-line ai">
 						<h1 class="uppercase font-semibold text-xl text-primary-900">ai budtender</h1>
-						<p class="text-sm whitespace-pre-wrap pt-2">...</p>
+						<div class="flex gap-2 text-lg whitespace-pre-wrap pt-2 font-bold">
+							<p class="animate-[bounce_1s_infinite_0ms]">.</p>
+							<p class="animate-[bounce_1s_infinite_100ms]">.</p>
+							<p class="animate-[bounce_1s_infinite_200ms]">.</p>
+						</div>
 					</div>
 				{/if}
 				<div bind:this={scrollFeed} />
