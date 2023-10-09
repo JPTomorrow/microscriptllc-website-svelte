@@ -169,7 +169,7 @@
 
 <style lang="postcss">
 	.custom-card {
-		@apply relative z-[2] w-full h-fit bg-black bg-opacity-5;
+		@apply relative z-[1] w-full h-fit bg-black bg-opacity-5;
 	}
 
 	.meetings-shape-cutout {

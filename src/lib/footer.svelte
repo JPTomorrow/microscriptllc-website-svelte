@@ -5,6 +5,6 @@
 	export { clazz as class };
 </script>
 
-<div class="z-20 flex flex-col w-full bg-secondary-900 p-16 items-center justify-between {clazz}">
+<div class="z-1 flex flex-col w-full bg-secondary-900 p-16 items-center justify-between {clazz}">
 	<FooterInfo />
 </div>
