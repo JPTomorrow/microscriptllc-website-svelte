@@ -11,7 +11,10 @@
 		"lint": "prettier --plugin-search-dir . --check . && eslint .",
 		"format": "prettier --plugin-search-dir . --write .",
 		"drizzle:generate": "drizzle-kit generate:sqlite - out ./drizzle/migrations - breakpoints - schema=./drizzle/schema.ts",
-		"drizzle:migrate": "tsx drizzle/migrate"
+		"drizzle:migrate": "tsx drizzle/migrate",
+		"drizzle:drop": "drizzle-kit drop",
+		"drizzle:introspect": "drizzle-kit introspect:sqlite",
+		"drizzle:push": "drizzle-kit push:sqlite - schema=./drizzle/schema.ts"
 	},
 	"devDependencies": {
 		"@skeletonlabs/skeleton": "^1.10.0",
