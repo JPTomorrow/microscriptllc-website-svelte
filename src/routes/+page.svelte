@@ -12,6 +12,7 @@
 	import ServiceCard from '$lib/service-card.svelte';
 	import Seo from '$lib/seo.svelte';
 	import { PUBLIC_BRAND_NAME } from '$env/static/public';
+	import AiUi from '$lib/ai-ui.svelte';
 
 	// capture scroll to hide header
 	let outer: HTMLDivElement;
@@ -163,6 +164,8 @@
 		<Projectmodal />
 	</div>
 </div>
+
+<AiUi />
 
 <style lang="postcss">
 	.custom-card {

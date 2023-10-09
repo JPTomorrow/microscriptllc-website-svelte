@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { PUBLIC_BRAND_NAME } from '$env/static/public';
+	import AiUi from '$lib/ai-ui.svelte';
 	import Footer from '$lib/footer.svelte';
 	import { setScrollY } from '$lib/scrollstore';
 	import Seo from '$lib/seo.svelte';
@@ -67,6 +68,8 @@
 		<Footer class="hidden lg:flex" />
 	</div>
 </div>
+
+<AiUi />
 
 <style lang="postcss">
 	.post-1 {
