@@ -5,7 +5,6 @@
 	import { useChat } from 'ai/svelte';
 	import Time from 'svelte-time';
 	import type { ChatCompletionMessage } from 'openai/resources/chat';
-	import { PUBLIC_BRAND_NAME } from '$env/static/public';
 
 	let { messages, input, handleSubmit } = useChat();
 	let showAI = false;

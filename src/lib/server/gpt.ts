@@ -3,7 +3,7 @@ import { OpenAIStream } from 'ai';
 import { OpenAI } from 'openai';
 import type { ChatCompletionMessage, ChatCompletionCreateParams } from 'openai/resources/chat';
 
-const openai = new OpenAI({
+export const openai = new OpenAI({
 	apiKey: PRIVATE_OPENAI_API_KEY
 });
 

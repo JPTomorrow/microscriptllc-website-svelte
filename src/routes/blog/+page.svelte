@@ -7,9 +7,70 @@
 	import TitleSpaced from '$lib/title-spaced.svelte';
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
+	import { dev } from '$app/environment';
+	import { ConicGradient, type ConicStop } from '@skeletonlabs/skeleton';
+	import { Trash } from 'tabler-icons-svelte';
 
 	export let data;
-	const posts = data.blogPosts;
+	$: posts = data.blogPosts;
+	let postGenertaionPreview: string = '';
+	let generatedPost = {
+		headline: '',
+		shortDescription: '',
+		body: ''
+	};
+	let subject: string = '';
+	let loading = false;
+
+	const generatePost = async () => {
+		subject = '';
+		loading = true;
+		const res = await fetch('/api/blog/make-post', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({
+				articleSubject: subject
+			})
+		}).then((r) => r.json());
+
+		generatedPost.headline = res.headline;
+		generatedPost.shortDescription = '';
+		generatedPost.body = res.body;
+		postGenertaionPreview = `${res.headline}
+		
+		${res.body}`;
+		loading = false;
+	};
+
+	const addPost = async () => {
+		if (postGenertaionPreview === '') return;
+		loading = true;
+		await fetch('/api/blog/add-post', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({
+				blogPost: generatedPost
+			})
+		});
+		loading = false;
+		postGenertaionPreview = '';
+	};
+
+	const deletePost = async (id: number) => {
+		await fetch('/api/blog/delete-post', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify({
+				postId: id
+			})
+		});
+	};
 
 	// capture scroll to hide header
 	let outer: HTMLDivElement;
@@ -27,6 +88,11 @@
 	}
 
 	let collapsed = true;
+
+	const conicStops: ConicStop[] = [
+		{ color: 'transparent', start: 0, end: 25 },
+		{ color: 'rgb(var(--color-primary-300))', start: 75, end: 100 }
+	];
 </script>
 
 <Seo
@@ -38,10 +104,33 @@
 <div in:fade|global={{ duration: 200 }} class="animated-space-bg">
 	<div bind:this={outer} class="page-inner-scroll-container pt-[85px]">
 		<TitleSpaced headerText="Justin talks about tech" />
+		{#if dev}
+			<article class="post-1 gap-5">
+				<h1 class="uppercase">AI Add Post</h1>
+				<div class="w-full border-[1px] border-secondary-300 rounded-lg min-h-[200px] p-5">
+					{@html postGenertaionPreview}
+				</div>
+				<input
+					class="input"
+					disabled={loading}
+					bind:value={subject}
+					placeholder="Enter an article subject..."
+				/>
+				<div class="flex gap-3 mt-5">
+					<button disabled={loading} class="btn1" on:click={generatePost}>
+						Generate
+						{#if loading}
+							<ConicGradient width="w-5 ml-4" stops={conicStops} spin />
+						{/if}
+					</button>
+					<button disabled={loading} class="btn1" on:click={addPost}> Add </button>
+				</div>
+			</article>
+		{/if}
 		{#each posts as post, i (i)}
-			<div class="post-{(i % 2) + 1}">
-				<h2 class="text-xl lg:text-5xl mb-2 font-normal lg:font-thin w-11/12">
-					{post.headline}
+			<article class="post-{(i % 2) + 1}">
+				<h2 class="w-11/12 line-clamp-1">
+					{@html post.headline}
 				</h2>
 				<p class="text-sm lg:text-xl ml-5 mb-5 font-thin">
 					Posted On: {cvtTimestamp(post.createdAt)}
@@ -52,18 +141,18 @@
 						? 'line-clamp-3 lg:line-clamp-4'
 						: ''}"
 				>
-					{#each post.body.replaceAll('\\n', 'AF12PVr5').split('AF12PVr5') as paragraph}
-						{paragraph}
-						<br />
-					{/each}
+					{@html post.shortDescription}
 				</p>
-				<button
-					on:click={() => {
-						collapsed = !collapsed;
-					}}
-					class="btn1 mt-5">{collapsed ? 'Read More' : '^'}</button
-				>
-			</div>
+				<div class="flex mt-5 gap-5">
+					<a href="/blog/{post.id}" class="btn1">Read More</a>
+					{#if dev}
+						<button
+							class="btn1 uppercase text-sm !bg-error-600 !bg-opacity-70 !p-2"
+							on:click={() => deletePost(post.id)}><Trash strokeWidth="1" /></button
+						>
+					{/if}
+				</div>
+			</article>
 		{/each}
 		<Footer class="hidden lg:flex" />
 	</div>
@@ -72,6 +161,16 @@
 <AiUi />
 
 <style lang="postcss">
+	article :global(h1) {
+		@apply text-3xl lg:text-5xl my-2 font-normal lg:font-thin;
+	}
+	article :global(h2) {
+		@apply text-xl lg:text-2xl my-2 font-normal lg:font-thin;
+	}
+	article :global(p) {
+		@apply text-lg lg:text-lg my-2 font-thin;
+	}
+
 	.post-1 {
 		@apply flex flex-col items-start text-left 
 		w-full h-fit 

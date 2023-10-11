@@ -1,1 +1,34 @@
-{"version":"5","dialect":"sqlite","entries":[]}
+{
+  "version": "5",
+  "dialect": "sqlite",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1696889217262,
+      "tag": "0000_pink_xorn",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1697043731297,
+      "tag": "0001_sloppy_frog_thor",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1697049092161,
+      "tag": "0002_known_havok",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1697049126281,
+      "tag": "0003_young_mikhail_rasputin",
+      "breakpoints": true
+    }
+  ]
+}

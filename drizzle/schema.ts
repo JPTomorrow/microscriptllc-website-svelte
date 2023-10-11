@@ -1,12 +1,13 @@
+import { sqliteTable, text, integer } from 'drizzle-orm/sqlite-core';
 import { sql } from 'drizzle-orm';
-import { integer, sqliteTable, text } from 'drizzle-orm/sqlite-core';
 
-export const blogPosts = sqliteTable('blog-posts', {
-	id: text('id').primaryKey(),
-	name: text('name').notNull(),
+// IMPORTANT: DO NOT NAME TABLES WITH A - ONLY USE _ E.G. blog_posts
+export const blogPosts = sqliteTable('blog_posts', {
+	id: integer('id').primaryKey().notNull(),
 	headline: text('headline').notNull(),
+	shortDescription: text('short_description').notNull(),
 	body: text('body').notNull(),
 	createdAt: integer('created_at')
-		.notNull()
 		.default(sql`(cast (unixepoch() as int))`)
+		.notNull()
 });
