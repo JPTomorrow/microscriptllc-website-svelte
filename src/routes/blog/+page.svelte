@@ -14,7 +14,6 @@
 	import { cleanHTML } from '$lib/scripts/sanitize-html';
 
 	export let data;
-	$: posts = data.blogPosts;
 	let postGenertaionPreview: string = '';
 	let generatedPost = {
 		headline: '',
@@ -139,33 +138,39 @@
 				</div>
 			</article>
 		{/if}
-		{#each posts as post, i (i)}
-			<article class="post-{(i % 2) + 1}">
-				<h2 class="w-11/12">
-					{@html post.headline}
-				</h2>
-				<p class="text-sm lg:text-xl ml-5 mb-5 font-thin">
-					Posted On: {cvtTimestamp(post.createdAt)}
-				</p>
+		{#if data.streamed}
+			{#await data.streamed.blogPosts then posts}
+				{#each posts as post, i (i)}
+					<article in:fade|global class="post-{(i % 2) + 1}">
+						<h2 class="w-11/12">
+							{@html post.headline}
+						</h2>
+						<p class="text-sm lg:text-xl ml-5 mb-5 font-thin">
+							Posted On: {cvtTimestamp(post.createdAt)}
+						</p>
 
-				<p
-					class="text-lg lg:text-xl mb-2 font-thin text-primary-50 text-ellipsis {collapsed
-						? 'line-clamp-3 lg:line-clamp-5'
-						: ''}"
-				>
-					{@html post.shortDescription}
-				</p>
-				<div class="flex mt-5 gap-5">
-					<a href="/blog/{post.id}" class="btn1">Read More</a>
-					{#if dev}
-						<button
-							class="btn1 uppercase text-sm !bg-error-600 !bg-opacity-70 !p-2"
-							on:click={() => deletePost(post.id)}><Trash strokeWidth="1" /></button
+						<p
+							class="text-lg lg:text-xl mb-2 font-thin text-primary-50 text-ellipsis {collapsed
+								? 'line-clamp-3 lg:line-clamp-5'
+								: ''}"
 						>
-					{/if}
-				</div>
-			</article>
-		{/each}
+							{@html post.shortDescription}
+						</p>
+						<div class="flex mt-5 gap-5">
+							<a href="/blog/{post.id}" class="btn1">Read More</a>
+							{#if dev}
+								<button
+									class="btn1 uppercase text-sm !bg-error-600 !bg-opacity-70 !p-2"
+									on:click={() => deletePost(post.id)}><Trash strokeWidth="1" /></button
+								>
+							{/if}
+						</div>
+					</article>
+				{/each}
+			{:catch error}
+				{error.message}
+			{/await}
+		{/if}
 		<Footer class="hidden lg:flex" />
 	</div>
 </div>

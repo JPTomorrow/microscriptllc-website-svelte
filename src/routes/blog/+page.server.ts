@@ -3,7 +3,7 @@ import type { PageServerLoad } from './$types';
 
 export const load: PageServerLoad = async () => {
 	const db = tursoClient();
-	const blogPosts = await db.query.blogPosts.findMany({
+	const blogPosts = db.query.blogPosts.findMany({
 		columns: {
 			id: true,
 			headline: true,
@@ -13,7 +13,11 @@ export const load: PageServerLoad = async () => {
 	});
 
 	if (blogPosts !== undefined) {
-		return { blogPosts };
+		return {
+			streamed: {
+				blogPosts: blogPosts
+			}
+		};
 	}
 
 	return { blogPosts: [] };
