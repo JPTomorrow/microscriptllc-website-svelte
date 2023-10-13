@@ -56,7 +56,9 @@ const sitemap = (
     <url>
       <loc>${site}/blog/${post.id}</loc>
       <changefreq>weekly</changefreq>
-      <lastmod>${`${cr.getFullYear()}-${cr.getMonth()}-${cr.getDay()}`}</lastmod>
+      <lastmod>${`${cr.getFullYear()}-${cr.getMonth() < 10 ? '0' : ''}${cr.getMonth()}-${
+				cr.getDay() < 10 ? '0' : ''
+			}${cr.getDay()}`}</lastmod>
       <priority>0.3</priority>
     </url>
     `;
