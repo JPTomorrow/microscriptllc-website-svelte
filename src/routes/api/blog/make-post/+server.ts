@@ -79,7 +79,7 @@ export const POST: RequestHandler = async ({ request }) => {
 		image_data.b64_json!,
 		{
 			access: 'public',
-			token: PRIVATE_BLOB_READ_WRITE_TOKEN,
+			token: BLOB_READ_WRITE_TOKEN,
 			contentType: 'image/jpeg'
 		}
 	);
