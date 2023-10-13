@@ -49,15 +49,17 @@ const sitemap = (
 		)
 		.join('')}
     ${posts
-			.map(
-				(post) => `
+			.map((post) => {
+				const cr = new Date(0);
+				cr.setUTCSeconds(post.createdAt);
+				return `
     <url>
       <loc>${site}/blog/${post.id}</loc>
       <changefreq>weekly</changefreq>
-      <lastmod>${post.createdAt}</lastmod>
+      <lastmod>${`${cr.getFullYear()}-${cr.getMonth()}-${cr.getDay()}`}</lastmod>
       <priority>0.3</priority>
     </url>
-    `
-			)
+    `;
+			})
 			.join('')}
 </urlset>`;
