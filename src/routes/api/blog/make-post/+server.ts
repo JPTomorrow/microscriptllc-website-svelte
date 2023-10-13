@@ -2,7 +2,7 @@ import type { RequestHandler } from '@sveltejs/kit';
 import { openai } from '$lib/server/gpt';
 import type { ChatCompletionMessage } from 'openai/resources/chat/completions';
 import { put } from '@vercel/blob';
-import { PRIVATE_BLOB_READ_WRITE_TOKEN } from '$env/static/private';
+import { BLOB_READ_WRITE_TOKEN } from '$env/static/private';
 
 export const POST: RequestHandler = async ({ request }) => {
 	// const db = tursoClient();
