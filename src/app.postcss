@@ -1,86 +1,87 @@
-html, body {
-    font-family: 'Montserrat', sans-serif;
+html,
+body {
+	font-family: 'Montserrat', sans-serif;
 }
 
 /* skeleton overrides */
 
 .input {
-    @apply !bg-black bg-opacity-50 rounded-full p-2 px-4 border-[2px] focus:!border-secondary-500 outline-none;
+	@apply !bg-black bg-opacity-50 rounded-full p-2 px-4 border-[2px] focus:!border-secondary-500 outline-none;
 }
 
 .textarea {
-    @apply input !rounded-lg;
+	@apply input !rounded-lg;
 }
 
 /* utility */
 
 .absolute-centered {
-    @apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2;
+	@apply absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2;
 }
 
 .fixed-centered {
-    @apply fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2;
+	@apply fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2;
 }
 
 /* component specific */
 
 .btn1 {
-    @apply flex w-fit items-center justify-center 
+	@apply flex w-fit items-center justify-center 
     border-[1px] border-primary-50 
     rounded-full px-5 py-2 hover:bg-primary-200 
     hover:bg-opacity-30 transition-all duration-150 
     dark:text-primary-50 dark:hover:text-white;
 
-    box-shadow: 0 -2px 0 0 rgb(var(--color-primary-50));
+	box-shadow: 0 -2px 0 0 rgb(var(--color-primary-50));
 }
 
 .btn1:hover {
-    box-shadow: none;
-    @apply translate-y-[-3px] transition-transform duration-150;
+	box-shadow: none;
+	@apply translate-y-[-3px] transition-transform duration-150;
 }
 
 .nav-link {
-    @apply h-full hover:underline underline-offset-4 transition-all duration-75 hover:scale-110 hover:text-secondary-300;
+	@apply h-full hover:underline underline-offset-4 transition-all duration-75 hover:scale-110 hover:text-secondary-300;
 }
 
 @keyframes animatedBackground {
-    from {
-        background-position: 0% 0%;
-    }
-    to {
-        background-position: 15% 15%;
-    }
+	from {
+		background-position: 0% 0%;
+	}
+	to {
+		background-position: 15% 15%;
+	}
 }
 .animate-bg {
-    background-size: 115% 115%;
-    aspect-ratio: 1 / 1;
-    /* background-position: 0px 0px; */
-    animation: animatedBackground 6s ease-in-out infinite alternate;
+	background-size: 115% 115%;
+	aspect-ratio: 1 / 1;
+	/* background-position: 0px 0px; */
+	animation: animatedBackground 6s ease-in-out infinite alternate;
 }
 
 @keyframes animatedImage {
-    from {
-        top: -50px;
-        left:  -25px;
-    }
-    to {
-        bottom: -50px;
-        right:  -25px;
-    }
+	from {
+		top: -50px;
+		left: -25px;
+	}
+	to {
+		bottom: -50px;
+		right: -25px;
+	}
 }
 
 .animate-img {
-    /* background-size: 110% 110%; */
-    /* aspect-ratio: 1 / 1; */
-    /* background-position: 0px 0px; */
-    animation: animatedImage 8s ease-in-out infinite alternate;
+	/* background-size: 110% 110%; */
+	/* aspect-ratio: 1 / 1; */
+	/* background-position: 0px 0px; */
+	animation: animatedImage 8s ease-in-out infinite alternate;
 }
 
 .animated-space-bg {
-    @apply animate-bg bg-space-stars bg-cover w-screen h-screen bg-repeat;
+	@apply animate-bg bg-space-stars bg-cover w-screen h-screen bg-repeat;
 }
 
 .page-inner-scroll-container {
-    @apply flex flex-col w-screen h-screen justify-start items-center 
+	@apply flex flex-col w-screen h-screen justify-start items-center 
     overflow-y-scroll scroll-smooth;
 }

@@ -27,7 +27,7 @@
 	<div>
 		<h1 class="footer-header">Resources</h1>
 		<ul>
-			<li><a href="/coming-soon" class="nav-link">Client Portal</a></li>
+			<!-- <li><a href="/coming-soon" class="nav-link">Client Portal</a></li> -->
 			<li><a href="/coming-soon" class="nav-link">Email Newsletter</a></li>
 		</ul>
 	</div>

@@ -10,6 +10,8 @@
 	import { dev } from '$app/environment';
 	import { ConicGradient, type ConicStop } from '@skeletonlabs/skeleton';
 	import { Trash } from 'tabler-icons-svelte';
+	import { invalidateAll } from '$app/navigation';
+	import { cleanHTML } from '$lib/scripts/sanitize-html';
 
 	export let data;
 	$: posts = data.blogPosts;
@@ -17,12 +19,14 @@
 	let generatedPost = {
 		headline: '',
 		shortDescription: '',
-		body: ''
+		body: '',
+		imgUrl: ''
 	};
 	let subject: string = '';
 	let loading = false;
 
 	const generatePost = async () => {
+		const subCopy = subject;
 		subject = '';
 		loading = true;
 		const res = await fetch('/api/blog/make-post', {
@@ -31,16 +35,22 @@
 				'Content-Type': 'application/json'
 			},
 			body: JSON.stringify({
-				articleSubject: subject
+				articleSubject: subCopy
 			})
 		}).then((r) => r.json());
 
-		generatedPost.headline = res.headline;
-		generatedPost.shortDescription = '';
-		generatedPost.body = res.body;
-		postGenertaionPreview = `${res.headline}
+		generatedPost.headline = cleanHTML(res.headline);
+		generatedPost.body = cleanHTML(res.body);
+		generatedPost.shortDescription = generatedPost.body.slice(0, 500);
+		generatedPost.imgUrl = res.imgUrl;
+		const imageBase64 = await fetch(res.imgUrl, { method: 'GET' }).then((r) => r.text());
+
+		postGenertaionPreview = `<h1>Headline:</h1> ${generatedPost.headline}
 		
-		${res.body}`;
+		<h1>Image:</h1>
+		<img src="data:image/jpeg;base64,${imageBase64}" alt="Generated Image" />
+		<h1>Body:</h1>
+		${generatedPost.body}`;
 		loading = false;
 	};
 
@@ -58,6 +68,7 @@
 		});
 		loading = false;
 		postGenertaionPreview = '';
+		invalidateAll(); // this will fire the server load function again
 	};
 
 	const deletePost = async (id: number) => {
@@ -70,6 +81,7 @@
 				postId: id
 			})
 		});
+		invalidateAll();
 	};
 
 	// capture scroll to hide header
@@ -129,7 +141,7 @@
 		{/if}
 		{#each posts as post, i (i)}
 			<article class="post-{(i % 2) + 1}">
-				<h2 class="w-11/12 line-clamp-1">
+				<h2 class="w-11/12">
 					{@html post.headline}
 				</h2>
 				<p class="text-sm lg:text-xl ml-5 mb-5 font-thin">
@@ -137,8 +149,8 @@
 				</p>
 
 				<p
-					class="text-lg lg:text-xl mb-2 font-thin text-primary-50 {collapsed
-						? 'line-clamp-3 lg:line-clamp-4'
+					class="text-lg lg:text-xl mb-2 font-thin text-primary-50 text-ellipsis {collapsed
+						? 'line-clamp-3 lg:line-clamp-5'
 						: ''}"
 				>
 					{@html post.shortDescription}

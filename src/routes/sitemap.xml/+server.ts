@@ -1,17 +1,29 @@
+import { tursoClient } from '$lib/server/turso';
 import type { RequestHandler } from '@sveltejs/kit';
 
 const pages: string[] = ['blog']; //list of pages as a string ex. ["about", "blog", "contact"]
 const site = 'https://www.microscriptllc.com';
 
 export const GET: RequestHandler = async ({ url }) => {
-	const body = sitemap(pages);
+	const db = tursoClient();
+	const posts = await db.query.blogPosts.findMany({
+		columns: {
+			id: true,
+			createdAt: true
+		}
+	});
+
+	const body = sitemap(posts, pages);
 	const response = new Response(body);
 	response.headers.set('Cache-Control', 'max-age=0, s-maxage=3600');
 	response.headers.set('Content-Type', 'application/xml');
 	return response;
 };
 
-const sitemap = (pages: string[]) => `<?xml version="1.0" encoding="UTF-8" ?>
+const sitemap = (
+	posts: { id: number; createdAt: number }[],
+	pages: string[]
+) => `<?xml version="1.0" encoding="UTF-8" ?>
 <urlset
   xmlns="https://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:news="https://www.google.com/schemas/sitemap-news/0.9"
@@ -36,4 +48,16 @@ const sitemap = (pages: string[]) => `<?xml version="1.0" encoding="UTF-8" ?>
   `
 		)
 		.join('')}
+    ${posts
+			.map(
+				(post) => `
+    <url>
+      <loc>${site}/blog/${post.id}</loc>
+      <changefreq>weekly</changefreq>
+      <lastmod>${post.createdAt}</lastmod>
+      <priority>0.3</priority>
+    </url>
+    `
+			)
+			.join('')}
 </urlset>`;

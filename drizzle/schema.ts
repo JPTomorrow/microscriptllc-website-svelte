@@ -7,6 +7,7 @@ export const blogPosts = sqliteTable('blog_posts', {
 	headline: text('headline').notNull(),
 	shortDescription: text('short_description').notNull(),
 	body: text('body').notNull(),
+	imgUrl: text('img_url').notNull(),
 	createdAt: integer('created_at')
 		.default(sql`(cast (unixepoch() as int))`)
 		.notNull()

@@ -5,11 +5,12 @@ import { blogPosts } from '../../../../../drizzle/schema';
 export const POST: RequestHandler = async ({ request }) => {
 	const db = tursoClient();
 	const body = await request.json();
-	const postToAdd = body['blogPost'] as typeof blogPosts.$inferInsert;
+	const postToAdd = body['blogPost'];
 	await db.insert(blogPosts).values({
 		headline: postToAdd.headline,
 		shortDescription: postToAdd.shortDescription,
-		body: postToAdd.body
+		body: postToAdd.body,
+		imgUrl: postToAdd.imgUrl
 	});
 
 	return new Response(JSON.stringify({ success: true }), {
