@@ -114,9 +114,8 @@
 
 <div in:fade|global={{ duration: 200 }} class="animated-space-bg">
 	<div bind:this={outer} class="page-inner-scroll-container pt-[85px]">
-		<TitleSpaced headerText="Justin talks about tech" />
 		{#if dev}
-			<article class="post-1 gap-5">
+			<article class="post-1 gap-5 py-16 mb-5 border-b-[1px] border-secondary-300">
 				<h1 class="uppercase">AI Add Post</h1>
 				<div class="w-full border-[1px] border-secondary-300 rounded-lg min-h-[200px] p-5">
 					{@html postGenertaionPreview}
@@ -138,39 +137,46 @@
 				</div>
 			</article>
 		{/if}
-		{#if data.streamed}
-			{#await data.streamed.blogPosts then posts}
-				{#each posts.reverse() as post, i (i)}
-					<article in:fade|global class="post-{(i % 2) + 1}">
-						<h2 class="w-11/12">
-							{@html post.headline}
-						</h2>
-						<p class="text-sm lg:text-xl ml-5 mb-5 font-thin">
-							Posted On: {cvtTimestamp(post.createdAt)}
-						</p>
+		<TitleSpaced headerText="Justin talks about tech" />
+		<div class="mt-10">
+			{#if data.streamed}
+				{#await data.streamed.blogPosts then posts}
+					{#each posts.reverse() as post, i (i)}
+						<article in:fade|global class="post-{(i % 2) + 1}">
+							<div
+								class="flex flex-col items-start justify-between text-left w-full h-fit border-x-[1px] border-double px-10 py-2 border-secondary-300 my-5"
+							>
+								<h2 class="w-11/12">
+									{@html post.headline}
+								</h2>
+								<p class="text-sm lg:text-xl ml-5 mb-5 font-thin">
+									Posted On: {cvtTimestamp(post.createdAt)}
+								</p>
 
-						<p
-							class="text-lg lg:text-xl mb-2 font-thin text-primary-50 text-ellipsis {collapsed
-								? 'line-clamp-3 lg:line-clamp-5'
-								: ''}"
-						>
-							{@html post.shortDescription}
-						</p>
-						<div class="flex mt-5 gap-5">
-							<a href="/blog/{post.id}" class="btn1">Read More</a>
-							{#if dev}
-								<button
-									class="btn1 uppercase text-sm !bg-error-600 !bg-opacity-70 !p-2"
-									on:click={() => deletePost(post.id)}><Trash strokeWidth="1" /></button
+								<p
+									class="text-lg lg:text-xl mb-2 font-thin text-primary-50 text-ellipsis {collapsed
+										? 'line-clamp-3 lg:line-clamp-5'
+										: ''}"
 								>
-							{/if}
-						</div>
-					</article>
-				{/each}
-			{:catch error}
-				{error.message}
-			{/await}
-		{/if}
+									{@html post.shortDescription}
+								</p>
+								<div class="flex mt-5 gap-5">
+									<a href="/blog/{post.id}" class="btn1">Read More</a>
+									{#if dev}
+										<button
+											class="btn1 uppercase text-sm !bg-error-600 !bg-opacity-70 !p-2"
+											on:click={() => deletePost(post.id)}><Trash strokeWidth="1" /></button
+										>
+									{/if}
+								</div>
+							</div>
+						</article>
+					{/each}
+				{:catch error}
+					{error.message}
+				{/await}
+			{/if}
+		</div>
 		<Footer class="hidden lg:flex" />
 	</div>
 </div>
@@ -179,7 +185,7 @@
 
 <style lang="postcss">
 	article :global(h1) {
-		@apply text-3xl lg:text-5xl my-2 font-normal lg:font-thin;
+		@apply text-3xl lg:text-5xl font-normal lg:font-thin;
 	}
 	article :global(h2) {
 		@apply text-xl lg:text-2xl my-2 font-normal lg:font-thin;
@@ -192,11 +198,11 @@
 		@apply flex flex-col items-start text-left 
 		w-full h-fit 
 		bg-black backdrop-blur-sm bg-opacity-25
-		px-5 lg:px-64 py-5;
+		px-5 lg:px-64;
 	}
 	.post-2 {
 		@apply flex flex-col items-start text-left 
 		w-full h-fit bg-transparent
-		px-5 lg:px-64 py-5;
+		px-5 lg:px-64;
 	}
 </style>
