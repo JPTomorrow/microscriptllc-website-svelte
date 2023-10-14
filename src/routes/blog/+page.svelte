@@ -140,7 +140,7 @@
 		{/if}
 		{#if data.streamed}
 			{#await data.streamed.blogPosts then posts}
-				{#each posts as post, i (i)}
+				{#each posts.reverse() as post, i (i)}
 					<article in:fade|global class="post-{(i % 2) + 1}">
 						<h2 class="w-11/12">
 							{@html post.headline}
