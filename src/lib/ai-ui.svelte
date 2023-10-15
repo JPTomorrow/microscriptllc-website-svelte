@@ -58,10 +58,9 @@
 				<div class="flex gap-3 items-center justify-center">
 					<img
 						alt="logo"
-						src="/images/logo.webp"
+						src="/images/logo/logo_128.webp"
 						width="50px"
-						height="50px"
-						class="w-[30px] h-[30px] md:w-[50px] md:h-[50px] self-center"
+						class="w-[30px] md:w-[50px] self-center"
 					/>
 					<Trackintext>
 						<h1 class="text-xl md:text-2xl font-semibold">GAIA</h1>
