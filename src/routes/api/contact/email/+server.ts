@@ -1,15 +1,15 @@
 import { render } from 'svelte-email';
 import Hello from '$lib/email.svelte';
 import postmark from 'postmark';
-import { env } from '$env/dynamic/private';
 import { PUBLIC_BRAND_NAME } from '$env/static/public';
+import { PRIVATE_POSTMARK_API_KEY } from '$env/static/private';
 
 export async function POST({ request }) {
 	const data = await request.formData();
+	const msg = data.get('msg') as string;
 	const name = data.get('name') as string;
 	const email = data.get('email') as string;
-	const msg = data.get('msg') as string;
-	const client = new postmark.ServerClient(env.POSTMARK_API_KEY);
+	const client = new postmark.ServerClient(PRIVATE_POSTMARK_API_KEY);
 
 	const emailHtml = render({
 		template: Hello,
@@ -27,9 +27,15 @@ export async function POST({ request }) {
 		HtmlBody: emailHtml
 	};
 
-	client.sendEmail(options).then(() => {
-		console.log(`email sent: ${[name, email, msg].join(' | ')}`);
-	});
+	await client
+		.sendEmail(options)
+		.then(() => {
+			console.log(`email sent: ${[name, email, msg].join(' | ')}`);
+		})
+		.catch((err) => {
+			console.error(`error sending email with postmark: ${err.message}`);
+			return new Response(JSON.stringify(err), { status: 500 });
+		});
 
 	return new Response('{}', { status: 200 });
 }
