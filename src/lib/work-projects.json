@@ -3,8 +3,8 @@
 		{
 			"name": "Zen and Wellness CBD",
 			"img": "/images/zenandwellness.webp",
-			"skills": ["SvelteKit", "Turso", "tailwindCSS", "Drizzle ORM", "OpenAI API"],
-			"description": "This website services a CBD dispensary and has interesting ecommerce features that are integrated directely into an AI CBD expert system meant to help the user in choosing the correct products to purchase.",
+			"skills": ["SvelteKit", "Turso", "TailwindCSS", "Drizzle ORM", "OpenAI API"],
+			"description": "This website services a CBD / Kratom dispensary and has interesting ecommerce features that are integrated directely into an AI CBD expert system meant to help the user in choosing the correct products to purchase.",
 			"site": "https://www.zenandwellnesscbd.com"
 		},
 		{

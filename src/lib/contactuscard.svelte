@@ -153,7 +153,6 @@
 				action="/api/contact/email"
 				on:submit|preventDefault={() => sub()}
 			>
-				<!-- <Rollintext text="Contact Us" /> -->
 				<Trackintext>
 					<h1 class="text-2xl">Contact Us</h1>
 				</Trackintext>
