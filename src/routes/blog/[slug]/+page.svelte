@@ -8,7 +8,7 @@
 	import { fade } from 'svelte/transition';
 	import Time from 'svelte-time';
 
-	export let data../[id]/$types.js;
+	export let data;
 	const post = data.post!;
 
 	// capture scroll to hide header
