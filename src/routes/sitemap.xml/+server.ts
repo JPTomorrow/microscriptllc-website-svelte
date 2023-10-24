@@ -1,3 +1,4 @@
+import { formBlogPostSlug } from '$lib/scripts/blog';
 import { tursoClient } from '$lib/server/turso';
 import type { RequestHandler } from '@sveltejs/kit';
 
@@ -9,6 +10,7 @@ export const GET: RequestHandler = async ({ url }) => {
 	const posts = await db.query.blogPosts.findMany({
 		columns: {
 			id: true,
+			headline: true,
 			createdAt: true
 		}
 	});
@@ -21,7 +23,7 @@ export const GET: RequestHandler = async ({ url }) => {
 };
 
 const sitemap = (
-	posts: { id: number; createdAt: number }[],
+	posts: { id: number; headline: string; createdAt: number }[],
 	pages: string[]
 ) => `<?xml version="1.0" encoding="UTF-8" ?>
 <urlset
@@ -54,7 +56,7 @@ const sitemap = (
 				cr.setUTCSeconds(post.createdAt);
 				return `
     <url>
-      <loc>${site}/blog/${post.id}</loc>
+      <loc>${site}/blog/${formBlogPostSlug(post.headline, post.id)}</loc>
       <changefreq>weekly</changefreq>
       <lastmod>${`${cr.getFullYear()}-${cr.getMonth() < 10 ? '0' : ''}${cr.getMonth()}-${
 				cr.getDay() < 10 ? '0' : ''

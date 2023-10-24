@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { PUBLIC_BRAND_NAME } from '$env/static/public';
+	import { PUBLIC_BRAND_NAME, PUBLIC_GOOGLE_REFFERER_LINK } from '$env/static/public';
 	import AiUi from '$lib/ai-ui.svelte';
 	import Footer from '$lib/footer.svelte';
 	import { setScrollY } from '$lib/scrollstore';
@@ -12,6 +12,7 @@
 	import { Trash } from 'tabler-icons-svelte';
 	import { invalidateAll } from '$app/navigation';
 	import { cleanHTML } from '$lib/scripts/sanitize-html';
+	import { formBlogPostSlug } from '$lib/scripts/blog';
 
 	export let data;
 	let postGenertaionPreview: string = '';
@@ -146,9 +147,14 @@
 							<div
 								class="flex flex-col items-start justify-between text-left w-full h-fit border-x-[1px] border-double px-10 py-2 border-secondary-300 my-5"
 							>
-								<h2 class="w-11/12">
-									{@html post.headline}
-								</h2>
+								<a
+									class="w-11/12 hover:underline underline-offset-8"
+									href="/blog/{formBlogPostSlug(post.headline, post.id)}"
+								>
+									<h2 class="w-full">
+										{@html post.headline}
+									</h2>
+								</a>
 								<p class="text-sm lg:text-xl ml-5 mb-5 font-thin">
 									Posted On: {cvtTimestamp(post.createdAt)}
 								</p>
@@ -161,7 +167,9 @@
 									{@html post.shortDescription}
 								</p>
 								<div class="flex mt-5 gap-5">
-									<a href="/blog/{post.id}" class="btn1">Read More</a>
+									<a href="/blog/{formBlogPostSlug(post.headline, post.id)}" class="btn1"
+										>Read More</a
+									>
 									{#if dev}
 										<button
 											class="btn1 uppercase text-sm !bg-error-600 !bg-opacity-70 !p-2"
@@ -171,6 +179,24 @@
 								</div>
 							</div>
 						</article>
+						{#if i % 5 == 0}
+							<div class="flex w-full justify-center items-center">
+								<div
+									class="flex flex-col px-5 lg:px-0 lg:flex-row w-5/6 justify-center gap-5 lg:gap-10 items-center border-y-[1px] border-primary-300 py-5 my-5 bg-tertiary-900 bg-opacity-20"
+								>
+									<h1 class=" text-center lg:text-left text-xl lg:text-5xl font-thin">
+										Try out Google Workspaces Today!
+									</h1>
+									<a class="w-[200px]" href={PUBLIC_GOOGLE_REFFERER_LINK}
+										><img
+											class="w-full"
+											alt="Google Refferer Link"
+											src="https://storage.googleapis.com/referworkspace-asset/img/digitalbuttons/digital_button_en.png"
+										/></a
+									>
+								</div>
+							</div>
+						{/if}
 					{/each}
 				{:catch error}
 					{error.message}
@@ -185,13 +211,13 @@
 
 <style lang="postcss">
 	article :global(h1) {
-		@apply text-3xl lg:text-5xl font-normal lg:font-thin;
+		@apply text-xl md:text-5xl font-normal lg:font-thin;
 	}
 	article :global(h2) {
-		@apply text-xl lg:text-2xl my-2 font-normal lg:font-thin;
+		@apply text-base md:text-2xl my-2 font-normal lg:font-thin;
 	}
 	article :global(p) {
-		@apply text-lg lg:text-lg my-2 font-thin;
+		@apply text-base md:text-lg my-2 font-thin;
 	}
 
 	.post-1 {
@@ -202,7 +228,7 @@
 	}
 	.post-2 {
 		@apply flex flex-col items-start text-left 
-		w-full h-fit bg-transparent
+		w-full h-fit bg-secondary-900 bg-opacity-20
 		px-5 lg:px-64;
 	}
 </style>
