@@ -111,6 +111,7 @@
 	title="Blog"
 	description="The blog page. Random thoughts by Justin Morrow, the co-founder of {PUBLIC_BRAND_NAME}."
 	type="WebPage"
+	enableGoogleAdSense
 />
 
 <div in:fade|global={{ duration: 200 }} class="animated-space-bg">

@@ -5,6 +5,7 @@
 	export let title: string;
 	export let description: string;
 	export let type: string;
+	export let enableGoogleAdSense: boolean = false;
 
 	export let image: { url: string; alt: string } = {
 		url: '/images/seo/seo-big.webp',
@@ -46,6 +47,10 @@
 	<meta property="og:image:width" content="400" />
 	<meta property="og:image:height" content="400" />
 	<meta property="og:image:alt" content={image.alt} />
+
+	{#if enableGoogleAdSense}
+		<meta name="google-adsense-account" content="ca-pub-5681510691636131" />
+	{/if}
 
 	{#if isArticle}
 		<meta name="article:author" content="https://www.linkedin.com/in/morrowjustin/" />
