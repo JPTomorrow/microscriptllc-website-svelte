@@ -34,7 +34,6 @@
 	type="WebPage"
 	isArticle
 	publishedTime={createdAt}
-	enableGoogleAdSense
 />
 
 <div in:fade|global={{ duration: 200 }} class="animated-space-bg">
