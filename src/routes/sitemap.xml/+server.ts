@@ -54,13 +54,14 @@ const sitemap = (
 			.map((post) => {
 				const cr = new Date(0);
 				cr.setUTCSeconds(post.createdAt);
+
 				return `
     <url>
       <loc>${site}/blog/${formBlogPostSlug(post.headline, post.id)}</loc>
       <changefreq>weekly</changefreq>
       <lastmod>${`${cr.getFullYear()}-${cr.getMonth() < 10 ? '0' : ''}${cr.getMonth()}-${
-				cr.getDay() < 10 ? '0' : ''
-			}${cr.getDay()}`}</lastmod>
+				cr.getDate() < 10 ? '0' : ''
+			}${cr.getDate()}`}</lastmod>
       <priority>0.3</priority>
     </url>
     `;
