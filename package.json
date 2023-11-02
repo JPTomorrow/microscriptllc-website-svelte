@@ -54,6 +54,7 @@
 		"openai": "^4.8.0",
 		"postmark": "^3.0.19",
 		"svelte-email": "^0.0.4",
+		"svelte-markdown": "^0.4.0",
 		"svelte-particles": "^2.12.0",
 		"tabler-icons-svelte": "^1.10.0",
 		"tsparticles-slim": "^2.12.0",

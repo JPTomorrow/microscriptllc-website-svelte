@@ -9,17 +9,23 @@ declare global {
 	}
 
 	interface NavLink {
-		name: string,
-		path: string
+		name: string;
+		path: string;
 	}
 
 	interface WorkProject {
-		name: string,
+		name: string;
 		img: string;
 		skills: string[];
 		description: string;
 		github?: string;
 		site?: string;
+	}
+
+	interface BlogParagraph {
+		header: string;
+		content: string;
+		codeExample?: string;
 	}
 }
 

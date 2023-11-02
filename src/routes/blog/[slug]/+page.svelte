@@ -69,13 +69,13 @@
 
 <style lang="postcss">
 	article :global(h1) {
-		@apply text-3xl lg:text-5xl my-2 font-bold text-primary-200;
+		@apply text-2xl lg:text-5xl my-2 font-bold text-primary-200;
 	}
 	article :global(h2) {
 		@apply text-xl lg:text-2xl mb-2 mt-5 font-light;
 	}
 	article :global(p) {
-		@apply text-lg lg:text-lg my-2 font-thin;
+		@apply text-base lg:text-lg my-2 font-thin;
 	}
 
 	.post-1 {
