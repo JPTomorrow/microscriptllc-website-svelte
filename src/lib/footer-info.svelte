@@ -1,6 +1,9 @@
 <script lang="ts">
 	import Github from '$lib/github.svelte';
 	import Linkedin from '$lib/linkedin.svelte';
+	import links from '$lib/navlinks.json';
+
+	const navLinks: NavLink[] = links.routes;
 </script>
 
 <div
@@ -12,9 +15,11 @@
 			<li>
 				<a href="/" class="nav-link"> Home </a>
 			</li>
-			<li>
-				<a href="/blog" class="nav-link"> Blog </a>
-			</li>
+			{#each navLinks as link}
+				<li>
+					<a href={link.path} class="nav-link"> {link.name} </a>
+				</li>
+			{/each}
 		</ul>
 	</div>
 	<div>

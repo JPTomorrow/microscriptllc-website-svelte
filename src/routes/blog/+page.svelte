@@ -284,6 +284,9 @@
 							</div>
 						{/if} -->
 					{/each}
+					{#if posts.length <= 0}
+						<h1 class="w-fit text-2xl font-thin col-span-2">No Blog Posts Found</h1>
+					{/if}
 				{:catch error}
 					{error.message}
 				{/await}

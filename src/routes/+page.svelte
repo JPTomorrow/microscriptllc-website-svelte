@@ -13,6 +13,7 @@
 	import Seo from '$lib/seo.svelte';
 	import { PUBLIC_BRAND_NAME } from '$env/static/public';
 	import AiUi from '$lib/ai-ui.svelte';
+	import Employeebadge from '$lib/employeebadge.svelte';
 
 	// capture scroll to hide header
 	let outer: HTMLDivElement;
@@ -69,8 +70,7 @@
 					<h1 slot="header">Web development</h1>
 					<p slot="content">
 						We handle everything from complicated e-commerce websites down to simple company
-						information websites. There is no project too large or small for our team of designers
-						and coders.
+						information websites. We also do feature integrations with existing websites.
 					</p>
 				</ServiceCard>
 				<!-- (REWRITE BLURB) -->
@@ -157,8 +157,18 @@
 		</div>
 
 		<!-- Contact -->
-		<div id="contact" class="backdrop-blur-sm custom-card py-16 md:py-32 px-10">
+		<div id="contact" class="flex backdrop-blur-sm custom-card py-16 md:py-32 px-10">
+			<Employeebadge
+				employeeName="Justin Morrow"
+				employeeTitle="Co-Founder / CTO"
+				employeeImage="/images/profile.webp"
+			/>
 			<Contactuscard />
+			<Employeebadge
+				employeeName="Thomas Bender"
+				employeeTitle="Co-Founder / COO"
+				employeeImage="/images/thomas.webp"
+			/>
 		</div>
 		<Footer class="hidden md:flex" />
 		<Projectmodal />

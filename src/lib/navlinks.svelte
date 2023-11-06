@@ -3,6 +3,7 @@
 	import { sineInOut } from 'svelte/easing';
 	import { blur } from 'svelte/transition';
 	import { page } from '$app/stores';
+	import links from '$lib/navlinks.json';
 
 	let animationStart = false;
 
@@ -10,13 +11,7 @@
 		animationStart = true;
 	});
 
-	const navLinks: NavLink[] = [
-		{ name: 'Home', path: '/' },
-		// { name: 'Blog', path: '/blog' },
-		// { name: 'Skills', path: '/skills' },
-		{ name: 'Blog', path: '/blog' }
-		// { name: 'Contact', path: '/contact' }
-	];
+	const navLinks: NavLink[] = links.routes;
 </script>
 
 {#if animationStart}
