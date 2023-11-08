@@ -6,7 +6,7 @@
 	import Projectmodal from '$lib/projectmodal.svelte';
 	import Seo from '$lib/seo.svelte';
 	import AiUi from '$lib/ai-ui.svelte';
-	import { ArrowRightRhombus } from 'tabler-icons-svelte';
+	import { ArrowRightRhombus, Bulb, Camera, DeviceDesktop, Devices2 } from 'tabler-icons-svelte';
 
 	// capture scroll to hide header
 	let outer: HTMLDivElement;
@@ -20,33 +20,38 @@
 
 <Seo
 	title="Our Services"
-	description="A page showing the web development services we offer."
+	description="A page showing the web development services MicroScript offer."
 	type="WebPage"
 />
 
 <div in:fade|global={{ duration: 200 }} class="animated-space-bg">
 	<div bind:this={outer} class="page-inner-scroll-container">
-		<div class="flex flex-col gap-10 items-center justify-center pt-32">
+		<div class="flex flex-col items-center justify-center pt-32">
 			<div class="flex flex-col items-center gap-5">
-				<h1 class="text-4xl md:text-6xl font-extralight uppercase">Our Services</h1>
+				<h1 class="h1-def">Our Services</h1>
 				<div class="h-[1px] w-2/3 md:w-1/6 bg-primary-300" />
-				<p class="w-3/4 text-xl md:text-2xl font-extralight text-center">
+				<p class="w-11/12 md:w-3/4 text-base md:text-2xl font-extralight text-center">
 					We offer a full spectrum of digital services and advanced web features designed to grow
 					your online presence and drive online business sales!
 				</p>
 			</div>
-			<div class="flex custom-card gap-5 py-10 px-10 border-t-[1px] border-secondary-700">
+
+			<!-- Web Development Service -->
+			<div
+				id="web-dev-service"
+				class="flex custom-card gap-5 py-10 px-10 mt-10 border-t-[1px] border-secondary-700"
+			>
 				<div class="flex flex-col gap-6 lg:gap-3 w-full lg:w-1/2 justify-between">
 					<div class="flex flex-col gap-3 text-center md:text-left items-center md:items-start">
-						<h2 class="text-2xl md:text-4xl">Web Development</h2>
+						<h2 class="h2-def">Web Development</h2>
 						<div class="h-[1px] w-4/6 bg-secondary-700" />
-						<p class="text-base md:text-xl font-extralight">
-							MicroScript LLC specializes in comprehensive web development services, catering to the
+						<p class="p-def">
+							MicroScript specializes in comprehensive web development services, catering to the
 							needs of businesses looking to establish a robust online presence From e-commerce
-							solutions to custom web applications, MicroScript LLC delivers tailor-made websites
-							that align perfectly with their clients' objectives.
+							solutions to custom web applications, MicroScript delivers tailor-made websites that
+							align perfectly with their clients' objectives.
 						</p>
-						<ul class="text-base font-bold md:list-disc flex flex-col gap-3 my-5 md:ml-5">
+						<ul class="ul-def">
 							<li>Comprehensive development of dynamic, scalable, and secure websites.</li>
 							<li>Proficiency in a variety of programming languages and frameworks.</li>
 							<li>Custom solutions ranging from e-commerce sites to web applications.</li>
@@ -72,6 +77,58 @@
 					</div>
 				</div>
 			</div>
+
+			<!-- User Experience -->
+			<div class="w-full gap-5 py-10 px-10 border-t-[1px] border-secondary-700">
+				<div class="flex flex-col items-center gap-5">
+					<h1 class="h1-def">User Experience</h1>
+					<div class="h-[1px] w-2/3 md:w-1/6 bg-primary-300" />
+					<p class="w-full md:w-3/4 text-base md:text-2xl font-extralight text-center">
+						Our web development approach ensures that users glide through your site with ease and
+						efficiency, fostering engagement and satisfaction.
+					</p>
+				</div>
+			</div>
+
+			<div
+				class="grid place-items-center grid-cols-1 md:grid-cols-3 w-full gap-5 lg:gap-10 p-1 lg:p-5"
+			>
+				<div class="float-card">
+					<Bulb size="100" strokeWidth="0.5" class="w-full" />
+					<h2 class="h2-def text-center mb-5">Branding Integration</h2>
+					<ul class="ul-def !ml-5 !text-base uppercase">
+						<li>Harmonized Color Schemes</li>
+						<li>Consistent Visual Identity</li>
+						<li>Typography Consistency</li>
+						<li>Logo Design</li>
+						<li>Brand Messaging</li>
+					</ul>
+				</div>
+				<div class="float-card">
+					<Camera size="100" strokeWidth="0.5" class="w-full" />
+					<h2 class="h2-def text-center mb-5">Photography & Images</h2>
+					<ul class="ul-def !ml-5 !text-base uppercase">
+						<li>Capturing Visual Stories</li>
+						<li>Narrative Scene Setting</li>
+						<li>High-Resolution Asset Selection</li>
+						<li>Visual Content SEO</li>
+						<li>AI Images</li>
+					</ul>
+				</div>
+				<div class="float-card">
+					<Devices2 size="100" strokeWidth="0.5" class="w-full" />
+					<h2 class="h2-def text-center mb-5">UI Design</h2>
+					<ul class="ul-def !ml-5 !text-base uppercase">
+						<li>Consistant Color Themes</li>
+						<li>Light / Dark Mode Themes</li>
+						<li>3 Color Design based on branding</li>
+						<li>Internal and External links for SEO</li>
+						<li>AI assistant for site features</li>
+					</ul>
+				</div>
+			</div>
+
+			<!-- SEO -->
 		</div>
 
 		<Footer class="hidden md:flex" />
@@ -82,8 +139,28 @@
 <AiUi />
 
 <style lang="postcss">
+	.h2-def {
+		@apply text-2xl md:text-4xl font-extralight;
+	}
+
+	.h1-def {
+		@apply text-4xl md:text-6xl text-center font-extralight uppercase;
+	}
+
+	.p-def {
+		@apply text-base md:text-xl font-extralight;
+	}
+
+	.ul-def {
+		@apply text-base font-bold md:list-disc flex flex-col gap-3 my-5 md:ml-5;
+	}
+
 	.custom-card {
-		@apply relative z-[1] w-full h-fit bg-tertiary-500 bg-opacity-20;
+		@apply relative z-[1] w-full h-fit  bg-opacity-20 bg-tertiary-500;
+	}
+
+	.float-card {
+		@apply flex flex-col gap-2 bg-secondary-900 bg-opacity-25 border-[1px] border-secondary-600 rounded-lg hover:shadow-xl shadow-white px-5 lg:px-10 py-1 lg:py-5 w-full h-full;
 	}
 
 	.img-border {
