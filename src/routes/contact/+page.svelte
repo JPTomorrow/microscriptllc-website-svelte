@@ -22,7 +22,11 @@
 	});
 </script>
 
-<Seo title="Contact Us" description="The contact page of {PUBLIC_BRAND_NAME}" type="WebPage" />
+<Seo
+	title="contact us for a quote"
+	description="The contact page of {PUBLIC_BRAND_NAME}"
+	type="WebPage"
+/>
 
 <div in:fade|global={{ duration: 200 }} class="animated-space-bg">
 	<div bind:this={outer} class="page-inner-scroll-container">

@@ -25,7 +25,11 @@
 	});
 </script>
 
-<Seo title="Home" description="The homepage of {PUBLIC_BRAND_NAME}" type="WebSite" />
+<Seo
+	title="build your companies web presence with our expertise"
+	description="The homepage of {PUBLIC_BRAND_NAME}"
+	type="WebSite"
+/>
 
 <div in:fade|global={{ duration: 200 }} class="animated-space-bg">
 	<div bind:this={outer} class="page-inner-scroll-container pt-[85px]">

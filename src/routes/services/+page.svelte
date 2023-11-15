@@ -6,7 +6,7 @@
 	import Projectmodal from '$lib/projectmodal.svelte';
 	import Seo from '$lib/seo.svelte';
 	import AiUi from '$lib/ai-ui.svelte';
-	import { ArrowRightRhombus, Bulb, Camera, DeviceDesktop, Devices2 } from 'tabler-icons-svelte';
+	import { ArrowRightRhombus, Bulb, Camera, Devices2 } from 'tabler-icons-svelte';
 
 	// capture scroll to hide header
 	let outer: HTMLDivElement;
@@ -19,8 +19,8 @@
 </script>
 
 <Seo
-	title="Our Services"
-	description="A page showing the web development services MicroScript offer."
+	title="here are the services we offer"
+	description="A page showing the web development services MicroScript LLC offers"
 	type="WebPage"
 />
 
@@ -39,7 +39,7 @@
 			<!-- Web Development Service -->
 			<div
 				id="web-dev-service"
-				class="flex custom-card gap-5 py-10 px-10 mt-10 border-t-[1px] border-secondary-700"
+				class="flex custom-card bg-tertiary-500 gap-5 py-10 px-10 mt-10 border-t-[1px] border-secondary-700"
 			>
 				<div class="flex flex-col gap-6 lg:gap-3 w-full lg:w-1/2 justify-between">
 					<div class="flex flex-col gap-3 text-center md:text-left items-center md:items-start">
@@ -79,7 +79,7 @@
 			</div>
 
 			<!-- User Experience -->
-			<div class="w-full gap-5 py-10 px-10 border-t-[1px] border-secondary-700">
+			<div id="user-xp" class="w-full gap-5 py-10 px-10 border-t-[1px] border-secondary-700">
 				<div class="flex flex-col items-center gap-5">
 					<h1 class="h1-def">User Experience</h1>
 					<div class="h-[1px] w-2/3 md:w-1/6 bg-primary-300" />
@@ -128,7 +128,116 @@
 				</div>
 			</div>
 
+			<!-- Website Statistics -->
+			<div class="pt-std w-full gap-5 mx-10">
+				<div class="flex flex-col items-center gap-5">
+					<p class="w-full md:w-full text-base md:text-2xl font-light text-center">
+						Alluring Branding + Website Performance + Professional Maintenance = Improved Business
+						Growth
+					</p>
+				</div>
+				<div
+					class="grid grid-cols-1 md:grid-cols-3 gap-24 justify-between px-5 md:px-20 py-10 mt-16 bg-primary-900 bg-opacity-70 border-t-[1px] border-primary-300"
+				>
+					<div class="flex flex-col items-center text-center">
+						<div class="flex gap-1 justify-start">
+							<h1 class="text-9xl font-bold">23</h1>
+							<p class="text-3xl">%</p>
+						</div>
+
+						<p class="w-fit">
+							Presenting a brand consistently across all platforms can increase revenue by up to
+							23%.
+						</p>
+					</div>
+					<div class="flex flex-col items-center text-center">
+						<div class="flex gap-1 justify-start">
+							<h1 class="text-9xl font-bold">50</h1>
+							<p class="text-3xl">%</p>
+						</div>
+
+						<p class="w-fit">
+							Poor website user experience drives almost 50% of users to go with competitors
+							instead.
+						</p>
+					</div>
+					<div class="flex flex-col items-center text-center">
+						<div class="flex gap-1 justify-start">
+							<h1 class="text-9xl font-bold">40</h1>
+							<p class="text-3xl">%</p>
+						</div>
+
+						<p class="w-fit">Nearly 40% of people will stop engaging with a slow website.</p>
+					</div>
+				</div>
+			</div>
+
 			<!-- SEO -->
+			<div id="user-xp" class="w-full gap-5 py-10 px-10 border-t-[1px] border-secondary-700">
+				<div class="flex flex-col items-center gap-5">
+					<h1 class="h1-def">SEO</h1>
+					<div class="h-[1px] w-2/3 md:w-1/6 bg-primary-300" />
+					<p class="w-full md:w-3/4 text-base md:text-2xl font-extralight text-center">
+						<strong class="text-2xl text-tertiary-200">Search Engine Optimization</strong> that will
+						ensure your website stays relevant to modern search engines. After all, what good is a website
+						if noone visits it?
+					</p>
+				</div>
+			</div>
+
+			<div
+				id="seo-service"
+				class="flex custom-card bg-secondary-500 gap-5 py-10 px-10 border-t-[1px] border-tertiary-700"
+			>
+				<div class="flex flex-col gap-6 lg:gap-3 w-full lg:w-1/2 justify-between">
+					<div class="flex flex-col gap-3 text-center md:text-left items-center md:items-start">
+						<h2 class="h2-def">Code Optimizations</h2>
+						<div class="h-[1px] w-4/6 bg-tertiary-300" />
+						<p class="p-def">
+							In order to achieve excellent SEO, our code meets the highest standards to ensure that
+							you website stays relevant to search engines, and that your SEO ranking remains
+							uneffected as the site grows in size and features.
+						</p>
+						<ul class="ul-def">
+							<li>
+								<a
+									href="https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data"
+									class="simple-link"
+									target="_blank"
+								>
+									Structured Data
+								</a> helps search engines recognize webpage content that is hard to parse.
+							</li>
+							<li>
+								<a
+									href="https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview"
+									class="simple-link"
+									target="_blank"
+								>
+									Sitemaps
+								</a> helps clearly map your website for search engines to crawl.
+							</li>
+							<li>Custom solutions ranging from e-commerce sites to web applications.</li>
+							<li>Focus on creating sites that align with clients' business goals.</li>
+						</ul>
+					</div>
+				</div>
+				<div
+					class="hidden lg:block img-border w-1/2 border-secondary-300 rounded-sm transition-all duration-150 hover:scale-[101%] hover:shadow-2xl"
+				>
+					<div class="img-border border-secondary-500">
+						<div class="img-border border-secondary-900">
+							<img
+								src="/images/services/web-dev-service.webp"
+								alt="Web Development"
+								class="rounded-sm shadow-black aspect-[1440/969]"
+							/>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- AI Assistant -->
 		</div>
 
 		<Footer class="hidden md:flex" />
@@ -156,7 +265,7 @@
 	}
 
 	.custom-card {
-		@apply relative z-[1] w-full h-fit  bg-opacity-20 bg-tertiary-500;
+		@apply relative z-[1] w-full h-fit  bg-opacity-20;
 	}
 
 	.float-card {
@@ -165,5 +274,13 @@
 
 	.img-border {
 		@apply border-b-[10px] border-r-[5px] border-l-[1px] border-t-[1px] h-fit;
+	}
+
+	.pt-std {
+		@apply pt-10;
+	}
+
+	.simple-link {
+		@apply text-secondary-500 underline underline-offset-2 hover:text-secondary-300 transition-colors duration-150;
 	}
 </style>

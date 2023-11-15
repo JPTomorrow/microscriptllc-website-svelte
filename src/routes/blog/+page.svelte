@@ -160,8 +160,8 @@
 </script>
 
 <Seo
-	title="Blog"
-	description="The blog page. Random thoughts by Justin Morrow, the co-founder of {PUBLIC_BRAND_NAME}."
+	title="web development tech blog by Justin Morrow"
+	description="The blog page. web development topics by Justin Morrow, the co-founder of {PUBLIC_BRAND_NAME}."
 	type="WebPage"
 />
 

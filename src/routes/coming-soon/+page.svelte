@@ -3,7 +3,7 @@
 	import { fade } from 'svelte/transition';
 </script>
 
-<Seo title="Coming Soon" description="A coming soon page." type="WebPage" />
+<Seo title="coming soon" description="A coming soon page" type="WebPage" />
 
 <div
 	in:fade|global={{ duration: 200 }}

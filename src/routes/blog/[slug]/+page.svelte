@@ -29,8 +29,8 @@
 </script>
 
 <Seo
-	title="Justins Talks About Tech - Blog Article"
-	description={post.headline}
+	title={post.headline}
+	description="a tech blog post about {post.headline}"
 	type="WebPage"
 	isArticle
 	publishedTime={createdAt}

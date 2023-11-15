@@ -24,7 +24,7 @@
 </script>
 
 <svelte:head>
-	<title>{title} | {PUBLIC_BRAND_NAME}</title>
+	<title>{PUBLIC_BRAND_NAME}, {title}</title>
 	<meta
 		name="keywords"
 		content="Software Engineer, Software Developer, Web Development, Web Developer, Web Designer, Web Engineer, OpenAI, ai, ai consulting, photography, image generation, SEO"

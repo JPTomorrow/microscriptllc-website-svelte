@@ -15,7 +15,11 @@
 	});
 </script>
 
-<Seo title="Privacy Policy" description="The privacy policy page." type="WebPage" />
+<Seo
+	title="privacy policy for MicroScript LLC"
+	description="The privacy policy page"
+	type="WebPage"
+/>
 
 <div in:fade|global={{ duration: 200 }} class="animated-space-bg">
 	<div bind:this={outer} class="page-inner-scroll-container pt-[85px]">
