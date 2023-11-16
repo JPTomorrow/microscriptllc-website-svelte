@@ -173,7 +173,7 @@
 			</div>
 
 			<!-- SEO -->
-			<div id="user-xp" class="w-full gap-5 py-10 px-10 border-t-[1px] border-secondary-700">
+			<div id="seo-service" class="w-full gap-5 py-10 px-10 border-t-[1px] border-secondary-700">
 				<div class="flex flex-col items-center gap-5">
 					<h1 class="h1-def">SEO</h1>
 					<div class="h-[1px] w-2/3 md:w-1/6 bg-primary-300" />
@@ -185,8 +185,8 @@
 				</div>
 			</div>
 
+			<!-- Code Optimizations -->
 			<div
-				id="seo-service"
 				class="flex custom-card bg-secondary-500 gap-5 py-10 px-10 border-t-[1px] border-tertiary-700"
 			>
 				<div class="flex flex-col gap-6 lg:gap-3 w-full lg:w-1/2 justify-between">
@@ -217,19 +217,26 @@
 									Sitemaps
 								</a> helps clearly map your website for search engines to crawl.
 							</li>
-							<li>Custom solutions ranging from e-commerce sites to web applications.</li>
-							<li>Focus on creating sites that align with clients' business goals.</li>
+							<li>
+								<a
+									href="https://developer.chrome.com/docs/lighthouse/overview/"
+									class="simple-link"
+									target="_blank"
+								>
+									Lighthouse Tests
+								</a> are a set of metrics used by Google to determine website performance and user experience.
+							</li>
 						</ul>
 					</div>
 				</div>
 				<div
-					class="hidden lg:block img-border w-1/2 border-secondary-300 rounded-sm transition-all duration-150 hover:scale-[101%] hover:shadow-2xl"
+					class="hidden lg:block img-border w-1/2 border-primary-300 rounded-sm transition-all duration-150 hover:scale-[101%] hover:shadow-2xl"
 				>
-					<div class="img-border border-secondary-500">
-						<div class="img-border border-secondary-900">
+					<div class="img-border border-primary-500">
+						<div class="img-border border-primary-900">
 							<img
-								src="/images/services/web-dev-service.webp"
-								alt="Web Development"
+								src="/images/services/lighthouse-test.webp"
+								alt="Code Optimization"
 								class="rounded-sm shadow-black aspect-[1440/969]"
 							/>
 						</div>
@@ -237,7 +244,110 @@
 				</div>
 			</div>
 
-			<!-- AI Assistant -->
+			<!-- <div
+				class="flex custom-card bg-tertiary-500 gap-10 py-10 px-10 border-t-[1px] border-tertiary-700"
+			>
+				<div
+					class="hidden lg:block img-border-2 w-1/2 border-secondary-300 rounded-sm transition-all duration-150 hover:scale-[101%] hover:shadow-2xl"
+				>
+					<div class="img-border-2 border-secondary-500">
+						<div class="img-border-2 border-secondary-900">
+							<img
+								src="/images/services/lighthouse-test.webp"
+								alt="Code Optimization"
+								class="rounded-sm shadow-black aspect-[1440/969]"
+							/>
+						</div>
+					</div>
+				</div>
+				<div class="flex flex-col gap-6 lg:gap-3 w-full lg:w-1/2 justify-between">
+					<div class="flex flex-col gap-3 text-center md:text-left items-center md:items-start">
+						<h2 class="h2-def">Code Optimizations</h2>
+						<div class="h-[1px] w-4/6 bg-tertiary-300" />
+						<p class="p-def">
+							In order to achieve excellent SEO, our code meets the highest standards to ensure that
+							you website stays relevant to search engines, and that your SEO ranking remains
+							uneffected as the site grows in size and features.
+						</p>
+						<ul class="ul-def">
+							<li>
+								<a
+									href="https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data"
+									class="simple-link"
+									target="_blank"
+								>
+									Structured Data
+								</a> helps search engines recognize webpage content that is hard to parse.
+							</li>
+							<li>
+								<a
+									href="https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview"
+									class="simple-link"
+									target="_blank"
+								>
+									Sitemaps
+								</a> helps clearly map your website for search engines to crawl.
+							</li>
+							<li>
+								<a
+									href="https://developer.chrome.com/docs/lighthouse/overview/"
+									class="simple-link"
+									target="_blank"
+								>
+									Lighthouse Tests
+								</a> are a set of metrics used by Google to determine website performance and user experience.
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div> -->
+
+			<!-- AI Integrations -->
+			<div id="ai-service" class="w-full gap-5 py-10 px-10 border-t-[1px] border-secondary-700">
+				<div class="flex flex-col items-center gap-5">
+					<h1 class="h1-def">AI Integrations</h1>
+					<div class="h-[1px] w-2/3 md:w-1/6 bg-primary-300" />
+					<p class="w-full md:w-3/4 text-base md:text-2xl font-extralight text-center">
+						We offer a wide variety of <strong class="text-2xl text-tertiary-200"
+							>highly custom tailored solutions</strong
+						> for building AI into your website and business endeavours.
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="grid grid-cols-1 md:grid-cols-3 gap-5 w-full md:mb-10">
+			<div class="ai-card ai-card-border-1">
+				<h2 class="h2-def mb-5">What features does AI offer?</h2>
+				<ul class="ul-def !ml-5 !text-base uppercase">
+					<li>AI chatbots for customer support.</li>
+					<li>Personalized, AI-driven marketing automation.</li>
+					<li>AI-enhanced website accessibility.</li>
+					<li>Automating routine tasks efficiently.</li>
+					<li>Optimized SEO with AI analytics.</li>
+				</ul>
+				<a class="btn1 !w-full md:!w-fit" href="/contact/?quote=true#big-contact">
+					<p class="text-sm uppercase mr-3 self-end">Get a Quote</p>
+					<ArrowRightRhombus />
+				</a>
+			</div>
+
+			<img
+				src="/images/services/ai-business.webp"
+				class="hidden md:block h-full object-cover border-x-[2px] rounded-md border-tertiary-300"
+				alt="AI services"
+			/>
+
+			<div class="ai-card ai-card-border-2">
+				<h2 class="h2-def mb-5">How can AI grow my business?</h2>
+				<ul class="ul-def !ml-5 !text-base uppercase">
+					<li>Enhances sales and customer loyalty.</li>
+					<li>Cuts marketing and staffing costs.</li>
+					<li>Boosts customer engagement and conversions.</li>
+					<li>Lowers operational expenses, increases profitability.</li>
+					<li>Informs effective strategic business decisions.</li>
+				</ul>
+			</div>
 		</div>
 
 		<Footer class="hidden md:flex" />
@@ -272,9 +382,29 @@
 		@apply flex flex-col gap-2 bg-secondary-900 bg-opacity-25 border-[1px] border-secondary-600 rounded-lg hover:shadow-xl shadow-white px-5 lg:px-10 py-1 lg:py-5 w-full h-full;
 	}
 
+	.ai-card {
+		@apply flex flex-col gap-2 bg-tertiary-900 bg-opacity-25 border-tertiary-600 hover:shadow-xl shadow-white px-2 text-center md:text-left lg:px-10 py-5 lg:py-5 w-full h-full;
+	}
+
+	.ai-card li {
+		@apply text-base md:text-lg;
+	}
+
+	.ai-card-border-1 {
+		@apply md:border-r-[1px] border-y-[1px] md:rounded-r-lg;
+	}
+
+	.ai-card-border-2 {
+		@apply md:border-l-[1px] border-y-[1px] md:rounded-l-lg;
+	}
+
 	.img-border {
 		@apply border-b-[10px] border-r-[5px] border-l-[1px] border-t-[1px] h-fit;
 	}
+
+	/* .img-border-2 {
+		@apply border-b-[10px] border-l-[5px] border-r-[1px] border-t-[1px] h-fit;
+	} */
 
 	.pt-std {
 		@apply pt-10;

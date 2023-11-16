@@ -76,6 +76,7 @@
 						We handle everything from complicated e-commerce websites down to simple company
 						information websites. We also do feature integrations with existing websites.
 					</p>
+					<a slot="read-more" href="/services/#web-dev-service">Read More</a>
 				</ServiceCard>
 				<!-- (REWRITE BLURB) -->
 				<ServiceCard>
@@ -84,6 +85,7 @@
 						Our websites are modern and responsive. This means you get a great website at a great
 						price for desktops and mobile platforms.
 					</p>
+					<a slot="read-more" href="/services/#user-xp">Read More</a>
 				</ServiceCard>
 				<!-- (REWRITE BLURB) -->
 				<ServiceCard>
@@ -92,6 +94,7 @@
 						Need a photographer? We are happy to offer professional photography services to capture
 						great images for your website and general marketing materials.
 					</p>
+					<a slot="read-more" href="/services/#user-xp">Read More</a>
 				</ServiceCard>
 				<!-- (REWRITE BLURB) -->
 				<ServiceCard>
@@ -101,6 +104,7 @@
 						From the ground up, we can help your business achieve new levels of success by appealing
 						to new customers and getting more clicks online.
 					</p>
+					<a slot="read-more" href="/services/#seo-service">Read More</a>
 				</ServiceCard>
 				<!-- (REWRITE BLURB) -->
 				<ServiceCard>
@@ -110,6 +114,7 @@
 						designed to be easy to navigate and use on phones and tablets. Ask about responsive web
 						design today.
 					</p>
+					<a slot="read-more" href="/services/#user-xp">Read More</a>
 				</ServiceCard>
 				<ServiceCard>
 					<h1 slot="header">AI Integrations</h1>
@@ -118,6 +123,7 @@
 						customer support but don't have the money to hire a person? We can tailor an AI
 						assistant to help users who visit your website.
 					</p>
+					<a slot="read-more" href="/services/#ai-service">Read More</a>
 				</ServiceCard>
 			</div>
 		</div>
