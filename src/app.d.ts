@@ -11,6 +11,7 @@ declare global {
 	interface Window {
 		dataLayer: any[];
 		gtag: (...args: any[]) => void;
+		gtag_report_conversion: (...args: any[]) => void;
 	}
 
 	interface NavLink {
