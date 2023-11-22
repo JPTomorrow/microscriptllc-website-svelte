@@ -135,6 +135,7 @@
 			use:enhance
 			action="/api/contact/email"
 			on:submit|preventDefault={() => sub()}
+			name="microscript-contact-form"
 		>
 			<h1 class="text-2xl md:text-3xl">{headerText}</h1>
 			<input
@@ -162,8 +163,9 @@
 				<button
 					class="btn1"
 					on:click={() => window.gtag_report_conversion(window.location)}
-					type="submit">Submit</button
-				>
+					type="submit"
+					>Submit
+				</button>
 			</div>
 		</form>
 	{/if}
