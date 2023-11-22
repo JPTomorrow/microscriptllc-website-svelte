@@ -4,7 +4,7 @@
 	<script>
 		window.dataLayer = window.dataLayer || [];
 		window.gtag = function gtag(...args) {
-			window.dataLayer.push(args);
+			window.dataLayer.push(...args);
 		};
 		window.gtag('js', new Date());
 		window.gtag('config', 'G-YWDL76T2MS');
