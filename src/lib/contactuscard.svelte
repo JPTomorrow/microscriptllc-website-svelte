@@ -69,6 +69,19 @@
 			isSending = false;
 		}, 2000);
 	}
+
+	function gtag_report_conversion(url: any) {
+		var callback = function () {
+			if (typeof url != 'undefined') {
+				window.location = url;
+			}
+		};
+		window.gtag('event', 'conversion', {
+			send_to: 'AW-11414972997/DFOGCOvo7vcYEMXUisMq',
+			event_callback: callback
+		});
+		return false;
+	}
 </script>
 
 <div in:fade={{ duration: 200 }} class="{clazz} flex flex-col justify-center items-center">
@@ -159,7 +172,9 @@
 				name="msg"
 			/>
 			<div class="flex items-center gap-3">
-				<button class="btn1" type="submit">Submit</button>
+				<button class="btn1" on:click={() => gtag_report_conversion(window.location)} type="submit"
+					>Submit</button
+				>
 			</div>
 		</form>
 	{/if}

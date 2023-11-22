@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { PUBLIC_BRAND_NAME } from '$env/static/public';
 	import { page } from '$app/stores';
+	import { onMount } from 'svelte';
 
 	export let title: string;
 	export let description: string;
@@ -21,6 +22,8 @@
 	const metaDescription = `${
 		description + '. '
 	}Unlock your business potential with MicroScript LLC's top-notch web design services as well as exciting new AI integrations. Transform your online presence today. Learn more now!`;
+
+	onMount(() => {});
 </script>
 
 <svelte:head>
@@ -54,23 +57,11 @@
 		<meta name="article:published_time" content={publishedTime.toISOString().split('T')[0]} />
 	{/if}
 
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-YWDL76T2MS">
-	</script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag() {
-			dataLayer.push(arguments);
-		}
-		gtag('js', new Date());
-
-		gtag('config', 'G-YWDL76T2MS');
-	</script>
-
 	{@html `<script type="application/ld+json">
                 {
                     "@context": "https://schema.org",
                     "@type": "${type}",
-					"name": "${title}",
+					"name": "${PUBLIC_BRAND_NAME}",
                     "description": "${description}",
                     "url": "${url}"
                 }

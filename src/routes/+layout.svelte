@@ -16,7 +16,10 @@
 
 	import { AppShell } from '@skeletonlabs/skeleton';
 	import Header from '$lib/header.svelte';
+	import GoogleAds from '$lib/google-ads.svelte';
 </script>
+
+<GoogleAds />
 
 <AppShell>
 	<svelte:fragment slot="header"><Header /></svelte:fragment>
