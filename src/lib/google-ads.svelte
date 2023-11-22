@@ -5,17 +5,15 @@
 		window.gtag = function gtag() {
 			dataLayer.push(arguments);
 		};
-		gtag('js', new Date());
+		window.gtag('js', new Date());
 
-		gtag('config', 'G-YWDL76T2MS');
+		window.gtag('config', 'G-YWDL76T2MS');
 	</script>
 
 	<script>
 		window.gtag_report_conversion = function gtag_report_conversion(url) {
 			var callback = function () {
-				if (typeof url != 'undefined') {
-					window.location = url;
-				}
+				console.log('gtag conversion');
 			};
 			window.gtag('event', 'conversion', {
 				send_to: 'AW-11414972997/DFOGCOvo7vcYEMXUisMq',
