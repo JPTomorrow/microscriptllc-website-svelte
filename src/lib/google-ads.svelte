@@ -8,7 +8,7 @@
 			console.log(`gtag: ${window.dataLayer}`);
 		};
 		window.gtag('js', new Date());
-		window.gtag('config', 'G-YWDL76T2MS');
+		window.gtag('config', 'AW-11414972997');
 	</script>
 
 	<script>
