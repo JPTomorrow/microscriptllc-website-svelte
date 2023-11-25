@@ -1,9 +1,16 @@
 {
 	"projects": [
 		{
+			"name": "Mock-2-HTML",
+			"img": "/images/mock2html.webp",
+			"skills": ["SvelteKit", "TailwindCSS", "DaisyUI", "OpenAI API"],
+			"description": "A webapp for converting mockups to HTML code. It utilizes OpenAI API Computer vision to analyse png mockup images and generates the HTML code that represents the UI in the mockup image.",
+			"site": "https://mock2html.site"
+		},
+		{
 			"name": "Zen and Wellness CBD",
 			"img": "/images/zenandwellness.webp",
-			"skills": ["SvelteKit", "Turso", "TailwindCSS", "Drizzle ORM", "OpenAI API"],
+			"skills": ["SvelteKit", "Turso", "TailwindCSS", "Drizzle ORM", "OpenAI API", "SkeletonUI"],
 			"description": "This website services a CBD / Kratom dispensary and has interesting ecommerce features that are integrated directely into an AI CBD expert system meant to help the user in choosing the correct products to purchase.",
 			"site": "https://www.zenandwellnesscbd.com"
 		},
