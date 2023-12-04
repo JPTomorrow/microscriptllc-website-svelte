@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { blur } from 'svelte/transition';
-	import { Send } from 'tabler-icons-svelte';
+	import { Robot, Send } from 'tabler-icons-svelte';
 	import Trackintext from '$lib/effects/trackintext.svelte';
 	import { useChat } from 'ai/svelte';
 	import Time from 'svelte-time';
@@ -37,17 +37,12 @@
 
 	const preMessage: ChatCompletionMessage = {
 		role: 'assistant',
-		content: `Try a seamless journey through the innovative world \
-		of web development with GAIA (Guided AI Assistant), your \
-		intelligent companion, right here at MicroScript!
+		content: `GAIA (Guided AI Assistant) offers a taste of MicroScript's \
+		artificial intelligence integrations.
 		
 		Whether you have questions about our past projects, our \
 		team, our expertise, or any services offered by \
-		MicroScript, GAIA is here to assist. From detailed \
-		explanations about our web development methodologies to \
-		insights into our company’s ethos and journey, GAIA is \
-		your go-to source for all information related to \
-		MicroScript.`
+		MicroScript, GAIA is here to assist.`
 	};
 </script>
 
@@ -111,7 +106,7 @@
 			in:blur|global
 			class="btn1 fixed top-[90%] right-[4%] lg:right-[2%] bg-secondary-900 !p-2 !px-3 !z-[1]"
 		>
-			AI
+			<Robot />
 		</button>
 	{/if}
 {/key}
@@ -137,6 +132,6 @@
 	}
 
 	.feed-msg {
-		@apply bg-secondary-500 text-secondary-900 rounded-xl px-3 py-3;
+		@apply bg-secondary-500 text-secondary-900 rounded-xl px-3 py-3 font-semibold;
 	}
 </style>
