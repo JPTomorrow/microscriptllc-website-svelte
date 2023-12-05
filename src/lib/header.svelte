@@ -56,7 +56,7 @@
 	<div class="drawer-content" />
 	<div class="drawer-side">
 		<label for="my-drawer" aria-label="close sidebar" class="drawer-overlay" />
-		<div class="flex flex-col gap-5 bg-base-100 p-5 h-screen">
+		<div class="hidescroll flex flex-col gap-5 bg-base-100 p-5 h-full overflow-y-auto">
 			<div class="flex w-full justify-between items-center gap-5">
 				<Logo />
 			</div>
@@ -64,3 +64,10 @@
 		</div>
 	</div>
 </div>
+
+<style>
+	.hidescroll {
+		-ms-overflow-style: none; /* IE and Edge */
+		scrollbar-width: none; /* Firefox */
+	}
+</style>
