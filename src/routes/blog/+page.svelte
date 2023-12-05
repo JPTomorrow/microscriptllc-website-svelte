@@ -8,7 +8,7 @@
 	import { onMount } from 'svelte';
 	import { fade } from 'svelte/transition';
 	import { dev } from '$app/environment';
-	import { ConicGradient, type ConicStop } from '@skeletonlabs/skeleton';
+	// import { ConicGradient, type ConicStop } from '@skeletonlabs/skeleton';
 	import { Trash } from 'tabler-icons-svelte';
 	import { invalidateAll } from '$app/navigation';
 	import { formBlogPostSlug } from '$lib/scripts/blog';
@@ -144,10 +144,10 @@
 		return date.toLocaleDateString();
 	}
 
-	const conicStops: ConicStop[] = [
-		{ color: 'transparent', start: 0, end: 25 },
-		{ color: 'rgb(var(--color-primary))', start: 75, end: 100 }
-	];
+	// const conicStops: ConicStop[] = [
+	// 	{ color: 'transparent', start: 0, end: 25 },
+	// 	{ color: 'rgb(var(--color-primary))', start: 75, end: 100 }
+	// ];
 
 	// capture scroll to hide header
 	let outer: HTMLDivElement;
@@ -220,9 +220,9 @@
 					<button disabled={loading} class="btn1 bg-secondary bg-opacity-75" on:click={addPost}>
 						Publish
 					</button>
-					{#if loading}
+					<!-- {#if loading}
 						<ConicGradient width="w-5 ml-4" stops={conicStops} spin />
-					{/if}
+					{/if} -->
 				</div>
 			</article>
 		{/if}
