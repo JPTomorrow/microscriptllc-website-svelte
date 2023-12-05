@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { Avatar } from '@skeletonlabs/skeleton';
 	import { onMount } from 'svelte';
 	import { scale, blur } from 'svelte/transition';
 
@@ -28,15 +27,16 @@
 	});
 </script>
 
-<div class="hidden md:flex w-full flex-col justify-center items-center">
+<div class="hidden md:flex w-full flex-col gap-5 justify-center items-center">
 	{#if visible}
 		<div in:scale|global={{ delay: 50, duration: 600 }}>
-			<Avatar
-				src={employeeImage}
-				width="w-[150px]"
-				rounded="rounded-full"
-				class="border-[2px] border-secondary-400 shadow-md shadow-secondary-800 mb-3 transform transition-transform duration-150"
-			/>
+			<div class="avatar mb-3">
+				<div
+					class="w-36 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 shadow-md shadow-secondary"
+				>
+					<img src={employeeImage} alt="justin-morrow-badge" />
+				</div>
+			</div>
 		</div>
 		<div class="flex flex-col font-thin">
 			<div class="flex items-center justify-center">

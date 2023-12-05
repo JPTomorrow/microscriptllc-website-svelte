@@ -1,7 +1,5 @@
 <script lang="ts">
 	import { Menu2, X } from 'tabler-icons-svelte';
-	import { Drawer, LightSwitch } from '@skeletonlabs/skeleton';
-	import { drawerStore } from '@skeletonlabs/skeleton';
 	import { slide } from 'svelte/transition';
 	import { onMount } from 'svelte';
 
@@ -17,22 +15,13 @@
 	onMount(() => {
 		playAnim = true;
 	});
-
-	// Open the drawer:
-	function drawerOpen(): void {
-		drawerStore.open();
-	}
-
-	function drawerClose(): void {
-		drawerStore.close();
-	}
 </script>
 
 <!-- <h1 class="absolute">{$scrollYStore}</h1> -->
 {#if $scrollYStore <= 0}
-	<div
+	<nav
 		out:slide={{ axis: 'y', duration: 200 }}
-		class="fixed hidden lg:flex w-screen bg-transparent justify-between p-5"
+		class="fixed hidden lg:flex w-screen bg-transparent justify-between p-5 z-20"
 	>
 		{#if playAnim}
 			<Logo />
@@ -44,45 +33,34 @@
 				>
 					<Linkedin />
 					<Github />
-					<!-- REMOVING LIGHT SWITCH UNTIL LIGHT THEME IS IMPLEMENTED -->
-					<!-- <div class="border-[1px] border-primary-200 rounded-full p-[2px]">
-						<LightSwitch rounded="rounded-full" />
-					</div> -->
 				</div>
 			</div>
 		{/if}
-	</div>
+	</nav>
 {/if}
 <div
-	class="fixed lg:hidden flex w-full justify-between items-center p-5 px-5 bg-black bg-opacity-30 backdrop-blur-sm"
+	class="fixed lg:hidden flex w-full justify-between items-center p-5 px-5 bg-black bg-opacity-30 backdrop-blur-sm z-20"
 >
 	<Logo />
-	<button aria-label="hamburger" class="flex items-center" on:click={drawerOpen}>
-		<Menu2
-			class="rounded-md p-1 border-[1px] bg-secondary-500 bg-opacity-60 hover:bg-primary-300 hover:bg-opacity-60"
+	<label for="my-drawer" class="drawer-button"
+		><Menu2
+			class="rounded-md p-1 border-[1px] bg-secondary bg-opacity-60 hover:bg-primary hover:bg-opacity-60"
 			size="32"
 			strokeWidth="2"
-		/>
-	</button>
+		/></label
+	>
 </div>
 
-<Drawer position="bottom" height="h-5/6">
-	<div class="w-full flex flex-col items-center justify-center p-5 gap-5">
-		<div class="flex w-full justify-between items-center gap-5">
-			<Logo />
-			<button
-				on:click={drawerClose}
-				class="border-[1px] border-primary-200 rounded-full p-1"
-				aria-label="exit-hamburger"
-			>
-				<X strokeWidth="1" size="22" />
-			</button>
-			<!-- REMOVING LIGHT SWITCH UNTIL LIGHT THEME IS IMPLEMENTED -->
-			<!-- <div class="h-fit border-[1px] border-primary-200 rounded-full p-[2px]">
-				<LightSwitch rounded="rounded-full" />
-			</div> -->
+<div class="drawer z-30">
+	<input id="my-drawer" type="checkbox" class="drawer-toggle" />
+	<div class="drawer-content" />
+	<div class="drawer-side">
+		<label for="my-drawer" aria-label="close sidebar" class="drawer-overlay" />
+		<div class="flex flex-col gap-5 bg-base-100 p-5 h-screen">
+			<div class="flex w-full justify-between items-center gap-5">
+				<Logo />
+			</div>
+			<FooterInfo />
 		</div>
-		<!-- <Navlinks /> -->
-		<FooterInfo />
 	</div>
-</Drawer>
+</div>

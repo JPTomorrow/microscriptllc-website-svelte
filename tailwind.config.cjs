@@ -1,29 +1,35 @@
-const { url } = require('inspector');
-
 /** @type {import('tailwindcss').Config}*/
 const config = {
-	// 1. Apply the dark mode class setting:
-	darkMode: 'class',
-	content: [
-		'./src/**/*.{html,js,svelte,ts}',
-		// 2. Append the path for the Skeleton NPM package and files:
-		require('path').join(require.resolve(
-			'@skeletonlabs/skeleton'),
-			'../**/*.{html,js,svelte,ts}'
-		)
-	],
+	content: ['./src/**/*.{html,js,svelte,ts}'],
 	theme: {
 		extend: {
 			backgroundImage: {
 				'space-stars': "url('/images/space-stars.webp')"
+			},
+			colors: {
+				'color-primary': 'hsl(var(--p))'
 			}
 		}
 	},
+	daisyui: {
+		themes: [
+			{
+				jade: {
+					primary: '#d0bfad',
+					secondary: '#4a6551',
+					accent: '#f0aa5f',
+					neutral: '#0369a1',
+					'base-100': '#26211d',
+					info: '#a8a29e',
+					success: '#22c55e',
+					warning: '#eab308',
+					error: '#ef4444'
+				}
+			}
+		]
+	},
 
-	plugins: [
-		// 3. Append the Skeleton plugin to the end of this list
-		...require('@skeletonlabs/skeleton/tailwind/skeleton.cjs')()
-	]
+	plugins: [require('daisyui')]
 };
 
 module.exports = config;

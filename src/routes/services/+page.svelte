@@ -29,7 +29,7 @@
 		<div class="flex flex-col items-center justify-center pt-32">
 			<div class="flex flex-col items-center gap-5">
 				<h1 class="h1-def">Our Services</h1>
-				<div class="h-[1px] w-2/3 md:w-1/6 bg-primary-300" />
+				<div class="h-[1px] w-2/3 md:w-1/6 bg-primary" />
 				<p class="w-11/12 md:w-3/4 text-base md:text-2xl font-extralight text-center">
 					We offer a full spectrum of digital services and advanced web features designed to grow
 					your online presence and drive online business sales!
@@ -39,12 +39,12 @@
 			<!-- Web Development Service -->
 			<div
 				id="web-dev-service"
-				class="flex custom-card bg-tertiary-500 gap-5 py-10 px-10 mt-10 border-t-[1px] border-secondary-700"
+				class="flex custom-card bg-neutral gap-5 py-10 px-10 mt-10 border-t-[1px] border-secondary"
 			>
 				<div class="flex flex-col gap-6 lg:gap-3 w-full lg:w-1/2 justify-between">
 					<div class="flex flex-col gap-3 text-center md:text-left items-center md:items-start">
 						<h2 class="h2-def">Web Development</h2>
-						<div class="h-[1px] w-4/6 bg-secondary-700" />
+						<div class="h-[1px] w-4/6 bg-secondary" />
 						<p class="p-def">
 							MicroScript specializes in comprehensive web development services, catering to the
 							needs of businesses looking to establish a robust online presence From e-commerce
@@ -64,10 +64,10 @@
 					</a>
 				</div>
 				<div
-					class="hidden lg:block img-border w-1/2 border-secondary-300 rounded-sm transition-all duration-150 hover:scale-[101%] hover:shadow-2xl"
+					class="hidden lg:block img-border w-1/2 border-secondary rounded-sm transition-all duration-150 hover:scale-[101%] hover:shadow-2xl"
 				>
-					<div class="img-border border-secondary-500">
-						<div class="img-border border-secondary-900">
+					<div class="img-border border-secondary">
+						<div class="img-border border-secondary">
 							<img
 								src="/images/services/web-dev-service.webp"
 								alt="Web Development"
@@ -79,10 +79,10 @@
 			</div>
 
 			<!-- User Experience -->
-			<div id="user-xp" class="w-full gap-5 py-10 px-10 border-t-[1px] border-secondary-700">
+			<div id="user-xp" class="w-full gap-5 py-10 px-10 border-t-[1px] border-secondary">
 				<div class="flex flex-col items-center gap-5">
 					<h1 class="h1-def">User Experience</h1>
-					<div class="h-[1px] w-2/3 md:w-1/6 bg-primary-300" />
+					<div class="h-[1px] w-2/3 md:w-1/6 bg-primary" />
 					<p class="w-full md:w-3/4 text-base md:text-2xl font-extralight text-center">
 						Our web development approach ensures that users glide through your site with ease and
 						efficiency, fostering engagement and satisfaction.
@@ -137,7 +137,7 @@
 					</p>
 				</div>
 				<div
-					class="grid grid-cols-1 md:grid-cols-3 gap-24 justify-between px-5 md:px-20 py-10 mt-16 bg-primary-900 bg-opacity-70 border-t-[1px] border-primary-300"
+					class="grid grid-cols-1 md:grid-cols-3 gap-24 justify-between px-5 md:px-20 py-10 mt-16 bg-accent/70 text-base-100 border-y-[1px] border-primary"
 				>
 					<div class="flex flex-col items-center text-center">
 						<div class="flex gap-1 justify-start">
@@ -173,10 +173,10 @@
 			</div>
 
 			<!-- SEO -->
-			<div id="seo-service" class="w-full gap-5 py-10 px-10 border-t-[1px] border-secondary-700">
+			<div id="seo-service" class="w-full gap-5 py-10 px-10 border-t-[1px] border-secondary">
 				<div class="flex flex-col items-center gap-5">
 					<h1 class="h1-def">SEO</h1>
-					<div class="h-[1px] w-2/3 md:w-1/6 bg-primary-300" />
+					<div class="h-[1px] w-2/3 md:w-1/6 bg-primary" />
 					<p class="w-full md:w-3/4 text-base md:text-2xl font-extralight text-center">
 						<strong class="text-2xl text-tertiary-200">Search Engine Optimization</strong> that will
 						ensure your website stays relevant to modern search engines. After all, what good is a website
@@ -187,12 +187,12 @@
 
 			<!-- Code Optimizations -->
 			<div
-				class="flex custom-card bg-secondary-500 gap-5 py-10 px-10 border-t-[1px] border-tertiary-700"
+				class="flex custom-card bg-secondary gap-5 py-10 px-10 border-t-[1px] border-tertiary-700"
 			>
 				<div class="flex flex-col gap-6 lg:gap-3 w-full lg:w-1/2 justify-between">
 					<div class="flex flex-col gap-3 text-center md:text-left items-center md:items-start">
 						<h2 class="h2-def">Code Optimizations</h2>
-						<div class="h-[1px] w-4/6 bg-tertiary-300" />
+						<div class="h-[1px] w-4/6 bg-neutral" />
 						<p class="p-def">
 							In order to achieve excellent SEO, our code meets the highest standards to ensure that
 							you website stays relevant to search engines, and that your SEO ranking remains
@@ -230,9 +230,9 @@
 					</div>
 				</div>
 				<div
-					class="hidden lg:block img-border w-1/2 border-primary-300 rounded-sm transition-all duration-150 hover:scale-[101%] hover:shadow-2xl"
+					class="hidden lg:block img-border w-1/2 border-primary rounded-sm transition-all duration-150 hover:scale-[101%] hover:shadow-2xl"
 				>
-					<div class="img-border border-primary-500">
+					<div class="img-border border-primary0">
 						<div class="img-border border-primary-900">
 							<img
 								src="/images/services/lighthouse-test.webp"
@@ -244,69 +244,11 @@
 				</div>
 			</div>
 
-			<!-- <div
-				class="flex custom-card bg-tertiary-500 gap-10 py-10 px-10 border-t-[1px] border-tertiary-700"
-			>
-				<div
-					class="hidden lg:block img-border-2 w-1/2 border-secondary-300 rounded-sm transition-all duration-150 hover:scale-[101%] hover:shadow-2xl"
-				>
-					<div class="img-border-2 border-secondary-500">
-						<div class="img-border-2 border-secondary-900">
-							<img
-								src="/images/services/lighthouse-test.webp"
-								alt="Code Optimization"
-								class="rounded-sm shadow-black aspect-[1440/969]"
-							/>
-						</div>
-					</div>
-				</div>
-				<div class="flex flex-col gap-6 lg:gap-3 w-full lg:w-1/2 justify-between">
-					<div class="flex flex-col gap-3 text-center md:text-left items-center md:items-start">
-						<h2 class="h2-def">Code Optimizations</h2>
-						<div class="h-[1px] w-4/6 bg-tertiary-300" />
-						<p class="p-def">
-							In order to achieve excellent SEO, our code meets the highest standards to ensure that
-							you website stays relevant to search engines, and that your SEO ranking remains
-							uneffected as the site grows in size and features.
-						</p>
-						<ul class="ul-def">
-							<li>
-								<a
-									href="https://developers.google.com/search/docs/appearance/structured-data/intro-structured-data"
-									class="simple-link"
-									target="_blank"
-								>
-									Structured Data
-								</a> helps search engines recognize webpage content that is hard to parse.
-							</li>
-							<li>
-								<a
-									href="https://developers.google.com/search/docs/crawling-indexing/sitemaps/overview"
-									class="simple-link"
-									target="_blank"
-								>
-									Sitemaps
-								</a> helps clearly map your website for search engines to crawl.
-							</li>
-							<li>
-								<a
-									href="https://developer.chrome.com/docs/lighthouse/overview/"
-									class="simple-link"
-									target="_blank"
-								>
-									Lighthouse Tests
-								</a> are a set of metrics used by Google to determine website performance and user experience.
-							</li>
-						</ul>
-					</div>
-				</div>
-			</div> -->
-
 			<!-- AI Integrations -->
-			<div id="ai-service" class="w-full gap-5 py-10 px-10 border-t-[1px] border-secondary-700">
+			<div id="ai-service" class="w-full gap-5 py-10 px-10 border-t-[1px] border-secondary">
 				<div class="flex flex-col items-center gap-5">
 					<h1 class="h1-def">AI Integrations</h1>
-					<div class="h-[1px] w-2/3 md:w-1/6 bg-primary-300" />
+					<div class="h-[1px] w-2/3 md:w-1/6 bg-primary" />
 					<p class="w-full md:w-3/4 text-base md:text-2xl font-extralight text-center">
 						We offer a wide variety of <strong class="text-2xl text-tertiary-200"
 							>highly custom tailored solutions</strong
@@ -334,7 +276,7 @@
 
 			<img
 				src="/images/services/ai-business.webp"
-				class="hidden md:block h-full object-cover border-x-[2px] rounded-md border-tertiary-300"
+				class="hidden md:block h-full object-cover border-x-[2px] rounded-md border-neutral"
 				alt="AI services"
 			/>
 
@@ -379,11 +321,11 @@
 	}
 
 	.float-card {
-		@apply flex flex-col gap-2 bg-secondary-900 bg-opacity-25 border-[1px] border-secondary-600 rounded-lg hover:shadow-xl shadow-white px-5 lg:px-10 py-1 lg:py-5 w-full h-full;
+		@apply flex flex-col gap-2 bg-secondary bg-opacity-25 border-[1px] border-secondary rounded-lg hover:shadow-xl shadow-white px-5 lg:px-10 py-1 lg:py-5 w-full h-full;
 	}
 
 	.ai-card {
-		@apply flex flex-col gap-2 bg-tertiary-900 bg-opacity-25 border-tertiary-600 hover:shadow-xl shadow-white px-2 text-center md:text-left lg:px-10 py-5 lg:py-5 w-full h-full;
+		@apply flex flex-col gap-2 bg-neutral bg-opacity-25 border-neutral hover:shadow-xl shadow-white px-2 text-center md:text-left lg:px-10 py-5 lg:py-5 w-full h-full;
 	}
 
 	.ai-card li {
@@ -411,6 +353,6 @@
 	}
 
 	.simple-link {
-		@apply text-secondary-500 underline underline-offset-2 hover:text-secondary-300 transition-colors duration-150;
+		@apply text-secondary underline underline-offset-2 hover:text-secondary transition-colors duration-150;
 	}
 </style>

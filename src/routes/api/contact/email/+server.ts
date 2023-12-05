@@ -27,15 +27,10 @@ export async function POST({ request }) {
 		HtmlBody: emailHtml
 	};
 
-	await client
-		.sendEmail(options)
-		.then(() => {
-			console.log(`email sent: ${[name, email, msg].join(' | ')}`);
-		})
-		.catch((err) => {
-			console.error(`error sending email with postmark: ${err.message}`);
-			return new Response(JSON.stringify(err), { status: 500 });
-		});
+	await client.sendEmail(options).catch((err) => {
+		console.error(`error sending email with postmark: ${err.message}`);
+		return new Response(JSON.stringify(err), { status: 500 });
+	});
 
 	return new Response('{}', { status: 200 });
 }

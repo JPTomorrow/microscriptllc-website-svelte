@@ -14,6 +14,7 @@
 	import { PUBLIC_BRAND_NAME } from '$env/static/public';
 	import AiUi from '$lib/ai-ui.svelte';
 	import Employeebadge from '$lib/employeebadge.svelte';
+	import TitleSpaced from '$lib/title-spaced.svelte';
 
 	// capture scroll to hide header
 	let outer: HTMLDivElement;
@@ -35,7 +36,7 @@
 	<div bind:this={outer} class="page-inner-scroll-container pt-[85px]">
 		<!-- Landing Banner -->
 		<div class="flex gap-5 backdrop-blur-sm custom-card items-center px-5 lg:px-10 py-5">
-			<div class="flex flex-col items-center lg:block lg:items-start w-full lg:min-w-[700px]">
+			<div class="flex flex-col items-center lg:block lg:items-start w-full">
 				<Inneraccentborder>
 					<h1
 						slot="content"
@@ -46,11 +47,6 @@
 						digital services and advanced features.
 					</h1>
 					<div slot="buttons">
-						<!-- Disabled till I can make the processes section -->
-						<!-- <a class="btn1" href="/projects">
-							<p class="text-sm uppercase mr-3">Our Process</p>
-							<ArrowRightRhombus />
-						</a> -->
 						<a class="btn1" href="#contact">
 							<p class="text-sm uppercase mr-3">Get in Touch</p>
 							<ArrowRightRhombus />
@@ -64,7 +60,7 @@
 		<!-- Company Services Offered -->
 		<div class="flex flex-col gap-5 w-full items-center justify-center px-3 md:px-10 my-12">
 			<h1
-				class="text-3xl md:text-5xl lg:text-7xl font-normal lg:font-thin border-b-[1px] border-primary-100 mt-5 pb-1 lg:pb-3 lg:px-5"
+				class="text-3xl md:text-5xl lg:text-7xl font-normal lg:font-thin border-b-[1px] border-primary mt-5 pb-1 lg:pb-3 lg:px-5"
 			>
 				Company Services
 			</h1>
@@ -130,7 +126,7 @@
 
 		<!-- Client Meetings Blurb -->
 		<div
-			class="relative block md:flex custom-card items-center justify-start gap-28 backdrop-blur-sm my-12 px-3 md:px-10"
+			class="relative block md:flex custom-card text-primary items-center justify-start gap-28 backdrop-blur-sm my-12 px-3 md:px-10"
 		>
 			<div class="w-full md:w-1/2 py-16 lg:py-32 lg:ml-12">
 				<h1 class="text-center md:text-left text-4xl font-semibold uppercase">
@@ -157,12 +153,13 @@
 				</div>
 			</div>
 			<div
-				class="absolute top-0 left-0 flex w-full h-full bg-secondary-500 meetings-shape-cutout z-[-1] backdrop-blur-sm opacity-25"
+				class="absolute top-0 left-0 flex w-full h-full bg-secondary meetings-shape-cutout z-[-1] backdrop-blur-sm opacity-25"
 			/>
 		</div>
 
 		<!-- Work -->
 		<div class="custom-card flex flex-col justify-center px-5 md:px-10">
+			<TitleSpaced headerText="Recent Work" />
 			<Projectscrollcontainer />
 		</div>
 
@@ -198,10 +195,10 @@
 
 	.meetings-icon {
 		@apply flex justify-center items-center 
-		bg-primary-300 text-secondary-800 rotate-45 
+		bg-primary text-secondary rotate-45 
 		w-[70px] h-[70px] md:w-[130px] md:h-[130px] 
 		shadow-xl 
-		border-[5px] border-primary-400
+		border-[5px] border-accent
 		transition-transform duration-700
 		hover:rotate-[405deg];
 	}

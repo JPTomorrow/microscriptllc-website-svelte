@@ -1,18 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 html,
 body {
 	font-family: 'Montserrat', sans-serif;
+	@apply text-primary;
 }
-
-/* skeleton overrides */
-
-.input {
-	@apply !bg-black bg-opacity-50 rounded-full p-2 px-4 border-[2px] focus:!border-secondary-500 outline-none;
-}
-
-.textarea {
-	@apply input !rounded-lg;
-}
-
 /* utility */
 
 .absolute-centered {
@@ -27,12 +21,12 @@ body {
 
 .btn1 {
 	@apply flex w-fit items-center justify-center 
-    border-[1px] border-primary-50 
-    rounded-full px-5 py-2 hover:bg-primary-200 
+    border-[1px] border-primary 
+    rounded-full px-5 py-2 hover:bg-primary 
     hover:bg-opacity-30 transition-all duration-150 
-    dark:text-primary-50 dark:hover:text-white;
+    dark:text-primary dark:hover:text-white;
 
-	box-shadow: 0 -2px 0 0 rgb(var(--color-primary-50));
+	box-shadow: 0 -2px 0 oklch(var(--p));
 }
 
 .btn1:hover {
@@ -41,7 +35,7 @@ body {
 }
 
 .nav-link {
-	@apply h-full hover:underline underline-offset-4 transition-all duration-75 hover:scale-110 hover:text-secondary-300;
+	@apply h-full hover:underline underline-offset-4 transition-all duration-75 hover:scale-110 hover:text-secondary;
 }
 
 @keyframes animatedBackground {

@@ -134,7 +134,7 @@
 		px-5 lg:px-10 py-5 
 		backdrop-blur-sm 
 		lg:rounded-md 
-		lg:border-l-[1px] lg:border-secondary-300;
+		lg:border-l-[1px] lg:border-secondary;
 	}
 
 	p {

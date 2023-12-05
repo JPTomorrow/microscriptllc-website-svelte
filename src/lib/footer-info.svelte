@@ -7,7 +7,7 @@
 </script>
 
 <div
-	class="w-full flex flex-col md:flex-row justify-center md:justify-between items-center text-center md:items-start md:text-left md:gap-0 gap-5"
+	class="w-full flex flex-col lg:flex-row justify-center md:justify-between items-center text-center lg:items-start lg:text-left lg:gap-0 gap-5"
 >
 	<div>
 		<h1 class="footer-header">Links</h1>
@@ -73,6 +73,6 @@
 	}
 
 	.divider {
-		@apply w-full border-t-[1px] border-primary-100;
+		@apply w-full border-t-[1px] border-primary;
 	}
 </style>

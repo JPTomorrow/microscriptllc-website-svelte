@@ -4,7 +4,7 @@
 </script>
 
 <div
-	class="hidden lg:flex w-full justify-between border-y-[1px] border-secondary-500 md:px-32 py-3 mt-5"
+	class="hidden md:flex w-full justify-between border-y-[1px] border-secondary md:px-32 py-3 mt-5"
 >
 	{#each text as c, i (i)}
 		<p class="text-7xl font-thin uppercase">
@@ -17,6 +17,8 @@
 	{/each}
 </div>
 
-<h1 class=" lg:hidden uppercase font-thin text-4xl w-full text-center my-5">
+<h1
+	class=" md:hidden uppercase font-thin text-4xl w-full text-center border-y-[1px] border-secondary py-3"
+>
 	{headerText}
 </h1>

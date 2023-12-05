@@ -1,8 +1,15 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
+	import { onMount } from 'svelte';
 	import { draw, fade } from 'svelte/transition';
-	import type { ToastSettings } from '@skeletonlabs/skeleton';
-	import { toastStore } from '@skeletonlabs/skeleton';
+
+	interface formError {
+		msg: string;
+	}
+
+	let err = {
+		msg: ''
+	} as formError;
 
 	let clazz = 'w-full';
 	export { clazz as class };
@@ -22,41 +29,22 @@
 	let email: string = '';
 	export let message: string = '';
 
-	const t: ToastSettings = {
-		message: 'Email Sent Successfully!'
-	};
-
-	const t2: ToastSettings = {
-		message: 'Missing Name',
-		background: 'variant-filled-error'
-	};
-
-	const t3: ToastSettings = {
-		message: 'Missing or Not Valid Email',
-		background: 'variant-filled-error'
-	};
-
-	const t4: ToastSettings = {
-		message: 'Missing Message',
-		background: 'variant-filled-error'
-	};
-
 	function sub() {
 		const isValid = valEmail(email);
-		if (!isValid) {
-			toastStore.trigger(t3);
+		err.msg = '';
+		if (name === '') {
+			err.msg = 'Please provide a name';
 			return;
 		}
-		if (name === '') {
-			toastStore.trigger(t2);
+		if (!isValid) {
+			err.msg = 'Not a valid email address';
 			return;
 		}
 		if (message === '') {
-			toastStore.trigger(t4);
+			err.msg = 'Please provide a message';
 			return;
 		}
 		animateSend();
-		toastStore.trigger(t);
 	}
 
 	let isSending = false;
@@ -138,23 +126,28 @@
 			name="microscript-contact-form"
 		>
 			<h1 class="text-2xl md:text-3xl">{headerText}</h1>
+			{#if err.msg !== ''}
+				<div class="text-error">
+					<span>*{err.msg}</span>
+				</div>
+			{/if}
 			<input
 				bind:value={name}
-				class="input custom-input custom-focus"
+				class="input input-secondary input-ghost w-full"
 				type="text"
 				placeholder="Name"
 				name="name"
 			/>
 			<input
 				bind:value={email}
-				class="input custom-input custom-focus"
+				class="input input-secondary input-ghost w-full"
 				type="text"
 				placeholder="Email"
 				name="email"
 			/>
 			<textarea
 				bind:value={message}
-				class="textarea p-4 rounded-lg custom-focus"
+				class="textarea textarea-ghost textarea-secondary w-full"
 				rows="4"
 				placeholder="Message"
 				name="msg"
@@ -171,18 +164,11 @@
 	{/if}
 </div>
 
-<div class="card mt-3 p-4 variant-outline-secondary" data-popup="contactAddInfo">
-	<p class="text-md"><strong>Helpful Info:</strong></p>
-	<ul class="text-sm">
-		<li>You Phone #</li>
-		<li>Your business name if applicable</li>
-		<li>A rough description of what you are looking to have designed</li>
-	</ul>
-	<div class="arrow variant-filled-secondary" />
-</div>
-
-<div class="card mt-3 p-4 variant-outline-secondary" data-popup="emailInfo">
-	<p class="text-md"><strong>Email Format:</strong></p>
-	<p class="text-sm">email@domain.com</p>
-	<div class="arrow variant-filled-secondary" />
-</div>
+<!-- {#if isSending}
+	<div out:fade|global class="toast toast-center">
+		<div class="flex flex-col alert alert-success">
+			<span>Thank you for reaching out!</span>
+			<span>We will be in touch with you shortly!</span>
+		</div>
+	</div>
+{/if} -->

@@ -146,7 +146,7 @@
 
 	const conicStops: ConicStop[] = [
 		{ color: 'transparent', start: 0, end: 25 },
-		{ color: 'rgb(var(--color-primary-300))', start: 75, end: 100 }
+		{ color: 'rgb(var(--color-primary))', start: 75, end: 100 }
 	];
 
 	// capture scroll to hide header
@@ -168,9 +168,9 @@
 <div in:fade|global={{ duration: 200 }} class="animated-space-bg">
 	<div bind:this={outer} class="page-inner-scroll-container pt-[85px]">
 		{#if dev}
-			<article class="post-1 gap-5 py-16 mb-5 border-b-[1px] border-secondary-300">
+			<article class="post-1 gap-5 py-16 mb-5 border-b-[1px] border-secondary">
 				<h1 class="uppercase">AI Add Post</h1>
-				<div class="w-full border-[1px] border-secondary-300 rounded-lg min-h-[200px] p-5">
+				<div class="w-full border-[1px] border-secondary rounded-lg min-h-[200px] p-5">
 					<h1>{headline}</h1>
 					{#each paragraphs as p, i (i)}
 						<SvelteMarkdown
@@ -217,7 +217,7 @@
 						Add Headline
 					</button>
 					<button disabled={loading} class="btn1" on:click={generateImage}> Add Image </button>
-					<button disabled={loading} class="btn1 bg-secondary-900 bg-opacity-75" on:click={addPost}>
+					<button disabled={loading} class="btn1 bg-secondary bg-opacity-75" on:click={addPost}>
 						Publish
 					</button>
 					{#if loading}
@@ -248,7 +248,7 @@
 								</p>
 
 								<p
-									class="text-lg lg:text-xl mb-2 font-thin text-primary-50 text-ellipsis line-clamp-3 lg:line-clamp-5"
+									class="text-lg lg:text-xl mb-2 font-thin text-primary text-ellipsis line-clamp-3 lg:line-clamp-5"
 								>
 									{post.shortDescription}
 								</p>
@@ -268,7 +268,7 @@
 						<!-- {#if i % 5 == 0}
 							<div class="flex w-full justify-center items-center">
 								<div
-									class="flex flex-col px-5 lg:px-0 lg:flex-row w-5/6 justify-center gap-5 lg:gap-10 items-center border-y-[1px] border-primary-300 py-5 my-5 bg-tertiary-900 bg-opacity-20"
+									class="flex flex-col px-5 lg:px-0 lg:flex-row w-5/6 justify-center gap-5 lg:gap-10 items-center border-y-[1px] border-primary py-5 my-5 bg-neutral bg-opacity-20"
 								>
 									<h1 class=" text-center lg:text-left text-xl lg:text-5xl font-thin">
 										Try out Google Workspaces Today!
@@ -315,10 +315,10 @@
 
 	.post-1 {
 		@apply flex flex-col items-start text-left w-full  
-		bg-secondary-900 backdrop-blur-sm bg-opacity-40;
+		bg-secondary backdrop-blur-sm bg-opacity-40;
 	}
 	.post-2 {
 		@apply flex flex-col items-start text-left 
-		w-full bg-tertiary-800 bg-opacity-40;
+		w-full bg-neutral bg-opacity-40;
 	}
 </style>

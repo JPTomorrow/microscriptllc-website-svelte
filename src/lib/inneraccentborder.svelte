@@ -37,7 +37,7 @@
 	<div class="lg:pl-2 lg:pr-10 my-4">
 		<slot name="content" />
 	</div>
-	<div class="divider w-3/4" />
+	<div class="divider w-3/4 self-center lg:self-start" />
 	<div class="w-3/4 flex justify-center lg:justify-start gap-5 mt-7">
 		<slot name="buttons" />
 	</div>
@@ -45,7 +45,7 @@
 
 <style lang="postcss">
 	.divider {
-		@apply h-[1px] bg-secondary-500;
+		@apply h-[1px] bg-secondary m-0 mb-1;
 	}
 
 	.header {

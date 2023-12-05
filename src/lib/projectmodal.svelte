@@ -18,7 +18,7 @@
 	>
 		<h1 class="text-5xl font-thin">{$modalShowStore.name}</h1>
 		<img
-			class="my-5 rounded-xl border-[1px] border-secondary-300 max-h-80 object-left-top object-cover"
+			class="my-5 rounded-xl border-[1px] border-secondary max-h-80 object-left-top object-cover"
 			src={$modalShowStore.img}
 			alt="projimage"
 		/>
@@ -45,6 +45,6 @@
 	}
 
 	.custom-card {
-		@apply z-40 p-5 bg-transparent border-y-[2px] rounded-xl border-secondary-500 select-none;
+		@apply z-40 p-5 bg-transparent border-y-[2px] rounded-xl border-secondary select-none;
 	}
 </style>

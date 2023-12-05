@@ -16,7 +16,7 @@
 
 <style lang="postcss">
 	.divider {
-		@apply border-[1px] border-secondary-700;
+		@apply border-[1px] h-[1px] self-center border-secondary m-2;
 	}
 
 	div :global(p) {
@@ -28,7 +28,7 @@
 	}
 
 	div :global(a) {
-		@apply hover:text-tertiary-300 py-2;
+		@apply transition-colors duration-100 hover:text-neutral;
 	}
 
 	.transparent-gradient-fade {

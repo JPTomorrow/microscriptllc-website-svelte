@@ -69,20 +69,18 @@
 						transition:blur|global
 						class="feed-msg whitespace-pre-line {m.role === 'assistant' ? 'ai' : 'you'}"
 					>
-						<h1
-							class="uppercase font-semibold text-xl {m.role === 'assistant'
-								? 'text-primary-900'
-								: 'text-secondary-800'}"
-						>
+						<h1 class="uppercase font-semibold text-xl">
 							{m.role === 'assistant' ? 'GAIA' : 'you'}
 						</h1>
-						<Time class="text-sm ml-2" relative timestamp={new Date()} />
-						<p class="text-sm whitespace-pre-line pt-2">{@html m.content}</p>
+						<p class="ml-2">- <Time class="text-sm" relative timestamp={new Date()} /></p>
+						<p class="text-sm whitespace-pre-line pt-2">
+							{@html m.content}
+						</p>
 					</div>
 				{/each}
 				{#if loading}
 					<div in:blur|global={{ delay: 400 }} class="feed-msg whitespace-pre-line ai">
-						<h1 class="uppercase font-semibold text-xl text-primary-900">GAIA</h1>
+						<h1 class="uppercase font-semibold text-xl text-primary">GAIA</h1>
 						<div class="flex gap-2 text-lg whitespace-pre-wrap pt-2 font-bold">
 							<p class="animate-[bounce_1s_infinite_0ms]">.</p>
 							<p class="animate-[bounce_1s_infinite_100ms]">.</p>
@@ -93,9 +91,13 @@
 				<div bind:this={scrollFeed} />
 			</div>
 			<form on:submit|preventDefault={handleSubmit} class="relative w-full mt-auto">
-				<input class="input w-full !pr-12" type="text" bind:value={$input} />
+				<input
+					class="input input-bordered input-secondary rounded-full w-full !pr-12"
+					type="text"
+					bind:value={$input}
+				/>
 				<button type="submit"
-					><Send class="absolute top-3 text-secondary-500 right-5 rotate-45" size="23" /></button
+					><Send class="absolute top-3 text-secondary right-5 rotate-45" size="23" /></button
 				>
 			</form>
 			<p class="mb-2 text-xs font-thin">Powered by OpenAI technologies.</p>
@@ -104,7 +106,7 @@
 		<button
 			on:click={toggleAI}
 			in:blur|global
-			class="btn1 fixed top-[90%] right-[4%] lg:right-[2%] bg-secondary-900 !p-2 !px-3 !z-[1]"
+			class="btn1 fixed top-[90%] right-[4%] lg:right-[2%] bg-secondary !p-2 !px-3 !z-[1]"
 		>
 			<Robot />
 		</button>
@@ -115,7 +117,7 @@
 	.container {
 		@apply w-full md:w-[400px] h-full max-h-screen flex flex-col gap-3 
 		items-center justify-start px-3 md:px-5 
-		 
+		 bg-base-100
 		fixed top-[0%] right-[0%] z-50 
 		!rounded-none md:!rounded-tl-lg md:!rounded-bl-lg;
 	}
@@ -124,14 +126,14 @@
 	}
 
 	.you {
-		@apply border-[2px] border-primary-600;
+		@apply border-[2px] border-primary;
 	}
 
 	.ai {
-		@apply border-[2px] border-secondary-600;
+		@apply border-[2px] border-secondary;
 	}
 
 	.feed-msg {
-		@apply bg-secondary-500 text-secondary-900 rounded-xl px-3 py-3 font-semibold;
+		@apply bg-primary text-base-100 rounded-xl px-3 py-3 font-semibold;
 	}
 </style>

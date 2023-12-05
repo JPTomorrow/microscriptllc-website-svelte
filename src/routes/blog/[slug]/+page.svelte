@@ -56,7 +56,7 @@
 				Posted On: <Time timestamp={createdAt.toLocaleDateString()} />
 			</p>
 
-			<p class="text-lg lg:text-xl mb-2 font-thin text-primary-50">
+			<p class="text-lg lg:text-xl mb-2 font-thin text-primary">
 				{@html post.body}
 			</p>
 			<a href="/blog" class="btn1 mt-5">Back</a>
@@ -69,7 +69,7 @@
 
 <style lang="postcss">
 	article :global(h1) {
-		@apply text-2xl lg:text-5xl my-2 font-bold text-primary-200;
+		@apply text-2xl lg:text-5xl my-2 font-bold text-primary;
 	}
 	article :global(h2) {
 		@apply text-xl lg:text-2xl mb-2 mt-5 font-light;
