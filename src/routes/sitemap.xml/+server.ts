@@ -2,7 +2,7 @@ import { formBlogPostSlug } from '$lib/scripts/blog';
 import { tursoClient } from '$lib/server/turso';
 import type { RequestHandler } from '@sveltejs/kit';
 
-const pages: string[] = ['blog', 'contact', 'services']; //list of pages as a string ex. ["about", "blog", "contact"]
+const pages: string[] = ['blog', 'contact', 'pricing', 'services']; //list of pages as a string ex. ["about", "blog", "contact"]
 const site = 'https://www.microscriptllc.com';
 
 export const GET: RequestHandler = async () => {
