@@ -1,6 +1,6 @@
 <script lang="ts">
-	import { Menu2, X } from 'tabler-icons-svelte';
-	import { slide } from 'svelte/transition';
+	import { Menu2, Phone, X } from 'tabler-icons-svelte';
+	import { fade, slide } from 'svelte/transition';
 	import { onMount } from 'svelte';
 
 	import Github from '$lib/github.svelte';
@@ -9,36 +9,48 @@
 	import { scrollYStore } from '$lib/scrollstore';
 	import Linkedin from '$lib/linkedin.svelte';
 	import FooterInfo from '$lib/footer-info.svelte';
+	import { page } from '$app/stores';
+	import { afterNavigate } from '$app/navigation';
 
 	let playAnim = false;
+	let bgBlur = '';
+
+	afterNavigate(() => {
+		bgBlur = $page.url.pathname === '/' ? 'backdrop-blur-sm !bg-base-100/75 shadow-2xl' : '';
+	});
 
 	onMount(() => {
 		playAnim = true;
+		if ($page.url.pathname === '/') {
+			bgBlur = 'backdrop-blur-sm !bg-base-100/75 shadow-2xl';
+		}
 	});
 </script>
 
-<!-- <h1 class="absolute">{$scrollYStore}</h1> -->
 {#if $scrollYStore <= 0}
 	<nav
-		out:slide={{ axis: 'y', duration: 200 }}
-		class="fixed hidden lg:flex w-screen bg-transparent justify-between p-5 z-20"
+		transition:slide={{ axis: 'y', duration: 200 }}
+		class="fixed hidden lg:flex w-screen bg-transparent justify-between p-5 z-20 {bgBlur}"
 	>
 		{#if playAnim}
 			<Logo />
 			<div class="flex h-full items-center justify-between gap-7">
 				<Navlinks />
 				<div
-					in:slide|global={{ delay: 0, axis: 'x', duration: 600 }}
-					class="flex gap-3 items-center justify-between"
+					in:fade|global={{ delay: 0, duration: 600 }}
+					class="flex gap-5 items-center justify-between"
 				>
-					<Linkedin />
-					<Github />
+					<a href="tel:3854200435" class="nav-link flex gap-2 whitespace-nowrap">
+						<Phone />
+						<h1>(385) 420-0435</h1>
+					</a>
+					<a class="btn1 whitespace-nowrap" href="/contact">Get a Quite</a>
 				</div>
 			</div>
 		{/if}
 	</nav>
 {/if}
-<div
+<nav
 	class="fixed lg:hidden flex w-full justify-between items-center p-5 px-5 bg-black bg-opacity-30 backdrop-blur-sm z-20"
 >
 	<Logo />
@@ -49,7 +61,7 @@
 			strokeWidth="2"
 		/></label
 	>
-</div>
+</nav>
 
 <div class="drawer z-30">
 	<input id="my-drawer" type="checkbox" class="drawer-toggle" />

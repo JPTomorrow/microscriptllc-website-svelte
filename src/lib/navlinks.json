@@ -1,7 +1,7 @@
 {
 	"routes": [
+		{ "name": "Pricing", "path": "/pricing" },
 		{ "name": "Services", "path": "/services" },
-
 		{ "name": "Contact", "path": "/contact" }
 	]
 }

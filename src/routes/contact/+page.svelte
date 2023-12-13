@@ -10,7 +10,6 @@
 	import AiUi from '$lib/ai-ui.svelte';
 
 	export let data;
-	console.log(data.isQuote);
 
 	// capture scroll to hide header
 	let outer: HTMLDivElement;
@@ -46,24 +45,14 @@
 					creating experiences that make people sit up and take notice. Got a vision? A question?
 					Just want to chat? We're all ears!
 				</p>
-				{#if data.isQuote}
-					<p class="text-base text-error-400 md:text-lg ml-1 font-extralight">
-						Quotes may take up to 24 hours to be processed.
-					</p>
-				{/if}
+				<p class="text-base text-primary md:text-lg ml-1 font-normal">
+					We will get back to you about your quote within 24 hours.
+				</p>
 			</div>
 			<Contactuscard
-				message={data.isQuote
-					? `Hi,
-					
-I would like to get a quote for building website that has the following features:
-
-- A 5 page layout
-- SEO optimizations
-- Online store / eCommerce
-- Photography / Image Generation
-- Integrate AI assistant into a website`
-					: ''}
+				standardQuote={data.standardQuote}
+				eCommerceQuote={data.eCommerceQuote}
+				aiIntegrationQuote={data.aiIntegrationQuote}
 				class="w-full md:w-1/2"
 			/>
 		</div>

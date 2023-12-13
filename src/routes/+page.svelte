@@ -2,13 +2,11 @@
 	import { onMount } from 'svelte';
 	import { setScrollY } from '$lib/scrollstore';
 	import { fade } from 'svelte/transition';
-	import Inneraccentborder from '$lib/inneraccentborder.svelte';
 	import Projectscrollcontainer from '$lib/projectscrollcontainer.svelte';
 	import Contactuscard from '$lib/contactuscard.svelte';
 	import Footer from '$lib/footer.svelte';
 	import Projectmodal from '$lib/projectmodal.svelte';
 	import { ArrowRightRhombus, BrandZoom, Phone, Users } from 'tabler-icons-svelte';
-	import BannerImage from '$lib/banner-image.svelte';
 	import ServiceCard from '$lib/service-card.svelte';
 	import Seo from '$lib/seo.svelte';
 	import { PUBLIC_BRAND_NAME } from '$env/static/public';
@@ -33,28 +31,42 @@
 />
 
 <div in:fade|global={{ duration: 200 }} class="animated-space-bg">
-	<div bind:this={outer} class="page-inner-scroll-container pt-[85px]">
+	<div bind:this={outer} class="page-inner-scroll-container">
 		<!-- Landing Banner -->
-		<div class="flex gap-5 backdrop-blur-sm custom-card items-center px-5 lg:px-10 py-5">
-			<div class="flex flex-col items-center lg:block lg:items-start w-full">
-				<Inneraccentborder>
-					<h1
-						slot="content"
-						class="text-xl lg:text-2xl text-center lg:text-left font-thin leading-snug"
+		<div class="relative w-full min-h-[98vh] shadow-2xl border-b-[1px] border-primary">
+			<img
+				class="w-full h-full object-cover object-center filter drop-shadow-2xl sepia contrast-75 pointer-events-none"
+				src="/images/about-pic.webp"
+				alt="landing banner"
+			/>
+			<div class="absolute-centered flex flex-col w-fit text-center mt-10 md:mt-0">
+				<h1 class="text-3xl md:text-6xl text-primary text-shadow font-bold">
+					Build Your Businesses<br class="hidden md:block" /> Online Presence Today
+				</h1>
+				<div
+					class="w-full h-[5px] bg-secondary border-b-[2px] border-base-100 rounded-xl mt-5 mb-3 self-center"
+				/>
+				<div
+					class="w-11/12 h-[3px] bg-secondary border-b-[2px] border-base-100 rounded-xl shadow-2xl self-center"
+				/>
+				<a
+					href="/pricing"
+					class="text-xl md:text-3xl text-primary text-shadow font-bold mt-5 hover:underline"
+				>
+					As low as $0 upfront and $150 a month!
+				</a>
+				<div
+					class="w-fit h-fit bg-base-100/75 border-[2px] border-secondary/75 rounded-3xl md:rounded-full shadow-2xl self-center mt-5 px-5 py-3 flex flex-col md:flex-row gap-5 items-center"
+				>
+					<a href="/pricing" class="btn1 gap-3 whitespace-nowrap">Our Plan<ArrowRightRhombus /></a>
+					<a href="/contact" class="btn1 gap-3 whitespace-nowrap"
+						>Get a Quote<ArrowRightRhombus /></a
 					>
-						As you set sail on your online voyage, consider us your steadfast co-pilots. At
-						MicroScript, we offer more than just web development; we provide a full spectrum of
-						digital services and advanced features.
-					</h1>
-					<div slot="buttons">
-						<a class="btn1" href="#contact">
-							<p class="text-sm uppercase mr-3">Get in Touch</p>
-							<ArrowRightRhombus />
-						</a>
-					</div>
-				</Inneraccentborder>
+					<a href="/services" class="btn1 gap-3 whitespace-nowrap"
+						>Other Services<ArrowRightRhombus /></a
+					>
+				</div>
 			</div>
-			<BannerImage />
 		</div>
 
 		<!-- Company Services Offered -->
@@ -201,5 +213,9 @@
 		border-[5px] border-accent
 		transition-transform duration-700
 		hover:rotate-[405deg];
+	}
+
+	.text-shadow {
+		text-shadow: #000000 1px 2px 5px;
 	}
 </style>

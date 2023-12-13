@@ -35,7 +35,9 @@ body {
 }
 
 .nav-link {
-	@apply h-full hover:underline underline-offset-4 transition-all duration-75 hover:scale-110 hover:text-secondary;
+	@apply h-full underline-offset-4 
+	transition-all duration-75 hover:scale-110 
+	hover:text-primary hover:underline hover:font-semibold;
 }
 
 @keyframes animatedBackground {

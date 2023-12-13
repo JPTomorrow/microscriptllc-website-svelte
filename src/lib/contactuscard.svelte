@@ -27,7 +27,11 @@
 
 	let name: string = '';
 	let email: string = '';
-	export let message: string = '';
+
+	export let standardQuote: boolean = false;
+	export let eCommerceQuote: boolean = false;
+	export let aiIntegrationQuote: boolean = false;
+	let message: string = '';
 
 	function sub() {
 		const isValid = valEmail(email);
@@ -145,6 +149,38 @@
 				placeholder="Email"
 				name="email"
 			/>
+			<h1>Reasons for contact:</h1>
+			<div class="flex flex-col">
+				<label class="label gap-5 cursor-pointer w-fit">
+					<input
+						bind:checked={standardQuote}
+						class="checkbox checkbox-primary"
+						type="checkbox"
+						name="standardQuote"
+					/>
+					<span class="text-primary label-text text-base"
+						>Standard Business Website ($0 down $150 per month)</span
+					>
+				</label>
+				<label class="label gap-5 cursor-pointer w-fit">
+					<input
+						bind:checked={eCommerceQuote}
+						class="checkbox checkbox-primary"
+						type="checkbox"
+						name="eCommerceQuote"
+					/>
+					<span class="text-primary label-text text-base">eCommerce Integration</span>
+				</label>
+				<label class="label gap-5 cursor-pointer w-fit">
+					<input
+						bind:checked={aiIntegrationQuote}
+						class="checkbox checkbox-primary"
+						type="checkbox"
+						name="aiIntegrationQuote"
+					/>
+					<span class="text-primary label-text text-base">AI Integration</span>
+				</label>
+			</div>
 			<textarea
 				bind:value={message}
 				class="textarea textarea-ghost textarea-secondary w-full"
@@ -163,12 +199,3 @@
 		</form>
 	{/if}
 </div>
-
-<!-- {#if isSending}
-	<div out:fade|global class="toast toast-center">
-		<div class="flex flex-col alert alert-success">
-			<span>Thank you for reaching out!</span>
-			<span>We will be in touch with you shortly!</span>
-		</div>
-	</div>
-{/if} -->

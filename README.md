@@ -36,3 +36,9 @@ npm run dev
 ### Migrate
 
 `npm run drizzle:migrate`
+
+# MidJourney Prompts Used
+
+### Astronaut on pricing page
+
+a mascot logo of an astronaut with visor floating in space, simple, vector --no shading detail --no realistic shading

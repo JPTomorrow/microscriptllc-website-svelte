@@ -28,6 +28,14 @@ declare global {
 		site?: string;
 	}
 
+	interface BlogPost {
+		title: string;
+		createdAt: Date;
+		htmlBody: string;
+		img: string;
+	}
+
+	// @TODO: DELETE AFTER MAKING NEW BLOG SYSTEM
 	interface BlogParagraph {
 		header: string;
 		content: string;

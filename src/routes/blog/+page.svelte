@@ -15,6 +15,8 @@
 	import SvelteMarkdown from 'svelte-markdown';
 
 	export let data;
+	// export let form;
+
 	let articleSubject: string = '';
 	let paragraphSubject: string = '';
 	let imgSubject: string =
@@ -168,7 +170,7 @@
 <div in:fade|global={{ duration: 200 }} class="animated-space-bg">
 	<div bind:this={outer} class="page-inner-scroll-container pt-[85px]">
 		{#if dev}
-			<article class="post-1 gap-5 py-16 mb-5 border-b-[1px] border-secondary">
+			<article class="flex flex-col py-16 mb-5 border-b-[1px] border-secondary">
 				<h1 class="uppercase">AI Add Post</h1>
 				<div class="w-full border-[1px] border-secondary rounded-lg min-h-[200px] p-5">
 					<h1>{headline}</h1>
@@ -188,20 +190,34 @@
 						{/if}
 					{/await}
 				</div>
+				<div>
+					<div class="label">
+						<span class="label-text">Article Subject</span>
+					</div>
+					<input
+						name="article-subject"
+						class="input input-primary input-ghost"
+						disabled={loading}
+						bind:value={articleSubject}
+						placeholder="Enter an article subject..."
+					/>
+				</div>
+				<div class="label">
+					<span class="label-text">Paragraph Subject</span>
+				</div>
 				<input
-					class="input"
-					disabled={loading}
-					bind:value={articleSubject}
-					placeholder="Enter an article subject..."
-				/>
-				<input
-					class="input"
+					name="paragraph-subject"
+					class="input input-primary input-ghost"
 					disabled={loading}
 					bind:value={paragraphSubject}
 					placeholder="Enter a subject for the next paragraph..."
 				/>
+				<div class="label">
+					<span class="label-text">Image Subject</span>
+				</div>
 				<input
-					class="input"
+					name="img-subject"
+					class="input input-primary input-ghost"
 					disabled={loading}
 					bind:value={imgSubject}
 					placeholder="Enter a subject for the article image..."

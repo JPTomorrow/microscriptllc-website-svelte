@@ -30,7 +30,7 @@
 			<div class="flex flex-col items-center gap-5">
 				<h1 class="h1-def">Our Services</h1>
 				<div class="h-[1px] w-2/3 md:w-1/6 bg-primary" />
-				<p class="w-11/12 md:w-3/4 text-base md:text-2xl font-extralight text-center">
+				<p class="w-11/12 md:w-3/4 text-base md:text-2xl font-light text-center">
 					We offer a full spectrum of digital services and advanced web features designed to grow
 					your online presence and drive online business sales!
 				</p>
@@ -64,9 +64,9 @@
 					</a>
 				</div>
 				<div
-					class="hidden lg:block img-border w-1/2 border-secondary rounded-sm transition-all duration-150 hover:scale-[101%] hover:shadow-2xl"
+					class="hidden lg:block img-border w-1/2 border-secondary border-opacity-25 rounded-sm transition-all duration-150 hover:scale-[101%] hover:shadow-2xl"
 				>
-					<div class="img-border border-secondary">
+					<div class="img-border border-secondary border-opacity-50">
 						<div class="img-border border-secondary">
 							<img
 								src="/images/services/web-dev-service.webp"
@@ -137,7 +137,7 @@
 					</p>
 				</div>
 				<div
-					class="grid grid-cols-1 md:grid-cols-3 gap-24 justify-between px-5 md:px-20 py-10 mt-16 bg-accent/70 text-base-100 border-y-[1px] border-primary"
+					class="grid grid-cols-1 md:grid-cols-3 gap-24 justify-between px-5 md:px-20 py-10 mt-16 bg-base-100/70 text-primary border-y-[1px] border-primary"
 				>
 					<div class="flex flex-col items-center text-center">
 						<div class="flex gap-1 justify-start">
@@ -186,9 +186,7 @@
 			</div>
 
 			<!-- Code Optimizations -->
-			<div
-				class="flex custom-card bg-secondary gap-5 py-10 px-10 border-t-[1px] border-tertiary-700"
-			>
+			<div class="flex custom-card bg-secondary gap-5 py-10 px-10 border-t-[1px] border-secondary">
 				<div class="flex flex-col gap-6 lg:gap-3 w-full lg:w-1/2 justify-between">
 					<div class="flex flex-col gap-3 text-center md:text-left items-center md:items-start">
 						<h2 class="h2-def">Code Optimizations</h2>
@@ -230,10 +228,10 @@
 					</div>
 				</div>
 				<div
-					class="hidden lg:block img-border w-1/2 border-primary rounded-sm transition-all duration-150 hover:scale-[101%] hover:shadow-2xl"
+					class="hidden lg:block img-border w-1/2 border-primary border-opacity-25 rounded-sm transition-all duration-150 hover:scale-[101%] hover:shadow-2xl"
 				>
-					<div class="img-border border-primary0">
-						<div class="img-border border-primary-900">
+					<div class="img-border border-primary border-opacity-50">
+						<div class="img-border border-primary">
 							<img
 								src="/images/services/lighthouse-test.webp"
 								alt="Code Optimization"
@@ -305,7 +303,7 @@
 	}
 
 	.h1-def {
-		@apply text-4xl md:text-6xl text-center font-extralight uppercase;
+		@apply text-4xl md:text-6xl text-center font-normal uppercase;
 	}
 
 	.p-def {

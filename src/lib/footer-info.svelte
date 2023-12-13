@@ -9,32 +9,34 @@
 <div
 	class="w-full flex flex-col lg:flex-row justify-center md:justify-between items-center text-center lg:items-start lg:text-left lg:gap-0 gap-5"
 >
-	<div>
-		<h1 class="footer-header">Links</h1>
-		<ul>
-			<li>
-				<a href="/" class="nav-link"> Home </a>
-			</li>
-			{#each navLinks as link}
+	<div class="flex flex-col lg:flex-row gap-5 lg:gap-20">
+		<div>
+			<h1 class="footer-header">Links</h1>
+			<ul>
 				<li>
-					<a href={link.path} class="nav-link"> {link.name} </a>
+					<a href="/" class="nav-link"> Home </a>
 				</li>
-			{/each}
-		</ul>
-	</div>
-	<div>
-		<h1 class="footer-header">Our Process</h1>
-		<ul>
-			<li><a href="/coming-soon" class="nav-link">Branding</a></li>
-			<li><a href="/coming-soon" class="nav-link">SEO</a></li>
-		</ul>
-	</div>
-	<div>
-		<h1 class="footer-header">Resources</h1>
-		<ul>
-			<!-- <li><a href="/coming-soon" class="nav-link">Client Portal</a></li> -->
-			<li><a href="/coming-soon" class="nav-link">Email Newsletter</a></li>
-		</ul>
+				{#each navLinks as link}
+					<li>
+						<a href={link.path} class="nav-link"> {link.name} </a>
+					</li>
+				{/each}
+			</ul>
+		</div>
+		<!-- <div>
+			<h1 class="footer-header">Our Process</h1>
+			<ul>
+				<li><a href="/coming-soon" class="nav-link">Branding</a></li>
+				<li><a href="/coming-soon" class="nav-link">SEO</a></li>
+			</ul>
+		</div> -->
+		<div>
+			<h1 class="footer-header">Resources</h1>
+			<ul>
+				<!-- <li><a href="/coming-soon" class="nav-link">Client Portal</a></li> -->
+				<li><a href="/coming-soon" class="nav-link">Email Newsletter</a></li>
+			</ul>
+		</div>
 	</div>
 	<div>
 		<h1 class="footer-header">Contact</h1>
