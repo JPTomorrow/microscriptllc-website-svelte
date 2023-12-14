@@ -1,7 +1,11 @@
 <script lang="ts">
+	export let readMoreLink: string;
 </script>
 
-<div class="flex flex-col text-center items-center justify-between">
+<a
+	href={readMoreLink}
+	class="flex flex-col text-center items-center justify-between transition-all duration-75 hover:bg-secondary/10 rounded-3xl hover:scale-105 p-5"
+>
 	<div class="flex flex-col w-full items-center">
 		<slot name="header" />
 		<div class="divider transparent-gradient-fade w-full !border-[2px] border-double" />
@@ -9,10 +13,8 @@
 	</div>
 	<div class="flex flex-col w-full items-center">
 		<div class="divider transparent-gradient-fade w-10/12 mt-1" />
-		<slot name="read-more" />
-		<div class="divider transparent-gradient-fade w-10/12" />
 	</div>
-</div>
+</a>
 
 <style lang="postcss">
 	.divider {
@@ -20,11 +22,11 @@
 	}
 
 	div :global(p) {
-		@apply text-sm pb-2 pt-3;
+		@apply text-lg pb-2 pt-3;
 	}
 
 	div :global(h1) {
-		@apply text-xl lg:text-2xl font-normal lg:font-semibold mb-3 uppercase;
+		@apply text-2xl lg:text-3xl font-normal lg:font-semibold mb-3 uppercase;
 	}
 
 	div :global(a) {

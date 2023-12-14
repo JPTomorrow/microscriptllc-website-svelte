@@ -76,62 +76,56 @@
 			>
 				Company Services
 			</h1>
-			<div class="grid grid-cols-1 md:grid-cols-3 gap-14 md:gap-20 w-full lg:px-5 my-10">
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-14 md:gap-20 w-full lg:px-20 mt-20 mb-10">
 				<!-- (REWRITE BLURB) -->
-				<ServiceCard>
+				<ServiceCard readMoreLink="/services/#web-dev-service">
 					<h1 slot="header">Web development</h1>
 					<p slot="content">
 						We handle everything from complicated e-commerce websites down to simple company
 						information websites. We also do feature integrations with existing websites.
 					</p>
-					<a slot="read-more" href="/services/#web-dev-service">Read More</a>
 				</ServiceCard>
 				<!-- (REWRITE BLURB) -->
-				<ServiceCard>
+				<ServiceCard readMoreLink="/services/#user-xp">
 					<h1 slot="header">UI / UX Design</h1>
 					<p slot="content">
 						Our websites are modern and responsive. This means you get a great website at a great
 						price for desktops and mobile platforms.
 					</p>
-					<a slot="read-more" href="/services/#user-xp">Read More</a>
 				</ServiceCard>
 				<!-- (REWRITE BLURB) -->
-				<ServiceCard>
+				<ServiceCard readMoreLink="/services/#user-xp">
 					<h1 slot="header">Image Generation</h1>
 					<p slot="content">
 						Need a photographer? We are happy to offer professional photography services to capture
 						great images for your website and general marketing materials.
 					</p>
-					<a slot="read-more" href="/services/#user-xp">Read More</a>
 				</ServiceCard>
 				<!-- (REWRITE BLURB) -->
-				<ServiceCard>
+				<ServiceCard readMoreLink="/services/#seo-service">
 					<h1 slot="header">Digital Strategy</h1>
 					<p slot="content">
 						Search engine optimization or SEO is the lifeblood of our online marketing campaigns.
 						From the ground up, we can help your business achieve new levels of success by appealing
 						to new customers and getting more clicks online.
 					</p>
-					<a slot="read-more" href="/services/#seo-service">Read More</a>
 				</ServiceCard>
 				<!-- (REWRITE BLURB) -->
-				<ServiceCard>
+				<ServiceCard readMoreLink="/services/#user-xp">
 					<h1 slot="header">mobile / Responsive Design</h1>
 					<p slot="content">
 						The majority of online visitors are mobile users. As such our website load fast and are
 						designed to be easy to navigate and use on phones and tablets. Ask about responsive web
 						design today.
 					</p>
-					<a slot="read-more" href="/services/#user-xp">Read More</a>
 				</ServiceCard>
-				<ServiceCard>
+				<ServiceCard readMoreLink="/services/#ai-service">
 					<h1 slot="header">AI Integrations</h1>
 					<p slot="content">
 						We offer AI driven services powered by OpenAI technologies. Need someone to handle
 						customer support but don't have the money to hire a person? We can tailor an AI
 						assistant to help users who visit your website.
 					</p>
-					<a slot="read-more" href="/services/#ai-service">Read More</a>
 				</ServiceCard>
 			</div>
 		</div>
