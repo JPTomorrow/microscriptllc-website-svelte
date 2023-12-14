@@ -189,12 +189,7 @@
 				name="msg"
 			/>
 			<div class="flex items-center gap-3">
-				<button
-					class="btn1"
-					on:click={() => window.gtag_report_conversion(window.location)}
-					type="submit"
-					>Submit
-				</button>
+				<button class="btn1" type="submit">Submit </button>
 			</div>
 		</form>
 	{/if}

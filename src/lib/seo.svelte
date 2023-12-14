@@ -30,7 +30,7 @@
 	<title>{PUBLIC_BRAND_NAME}, {title}</title>
 	<meta
 		name="keywords"
-		content="Software Engineer, Software Developer, Web Development, Web Developer, Web Designer, Web Engineer, OpenAI, ai, ai consulting, photography, image generation, SEO"
+		content="Web Development, Web Developer, Web Designer, AI Integrations, SEO Experts"
 	/>
 	<meta name="description" content={metaDescription} />
 
@@ -49,8 +49,6 @@
 	<meta property="og:image:width" content="400" />
 	<meta property="og:image:height" content="400" />
 	<meta property="og:image:alt" content={image.alt} />
-
-	<meta name="google-adsense-account" content="ca-pub-5681510691636131" />
 
 	{#if isArticle}
 		<meta name="article:author" content="https://www.linkedin.com/in/morrowjustin/" />

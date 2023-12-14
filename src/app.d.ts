@@ -8,12 +8,6 @@ declare global {
 		// interface Platform {}
 	}
 
-	interface Window {
-		dataLayer: any[];
-		gtag: (...args: any[]) => void;
-		gtag_report_conversion: (...args: any[]) => void;
-	}
-
 	interface NavLink {
 		name: string;
 		path: string;
