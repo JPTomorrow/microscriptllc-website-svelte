@@ -22,11 +22,11 @@
 	}
 
 	div :global(p) {
-		@apply text-lg pb-2 pt-3;
+		@apply text-base md:text-lg pb-2 pt-3;
 	}
 
 	div :global(h1) {
-		@apply text-2xl lg:text-3xl font-normal lg:font-semibold mb-3 uppercase;
+		@apply text-xl lg:text-3xl font-semibold mb-3 uppercase;
 	}
 
 	div :global(a) {
