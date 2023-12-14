@@ -107,6 +107,7 @@
 			on:click={toggleAI}
 			in:blur|global
 			name="toggle AI"
+			aria-label="toggle AI"
 			class="btn1 fixed top-[90%] right-[4%] lg:right-[2%] bg-secondary !p-2 !px-3 !z-[1]"
 		>
 			<Robot />
