@@ -9,7 +9,7 @@
 		alt="logo"
 		src="/images/logo/logo_512.webp"
 		width="45px"
-		class="w-[45px] md:w-[50px] self-center pb-1 mr-2"
+		class="w-[45px] md:w-[50px] aspect-[512/293] self-center pb-1 mr-2"
 	/>
 	<div class="relative w-fit pr-5">
 		<p in:blur|global={{ delay: 200, duration: 400 }} class="text-3xl md:text-4xl font-thin">
