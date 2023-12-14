@@ -1,11 +1,11 @@
 <script lang="ts">
-	import { slide, blur } from 'svelte/transition';
+	import { blur } from 'svelte/transition';
 	import { env } from '$env/dynamic/public';
 </script>
 
 <a href="/" class="flex h-full items-start transition-transform hover:scale-105">
 	<img
-		in:slide|global={{ delay: 0, axis: 'x', duration: 400 }}
+		in:blur|global={{ duration: 400 }}
 		alt="logo"
 		src="/images/logo/logo_512.webp"
 		width="45px"
